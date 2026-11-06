@@ -119,6 +119,17 @@
       "prayer": "Prayer journal",
       "saved": "Saved content",
       "preferences": "Preferences"
+    },
+    "profile": {
+      "title": "Your profile",
+      "name": "Name",
+      "email": "Email",
+      "language": "Preferred language",
+      "save": "Save",
+      "saving": "Saving…",
+      "saved": "Saved.",
+      "loadError": "We couldn't load your profile. Please try again later.",
+      "saveError": "We couldn't save your changes. Please try again."
     }
   },
   "auth": {
@@ -148,8 +159,26 @@
       "passwordRequired": "Enter your password.",
       "passwordShort": "Password must be at least 8 characters.",
       "passwordMismatch": "Passwords don't match.",
-      "generic": "We couldn't complete that. Please try again."
-    }
+      "generic": "We couldn't complete that. Please try again.",
+      "invalidCredentials": "Email or password is incorrect.",
+      "emailNotConfirmed": "Please confirm your email first. Check your inbox for the link.",
+      "rateLimited": "Too many attempts. Please wait a few minutes and try again.",
+      "weakPassword": "Choose a stronger password.",
+      "samePassword": "Your new password must be different from the old one.",
+      "userExists": "An account with this email already exists."
+    },
+    "forgotTitle": "Reset your password",
+    "forgotIntro": "Enter your email and we'll send you a link to choose a new password.",
+    "submitForgot": "Send reset link",
+    "forgotSent": "If an account exists for that email, a reset link is on its way. Check your inbox.",
+    "backToSignIn": "Back to sign in",
+    "resetTitle": "Choose a new password",
+    "resetIntro": "Enter a new password for your account.",
+    "newPassword": "New password",
+    "submitReset": "Save new password",
+    "resetDone": "Your password has been changed.",
+    "resetInvalid": "This reset link is invalid or has expired. Please request a new one.",
+    "requestNewLink": "Request a new link"
   },
   "notFound": {
     "title": "Page not found",

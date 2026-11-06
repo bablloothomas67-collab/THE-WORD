@@ -1,5 +1,5 @@
 import { useState, type FormEvent } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { Button, Card, ErrorState, Notice, TextField } from '../components/ui';
 import { useAuth } from '../features/auth/useAuth';
@@ -7,9 +7,15 @@ import { validateLogin, type FieldErrors, type LoginValues } from '../utils/vali
 import { PageHeader } from './PageHeader';
 import styles from './pages.module.css';
 
+/** Only allow redirects to in-app paths (prevents open redirects). */
+function safeRedirect(from: unknown): string {
+  return typeof from === 'string' && from.startsWith('/') && !from.startsWith('//') ? from : '/journey';
+}
+
 export function LoginPage() {
   const { t } = useTranslation();
   const navigate = useNavigate();
+  const location = useLocation();
   const { service, isConfigured } = useAuth();
   const [values, setValues] = useState<LoginValues>({ email: '', password: '' });
   const [errors, setErrors] = useState<FieldErrors<keyof LoginValues>>({});
@@ -26,8 +32,8 @@ export function LoginPage() {
     setSubmitting(true);
     try {
       const result = await service.signIn(values.email, values.password);
-      if (result.ok) navigate('/journey');
-      else setSubmitError(result.code === 'not_configured' ? t('auth.notConfigured') : t('auth.errors.generic'));
+      if (result.ok) navigate(safeRedirect((location.state as { from?: unknown } | null)?.from), { replace: true });
+      else setSubmitError(t(result.messageKey));
     } catch (err) {
       console.error('Sign-in failed', err);
       setSubmitError(t('auth.errors.generic'));
@@ -61,6 +67,7 @@ export function LoginPage() {
               onChange={(e) => setValues((v) => ({ ...v, password: e.target.value }))}
               error={err('password')}
             />
+            <Link to="/forgot-password">{t('auth.forgotPassword')}</Link>
           </div>
           {submitError && <ErrorState message={submitError} />}
           <Button type="submit" fullWidth disabled={submitting}>

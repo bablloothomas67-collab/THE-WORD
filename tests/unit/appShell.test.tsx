@@ -25,9 +25,10 @@ describe('application shell', () => {
     ['/bible', 'Bible'],
     ['/ask', 'Ask the Word'],
     ['/discover', 'Discover'],
-    ['/journey', 'My Journey'],
     ['/login', 'Sign in'],
     ['/register', 'Create your account'],
+    ['/forgot-password', 'Reset your password'],
+    ['/reset-password', 'Choose a new password'],
     ['/nowhere', 'Page not found'],
   ])('route %s shows heading "%s"', async (route, heading) => {
     await renderApp(route);
@@ -67,6 +68,18 @@ describe('language switching', () => {
     await renderApp('/');
     const options = within(screen.getByRole('combobox', { name: 'Language' })).getAllByRole('option');
     expect(options.map((o) => o.getAttribute('value'))).toEqual(['en', 'ml']);
+  });
+});
+
+describe('protected routes', () => {
+  it('sends signed-out visitors from My Journey to sign in', async () => {
+    await renderApp('/journey');
+    expect(screen.getByRole('heading', { level: 1, name: 'Sign in' })).toBeInTheDocument();
+  });
+
+  it('treats a reset link without a recovery session as invalid', async () => {
+    await renderApp('/reset-password');
+    expect(screen.getByText(/invalid or has expired/)).toBeInTheDocument();
   });
 });
 

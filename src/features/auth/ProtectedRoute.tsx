@@ -4,9 +4,8 @@ import { useAuth } from './useAuth';
 import { LoadingState } from '../../components/ui/States';
 
 /**
- * Prepared for Task 002. Wrap private routes (prayer journal, notes) in this
- * once Supabase is connected. Client-side guards are a convenience only —
- * real protection comes from Row Level Security on the database.
+ * Sends signed-out visitors to /login and back afterwards. This is a UX
+ * convenience only — real protection comes from Row Level Security.
  */
 export function ProtectedRoute({ children }: { children: ReactNode }) {
   const { user, loading } = useAuth();

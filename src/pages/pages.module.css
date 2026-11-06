@@ -128,3 +128,23 @@
   background: var(--color-surface-raised);
   border-left: 4px solid var(--green-700);
 }
+
+.profileList {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: var(--space-2) var(--space-4);
+  margin: 0 0 var(--space-4);
+}
+.profileList dt {
+  font-weight: 600;
+  font-size: var(--font-size-sm);
+}
+.profileList dd {
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+.savedNote {
+  margin-left: var(--space-3);
+  color: var(--green-700);
+  font-weight: 600;
+}

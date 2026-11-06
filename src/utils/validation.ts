@@ -40,3 +40,21 @@ export function validateRegister(values: RegisterValues): FieldErrors<keyof Regi
   if (values.confirmPassword !== values.password) errors.confirmPassword = 'auth.errors.passwordMismatch';
   return errors;
 }
+
+export interface NewPasswordValues {
+  password: string;
+  confirmPassword: string;
+}
+
+export function validateEmailOnly(email: string): FieldErrors<'email'> {
+  const error = validateEmail(email);
+  return error ? { email: error } : {};
+}
+
+export function validateNewPassword(values: NewPasswordValues): FieldErrors<keyof NewPasswordValues> {
+  const errors: FieldErrors<keyof NewPasswordValues> = {};
+  if (!values.password) errors.password = 'auth.errors.passwordRequired';
+  else if (values.password.length < MIN_PASSWORD_LENGTH) errors.password = 'auth.errors.passwordShort';
+  if (values.confirmPassword !== values.password) errors.confirmPassword = 'auth.errors.passwordMismatch';
+  return errors;
+}

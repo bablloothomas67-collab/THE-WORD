@@ -40,7 +40,7 @@ export function RegisterPage() {
         preferredLanguage: isEnabledLanguage(i18n.language) ? i18n.language : 'en',
       });
       if (!result.ok) {
-        setSubmitError(result.code === 'not_configured' ? t('auth.notConfigured') : t('auth.errors.generic'));
+        setSubmitError(t(result.messageKey));
       } else if (result.needsEmailConfirmation) {
         setConfirmationSent(true);
       } else {

@@ -8,6 +8,9 @@ import { JourneyPage } from '../pages/JourneyPage';
 import { LoginPage } from '../pages/LoginPage';
 import { RegisterPage } from '../pages/RegisterPage';
 import { NotFoundPage } from '../pages/NotFoundPage';
+import { ForgotPasswordPage } from '../pages/ForgotPasswordPage';
+import { ResetPasswordPage } from '../pages/ResetPasswordPage';
+import { ProtectedRoute } from '../features/auth/ProtectedRoute';
 
 export function AppRoutes() {
   return (
@@ -17,9 +20,18 @@ export function AppRoutes() {
         <Route path="bible" element={<BiblePage />} />
         <Route path="ask" element={<AskPage />} />
         <Route path="discover" element={<DiscoverPage />} />
-        <Route path="journey" element={<JourneyPage />} />
+        <Route
+          path="journey"
+          element={
+            <ProtectedRoute>
+              <JourneyPage />
+            </ProtectedRoute>
+          }
+        />
         <Route path="login" element={<LoginPage />} />
         <Route path="register" element={<RegisterPage />} />
+        <Route path="forgot-password" element={<ForgotPasswordPage />} />
+        <Route path="reset-password" element={<ResetPasswordPage />} />
         <Route path="*" element={<NotFoundPage />} />
       </Route>
     </Routes>

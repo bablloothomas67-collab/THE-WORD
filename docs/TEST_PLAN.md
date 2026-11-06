@@ -3,6 +3,23 @@
 Automated tests: Vitest + Testing Library (`tests/`). Run `npm run check` before
 every commit. Release gates follow section 13 of the Implementation Package.
 
+## Task 002 test report — 6 November 2026
+
+| Check | Result |
+|---|---|
+| Typecheck / lint | Pass, 0 warnings |
+| Unit + component tests | **52/52 pass** (6 files) |
+| Build | Pass (JS 578 kB / 168 kB gzip — Supabase client now bundled) |
+| RLS integration (`npm run test:rls`, 9 tests) | **Pending** — needs migration applied and two confirmed test users |
+
+New automated coverage: auth error mapping, sign-up metadata and redirect URLs, password-reset
+redirect, profile row validation, update whitelisting, disabled-language rejection, protected
+`/journey` redirect, invalid reset link handling.
+
+RLS suite checks: own profile readable; select-all returns only own row; cannot read, update,
+insert or delete another user's profile; cannot change `created_at`; only enabled languages
+accepted; anonymous visitors see no profiles; language list public and read-only.
+
 ## Task 001 test report — 6 November 2026
 
 | Check | Result |

@@ -55,8 +55,14 @@ Edge Function holding secrets server-side.
 - Choice persists in `localStorage` (`theword.language`); Task 002 also stores it
   in `profiles.preferred_language` for signed-in users.
 
+## Authentication (Task 002)
+- `authService` wraps Supabase Auth and maps errors to translation keys.
+- `profileService` reads/updates the signed-in user's `profiles` row and validates responses.
+- `AuthProvider` tracks the session, loads the profile on sign-in, applies its language,
+  and exposes `setLanguage` (switches UI and saves to profile) and `updateProfile`.
+- `ProtectedRoute` guards `/journey`; RLS is the real guarantee.
+- Password reset: email link → `/reset-password` recovery session → `updateUser({ password })`.
+
 ## Planned next layers
-- Task 002: `profiles` table, RLS, sign-up/in/out, password reset, protected routes,
-  language preference sync, two-account isolation test.
 - Phase 2: Bible provider adapter interface (`src/services/bible-provider/`) with a
   server-side implementation; UI depends only on the interface.

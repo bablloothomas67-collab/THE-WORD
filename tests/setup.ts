@@ -1,5 +1,8 @@
 import '@testing-library/jest-dom/vitest';
-import { afterEach } from 'vitest';
+import { afterEach, vi } from 'vitest';
+
+// Unit/component tests never touch a real backend, even if .env.local exists.
+vi.mock('../src/services/supabase/client', () => ({ supabase: null, isSupabaseConfigured: false }));
 import { cleanup } from '@testing-library/react';
 
 afterEach(() => {

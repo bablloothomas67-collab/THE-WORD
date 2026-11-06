@@ -14,6 +14,16 @@
 | `APP_URL` | Server / auth redirects | Task 002 | e.g. https://theword.example |
 | `APP_ENV` | Both | Now | development / staging / production |
 
+## Supabase setup (development project `qeyhpojsklbsutegchpz`)
+1. **SQL Editor → New query**: paste `supabase/migrations/20261106120000_profiles_and_languages.sql`, Run.
+2. **Authentication → URL Configuration**: Site URL `http://localhost:5173` (change to the real
+   domain at launch); add redirect URLs `http://localhost:5173/**` and the production domain.
+3. **Authentication → Users → Add user** (tick *Auto Confirm User*): two test accounts for the
+   isolation test. Never use real people's emails for tests.
+4. Local `.env.local` holds `VITE_SUPABASE_URL` and `VITE_SUPABASE_ANON_KEY` (git-ignored).
+5. Before public launch: configure a custom SMTP sender (Supabase's built-in email is rate-limited
+   and for testing only).
+
 ## Environments
 Development → Staging → Production, each with its own Supabase project and keys.
 

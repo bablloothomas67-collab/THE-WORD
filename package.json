@@ -1,7 +1,7 @@
 {
   "name": "the-word",
   "private": true,
-  "version": "0.1.0",
+  "version": "0.2.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -11,7 +11,8 @@
     "typecheck": "tsc -b",
     "test": "vitest run",
     "test:watch": "vitest",
-    "check": "npm run typecheck && npm run lint && npm run test && npm run build"
+    "check": "npm run typecheck && npm run lint && npm run test && npm run build",
+    "test:rls": "vitest run --config vitest.integration.config.ts"
   },
   "dependencies": {
     "@fontsource/noto-sans": "^5.3.0",

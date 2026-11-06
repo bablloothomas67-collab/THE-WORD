@@ -5,7 +5,7 @@
 A multilingual, broadly ecumenical Bible and Christian learning platform — responsive
 website first, Android and iPhone later. Launch languages: English and Malayalam.
 
-> Status: **Phase 1 — Foundation (Task 001 complete).** App shell, design system,
+> Status: **Phase 1 — Task 002 (authentication) built; database migration pending.** Task 001 foundation complete. App shell, design system,
 > navigation, English/Malayalam localisation and the authentication structure are in
 > place. Accounts, Bible text, the AI assistant and payments are **not connected yet**,
 > and the app says so on screen rather than faking them.
@@ -33,6 +33,7 @@ Without Supabase variables the app still runs; sign-in forms show a
 | `npm run typecheck` | TypeScript only |
 | `npm run lint` | Oxlint |
 | `npm test` | Vitest unit and component tests |
+| `npm run test:rls` | Two-account Row Level Security test against Supabase (needs env vars) |
 | `npm run check` | Typecheck + lint + tests + build (run before every commit) |
 
 ## What's in Task 001
@@ -57,7 +58,8 @@ Without Supabase variables the app still runs; sign-in forms show a
 - [docs/LOCALISATION_GUIDELINES.md](docs/LOCALISATION_GUIDELINES.md)
 - [docs/SECURITY_POLICY.md](docs/SECURITY_POLICY.md)
 - [docs/TEST_PLAN.md](docs/TEST_PLAN.md) — includes the Task 001 test report
-- [docs/DEPLOYMENT.md](docs/DEPLOYMENT.md) — environment variables and hosting
+- [docs/DEPLOYMENT.md](docs/DEPLOYMENT.md) — environment variables, Supabase setup, hosting
+- [docs/DATABASE_SCHEMA.md](docs/DATABASE_SCHEMA.md)
 - [CHANGELOG.md](CHANGELOG.md)
 
 PRD, database schema, API specifications and editorial guidelines are defined in the
