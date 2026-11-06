@@ -1,0 +1,159 @@
+{
+  "app": {
+    "name": "THE WORD",
+    "nativeName": "വചനം",
+    "tagline": "Read. Understand. Reflect. Believe.",
+    "skipToContent": "Skip to main content"
+  },
+  "nav": {
+    "primary": "Main navigation",
+    "home": "Home",
+    "bible": "Bible",
+    "ask": "Ask the Word",
+    "discover": "Discover",
+    "journey": "My Journey",
+    "signIn": "Sign in",
+    "signOut": "Sign out"
+  },
+  "language": {
+    "label": "Language"
+  },
+  "theme": {
+    "toLight": "Switch to light reading mode",
+    "toDark": "Switch to dark reading mode"
+  },
+  "states": {
+    "loading": "Loading…",
+    "errorTitle": "Something went wrong",
+    "retry": "Try again",
+    "demo": "Demo",
+    "comingSoon": "Coming soon",
+    "notConnected": "Not connected yet"
+  },
+  "home": {
+    "greeting": "Welcome",
+    "intro": "A quiet place to read the Bible, understand it and grow in faith.",
+    "dailyVerse": {
+      "title": "Verse of the day",
+      "placeholder": "The verse of the day will appear here once a licensed Bible version is connected."
+    },
+    "devotional": {
+      "title": "Today's devotional",
+      "placeholder": "Devotionals will appear here after editorial review."
+    },
+    "continue": {
+      "title": "Continue reading",
+      "empty": "You haven't started reading yet.",
+      "action": "Open the Bible"
+    },
+    "plan": {
+      "title": "Reading plan",
+      "empty": "You haven't started a reading plan.",
+      "action": "Explore plans"
+    },
+    "ask": {
+      "title": "Ask the Word",
+      "body": "Ask about a passage and get an explanation with Bible references you can check.",
+      "action": "Ask a question"
+    },
+    "learn": {
+      "title": "Recommended for you",
+      "empty": "Learning content is being prepared."
+    }
+  },
+  "bible": {
+    "title": "Bible",
+    "intro": "Read the Old and New Testaments by book and chapter.",
+    "oldTestament": "Old Testament",
+    "newTestament": "New Testament",
+    "placeholderTitle": "Bible text isn't connected yet",
+    "placeholderBody": "THE WORD only shows Bible text from versions it is licensed to use. The reader will open once a licensed provider is connected."
+  },
+  "ask": {
+    "title": "Ask the Word",
+    "intro": "Ask about the Bible, its historical context and Christian teaching. Every answer will include Bible references you can check.",
+    "placeholderTitle": "The study assistant isn't available yet",
+    "placeholderBody": "It will be switched on after reference checking and safety reviews are complete.",
+    "inputLabel": "Your question",
+    "inputPlaceholder": "For example: What is the context of John chapter 3?",
+    "submit": "Ask",
+    "disclaimer": "Answers are study explanations, not scripture. Always read the cited passage and consult trusted teachers."
+  },
+  "discover": {
+    "title": "Discover",
+    "intro": "Explore Bible stories, Christian history, theology and more.",
+    "categories": {
+      "stories": {
+        "title": "Bible stories",
+        "body": "Animated stories for children and families."
+      },
+      "history": {
+        "title": "Christian history",
+        "body": "From the early Church to today."
+      },
+      "theology": {
+        "title": "Theology",
+        "body": "Catholic, Orthodox and Protestant perspectives, presented fairly."
+      },
+      "apologetics": {
+        "title": "Apologetics",
+        "body": "Thoughtful answers to questions about faith."
+      },
+      "quizzes": {
+        "title": "Bible quizzes",
+        "body": "Test and grow your Bible knowledge."
+      }
+    }
+  },
+  "journey": {
+    "title": "My Journey",
+    "intro": "Your bookmarks, notes, prayers and progress in one place.",
+    "signedOutTitle": "Sign in to keep your journey",
+    "signedOutBody": "Bookmarks, notes and your prayer journal are stored privately in your account.",
+    "sections": {
+      "bookmarks": "Bookmarks",
+      "highlights": "Highlights",
+      "notes": "Notes",
+      "history": "Reading history",
+      "plans": "Reading plans",
+      "prayer": "Prayer journal",
+      "saved": "Saved content",
+      "preferences": "Preferences"
+    }
+  },
+  "auth": {
+    "loginTitle": "Sign in",
+    "loginIntro": "Welcome back.",
+    "registerTitle": "Create your account",
+    "registerIntro": "Save your reading, notes and prayers privately.",
+    "displayName": "Your name",
+    "email": "Email",
+    "password": "Password",
+    "confirmPassword": "Confirm password",
+    "passwordHint": "At least 8 characters.",
+    "submitLogin": "Sign in",
+    "submitRegister": "Create account",
+    "submitting": "Please wait…",
+    "noAccount": "Don't have an account?",
+    "createOne": "Create one",
+    "haveAccount": "Already have an account?",
+    "forgotPassword": "Forgot password?",
+    "notConfigured": "Accounts aren't connected yet. This form won't sign you in until the account service is set up.",
+    "privacy": "Your prayers and notes are private by default.",
+    "registered": "Check your email to confirm your account.",
+    "errors": {
+      "nameRequired": "Enter your name.",
+      "emailRequired": "Enter your email.",
+      "emailInvalid": "Enter a valid email address.",
+      "passwordRequired": "Enter your password.",
+      "passwordShort": "Password must be at least 8 characters.",
+      "passwordMismatch": "Passwords don't match.",
+      "generic": "We couldn't complete that. Please try again."
+    }
+  },
+  "notFound": {
+    "title": "Page not found",
+    "body": "The page you're looking for doesn't exist.",
+    "home": "Back to Home"
+  }
+}

@@ -1,0 +1,186 @@
+/* ---------- Top bar ---------- */
+.topBar {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: var(--color-nav-bg);
+  color: var(--color-nav-text);
+  border-bottom: 1px solid rgb(184 151 90 / 0.35);
+}
+.topBarInner {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  max-width: var(--content-max);
+  min-height: var(--topbar-height);
+  margin: 0 auto;
+  padding: 0 var(--space-4);
+}
+.brand {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  color: inherit;
+  text-decoration: none;
+  flex-shrink: 0;
+}
+.brandMark {
+  color: var(--gold-300);
+}
+.brandText {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+}
+.brandName {
+  font-family: var(--font-serif);
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  font-size: var(--font-size-md);
+}
+.brandNative {
+  font-size: var(--font-size-xs);
+  color: var(--gold-300);
+}
+
+.desktopNav {
+  display: none;
+  flex: 1;
+}
+.desktopNavList {
+  display: flex;
+  gap: var(--space-1);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.desktopLink {
+  display: inline-block;
+  padding: var(--space-2) var(--space-3);
+  color: var(--color-nav-text);
+  text-decoration: none;
+  font-size: var(--font-size-sm);
+  font-weight: 500;
+  border-bottom: 2px solid transparent;
+}
+.desktopLink:hover {
+  color: var(--color-nav-active);
+}
+.desktopLink.active {
+  color: var(--color-nav-active);
+  border-bottom-color: var(--color-nav-active);
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin-left: auto;
+}
+.select {
+  min-height: 40px;
+  padding: 0 var(--space-2);
+  border-radius: var(--radius-md);
+  border: 1px solid rgb(220 196 143 / 0.5);
+  background: transparent;
+  color: var(--color-nav-text);
+  font: inherit;
+  font-size: var(--font-size-sm);
+}
+.select option {
+  color: #0a1530;
+}
+.iconButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-pill);
+  border: 1px solid rgb(220 196 143 / 0.5);
+  background: transparent;
+  color: var(--color-nav-text);
+  cursor: pointer;
+}
+.iconButton svg {
+  width: 20px;
+  height: 20px;
+}
+.signInLink {
+  display: none;
+  min-height: 40px;
+  align-items: center;
+  padding: 0 var(--space-4);
+  border-radius: var(--radius-pill);
+  background: var(--gold-300);
+  color: var(--navy-950);
+  font: inherit;
+  font-weight: 600;
+  font-size: var(--font-size-sm);
+  text-decoration: none;
+  border: 0;
+  cursor: pointer;
+}
+
+/* ---------- Bottom nav (mobile) ---------- */
+.bottomNav {
+  position: fixed;
+  inset: auto 0 0 0;
+  z-index: 20;
+  background: var(--color-nav-bg);
+  border-top: 1px solid rgb(184 151 90 / 0.35);
+  padding-bottom: env(safe-area-inset-bottom);
+}
+.bottomNavList {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.bottomLink {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  min-height: var(--bottomnav-height);
+  padding: var(--space-1);
+  color: var(--color-nav-text);
+  text-decoration: none;
+  opacity: 0.8;
+}
+.bottomLink.active {
+  color: var(--color-nav-active);
+  opacity: 1;
+}
+.bottomIcon {
+  width: 22px;
+  height: 22px;
+}
+.bottomLabel {
+  font-size: 0.6875rem;
+  line-height: 1.2;
+  text-align: center;
+}
+:global(html[lang='ml']) .bottomLabel {
+  font-size: 0.625rem;
+  line-height: 1.35;
+}
+
+@media (min-width: 900px) {
+  .desktopNav {
+    display: block;
+  }
+  .signInLink {
+    display: inline-flex;
+  }
+  .bottomNav {
+    display: none;
+  }
+}
+@media (min-width: 480px) and (max-width: 899px) {
+  .signInLink {
+    display: inline-flex;
+  }
+}

@@ -1,0 +1,120 @@
+/*
+ * THE WORD — design tokens.
+ * Palette: deep navy (primary), warm ivory (secondary), muted antique gold (accent),
+ * neutral greys. Gold is used for accents and borders; text on ivory uses the
+ * darker gold-700 so contrast stays at or above WCAG AA.
+ */
+:root {
+  /* Raw palette */
+  --navy-950: #0a1530;
+  --navy-900: #0f1f3d;
+  --navy-800: #16294f;
+  --navy-700: #1f3768;
+  --navy-100: #e4e9f3;
+
+  --ivory-50: #fdfbf6;
+  --ivory-100: #f8f3e8;
+  --ivory-200: #efe6d3;
+  --ivory-300: #e2d6bd;
+
+  --gold-300: #dcc48f;
+  --gold-500: #b8975a;
+  --gold-600: #9a7a3f;
+  --gold-700: #7a5f2c;
+
+  --grey-50: #f7f7f6;
+  --grey-300: #d4d2cc;
+  --grey-500: #6b6a66;
+  --grey-700: #3d3c39;
+
+  --red-600: #a8322d;
+  --red-100: #f8e6e4;
+  --green-700: #2f6b3f;
+
+  /* Semantic — light reading mode */
+  --color-bg: var(--ivory-100);
+  --color-surface: var(--ivory-50);
+  --color-surface-raised: #ffffff;
+  --color-text: var(--navy-950);
+  --color-text-muted: #4f4e4a;
+  --color-primary: var(--navy-900);
+  --color-primary-hover: var(--navy-700);
+  --color-on-primary: var(--ivory-50);
+  --color-accent: var(--gold-500);
+  --color-accent-text: var(--gold-700);
+  --color-border: var(--ivory-300);
+  --color-border-strong: var(--grey-300);
+  --color-focus: var(--gold-600);
+  --color-danger: var(--red-600);
+  --color-danger-bg: var(--red-100);
+  --color-nav-bg: var(--navy-900);
+  --color-nav-text: var(--ivory-100);
+  --color-nav-active: var(--gold-300);
+
+  /* Typography */
+  --font-serif: 'Noto Serif', 'Noto Serif Malayalam', Georgia, serif;
+  --font-sans: 'Noto Sans', 'Noto Sans Malayalam', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-size-xs: 0.8125rem;
+  --font-size-sm: 0.9375rem;
+  --font-size-md: 1rem;
+  --font-size-lg: 1.1875rem;
+  --font-size-xl: 1.5rem;
+  --font-size-2xl: 2rem;
+  --font-size-3xl: 2.5rem;
+  --line-height-body: 1.6;
+  --line-height-heading: 1.25;
+  /* Malayalam glyphs need extra vertical room */
+  --line-height-body-ml: 1.85;
+  --line-height-heading-ml: 1.45;
+
+  /* Spacing scale (4px base) */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-7: 3rem;
+  --space-8: 4rem;
+
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-pill: 999px;
+
+  --shadow-sm: 0 1px 2px rgb(15 31 61 / 0.06);
+  --shadow-md: 0 4px 16px rgb(15 31 61 / 0.08);
+
+  --content-max: 72rem;
+  --reading-max: 42rem;
+  --topbar-height: 4rem;
+  --bottomnav-height: 4.25rem;
+
+  --transition-fast: 120ms ease;
+
+  color-scheme: light;
+}
+
+/* Dark reading mode */
+[data-theme='dark'] {
+  --color-bg: #0b1428;
+  --color-surface: #111d38;
+  --color-surface-raised: #16244a;
+  --color-text: #f3ede0;
+  --color-text-muted: #bdb6a6;
+  --color-primary: var(--gold-300);
+  --color-primary-hover: #e8d5a8;
+  --color-on-primary: var(--navy-950);
+  --color-accent: var(--gold-500);
+  --color-accent-text: var(--gold-300);
+  --color-border: #263760;
+  --color-border-strong: #34497a;
+  --color-focus: var(--gold-300);
+  --color-danger: #f0a39d;
+  --color-danger-bg: #3a1e22;
+  --color-nav-bg: #0a1226;
+  --color-nav-text: #e9e2d1;
+  --color-nav-active: var(--gold-300);
+
+  color-scheme: dark;
+}
