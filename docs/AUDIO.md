@@ -33,3 +33,7 @@ Devotional audio is recorded only after the owner approves that devotional's tex
 
 Secrets (`ELEVENLABS_API_KEY`, importer password) live only in local, untracked env files; the
 app never calls ElevenLabs.
+
+## Status (8 Nov 2026)
+- 174 daily-verse clips and 30 devotional clips (Week 1: Scripture + prayer, EN + ML) published.
+- Characters billed: 25,349 (daily) + 5,934 (devotionals) + ~1,900 samples.
