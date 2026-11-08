@@ -10,7 +10,9 @@ every commit. Release gates follow section 13 of the Implementation Package.
 | Typecheck / lint | Pass, 0 warnings |
 | Unit + component tests | **52/52 pass** (6 files) |
 | Build | Pass (JS 578 kB / 168 kB gzip — Supabase client now bundled) |
-| RLS integration (`npm run test:rls`, 9 tests) | **Pending** — needs migration applied and two confirmed test users |
+| RLS integration (`npm run test:rls`, 9 tests) | **9/9 pass** against dev project (8 Nov 2026) |
+| Browser end-to-end (Chrome, real Supabase) | Pass — /journey redirects to sign-in, sign-in returns to /journey, profile language (ml) applied on sign-in, language switch saved and survives reload, no console errors |
+| Supabase security advisor | 1 warning: leaked-password protection disabled (dashboard setting) |
 
 New automated coverage: auth error mapping, sign-up metadata and redirect URLs, password-reset
 redirect, profile row validation, update whitelisting, disabled-language rejection, protected

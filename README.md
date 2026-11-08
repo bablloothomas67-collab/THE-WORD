@@ -5,7 +5,7 @@
 A multilingual, broadly ecumenical Bible and Christian learning platform — responsive
 website first, Android and iPhone later. Launch languages: English and Malayalam.
 
-> Status: **Phase 1 — Task 002 (authentication) built; database migration pending.** Task 001 foundation complete. App shell, design system,
+> Status: **Phase 1 — Task 002 (authentication) complete and tested against Supabase.** Task 001 foundation complete. App shell, design system,
 > navigation, English/Malayalam localisation and the authentication structure are in
 > place. Accounts, Bible text, the AI assistant and payments are **not connected yet**,
 > and the app says so on screen rather than faking them.

@@ -15,11 +15,12 @@
 | `APP_ENV` | Both | Now | development / staging / production |
 
 ## Supabase setup (development project `qeyhpojsklbsutegchpz`)
-1. **SQL Editor → New query**: paste `supabase/migrations/20261106120000_profiles_and_languages.sql`, Run.
+1. Migration `20261106120000_profiles_and_languages.sql` — **applied 8 Nov 2026** via the Supabase connector.
 2. **Authentication → URL Configuration**: Site URL `http://localhost:5173` (change to the real
    domain at launch); add redirect URLs `http://localhost:5173/**` and the production domain.
-3. **Authentication → Users → Add user** (tick *Auto Confirm User*): two test accounts for the
-   isolation test. Never use real people's emails for tests.
+3. Test accounts `rls-test-a@theword.test` / `rls-test-b@theword.test` exist (created confirmed, no emails sent).
+   Their passwords live only in the git-ignored `.env.test.local` used by `npm run test:rls`.
+   Never use real people's emails for tests.
 4. Local `.env.local` holds `VITE_SUPABASE_URL` and `VITE_SUPABASE_ANON_KEY` (git-ignored).
 5. Before public launch: configure a custom SMTP sender (Supabase's built-in email is rate-limited
    and for testing only).
