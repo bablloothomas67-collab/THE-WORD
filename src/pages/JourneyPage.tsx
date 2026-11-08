@@ -1,4 +1,5 @@
 import { useState, type FormEvent } from 'react';
+import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { Badge, Button, Card, ErrorState, TextField } from '../components/ui';
 import { useAuth } from '../features/auth/useAuth';
@@ -8,7 +9,12 @@ import { PageHeader } from './PageHeader';
 import { StudyLists } from '../features/study/StudyLists';
 import styles from './pages.module.css';
 
-const COMING_SOON = ['history', 'plans', 'prayer', 'saved', 'preferences'] as const;
+const COMING_SOON = ['history', 'saved', 'preferences'] as const;
+const LINKS = [
+  { to: '/prayer', key: 'journey.links.prayer' },
+  { to: '/plans', key: 'journey.links.plans' },
+  { to: '/devotionals', key: 'journey.links.devotionals' },
+] as const;
 
 /** Protected route: only rendered for signed-in users (see AppRoutes). */
 export function JourneyPage() {
@@ -34,6 +40,16 @@ export function JourneyPage() {
           </>
         )}
       </Card>
+
+      <ul className={styles.list} style={{ marginTop: 'var(--space-5)' }}>
+        {LINKS.map((l) => (
+          <li key={l.to}>
+            <Link to={l.to} className={styles.listItem}>
+              {t(l.key)} <span aria-hidden="true">→</span>
+            </Link>
+          </li>
+        ))}
+      </ul>
 
       <h2 className={styles.sectionTitle}>{t('journey.studyTitle')}</h2>
       <StudyLists />

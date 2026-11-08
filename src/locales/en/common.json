@@ -35,11 +35,16 @@
     "intro": "A quiet place to read the Bible, understand it and grow in faith.",
     "dailyVerse": {
       "title": "Verse of the day",
-      "placeholder": "The verse of the day will appear here once a licensed Bible version is connected."
+      "placeholder": "The verse of the day will appear here once a licensed Bible version is connected.",
+      "readChapter": "Read the chapter",
+      "unavailable": "Today's verse couldn't be loaded."
     },
     "devotional": {
       "title": "Today's devotional",
-      "placeholder": "Devotionals will appear here after editorial review."
+      "placeholder": "Devotionals will appear here after editorial review.",
+      "none": "No devotional has been published for today yet.",
+      "read": "Read today's devotional",
+      "all": "All devotionals"
     },
     "continue": {
       "title": "Continue reading",
@@ -50,7 +55,11 @@
     "plan": {
       "title": "Reading plan",
       "empty": "You haven't started a reading plan.",
-      "action": "Explore plans"
+      "action": "Explore plans",
+      "next": "Day {{day}} of {{total}}: {{reading}}",
+      "done": "Plan complete — well done!",
+      "open": "Open plan",
+      "signIn": "Sign in to follow a reading plan."
     },
     "ask": {
       "title": "Ask the Word",
@@ -158,7 +167,12 @@
       "notesEmpty": "No notes yet.",
       "loadError": "We couldn't load this list. Please try again."
     },
-    "studyTitle": "Bookmarks, highlights and notes"
+    "studyTitle": "Bookmarks, highlights and notes",
+    "links": {
+      "plans": "Reading plans",
+      "prayer": "Prayer journal",
+      "devotionals": "Devotionals"
+    }
   },
   "auth": {
     "loginTitle": "Sign in",
@@ -254,5 +268,84 @@
     "resultCount_one": "{{count}} verse found",
     "resultCount_other": "{{count}} verses found",
     "truncated": "Showing the first 200 results. Add more words to narrow your search."
+  },
+  "plans": {
+    "title": "Reading plans",
+    "intro": "Read the Bible a little each day and keep track of your progress.",
+    "days_one": "{{count}} day",
+    "days_other": "{{count}} days",
+    "start": "Start this plan",
+    "started": "You're following this plan",
+    "progress": "{{done}} of {{total}} days completed",
+    "day": "Day {{day}}",
+    "read": "Read",
+    "markDone": "Mark day {{day}} as read",
+    "leave": "Leave plan",
+    "leaveConfirm": "Leave this plan? Your progress in it will be deleted.",
+    "notFound": "This plan isn't available.",
+    "signIn": "Sign in to start a plan and save your progress.",
+    "error": "Plans couldn't be loaded. Please try again.",
+    "saveError": "Your progress couldn't be saved. Please try again.",
+    "myPlans": "My plans",
+    "allPlans": "All plans",
+    "complete": "Completed",
+    "range": "{{book}} {{start}}–{{end}}"
+  },
+  "prayer": {
+    "title": "Prayer journal",
+    "intro": "A private place for your prayers. Only you can read them.",
+    "privacy": "Your prayer journal is private. It is never shown to administrators, never used for analytics and never sent to AI.",
+    "new": "New prayer",
+    "edit": "Edit prayer",
+    "titleLabel": "Title",
+    "bodyLabel": "Prayer",
+    "categoryLabel": "Category",
+    "save": "Save",
+    "cancel": "Cancel",
+    "delete": "Delete",
+    "deleteConfirm": "Delete this prayer? This can't be undone.",
+    "markAnswered": "Mark as answered",
+    "markOpen": "Mark as not yet answered",
+    "answeredOn": "Answered on {{date}}",
+    "filterAll": "All",
+    "filterOpen": "Praying",
+    "filterAnswered": "Answered",
+    "empty": "No prayers yet. Write your first one.",
+    "export": "Download my prayers",
+    "deleteAll": "Delete all my prayers",
+    "deleteAllConfirm": "Delete every prayer in your journal? This can't be undone. Download a copy first if you want to keep them.",
+    "error": "Your prayers couldn't be loaded. Please try again.",
+    "saveError": "That couldn't be saved. Please try again.",
+    "categories": {
+      "thanksgiving": "Thanksgiving",
+      "petition": "Request",
+      "intercession": "For others",
+      "confession": "Confession",
+      "praise": "Praise",
+      "other": "Other"
+    },
+    "errors": {
+      "titleRequired": "Give your prayer a short title.",
+      "titleLong": "The title is too long.",
+      "bodyLong": "The prayer is too long.",
+      "category": "Choose a category."
+    }
+  },
+  "devotionals": {
+    "title": "Devotionals",
+    "intro": "Daily reflections on Scripture, written and reviewed by THE WORD editorial team.",
+    "scripture": "Scripture",
+    "reflection": "Reflection",
+    "application": "For today",
+    "questions": "Questions to reflect on",
+    "prayer": "Prayer",
+    "original": "Original writing by {{author}}. Bible text is shown from your chosen version.",
+    "reviewed": "Reviewed by {{reviewer}}",
+    "share": "Share",
+    "shared": "Link copied",
+    "none": "No devotionals have been published in this language yet.",
+    "notFound": "This devotional isn't available in this language.",
+    "error": "Devotionals couldn't be loaded. Please try again.",
+    "passageError": "This passage couldn't be loaded."
   }
 }

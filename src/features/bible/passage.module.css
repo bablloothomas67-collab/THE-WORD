@@ -1,0 +1,44 @@
+.passage {
+  margin: 0;
+}
+.text {
+  margin: 0 0 var(--space-3);
+  font-family: var(--font-serif);
+  font-size: var(--font-size-lg);
+  line-height: 1.7;
+}
+.text:lang(ml) {
+  font-family: var(--font-sans);
+  line-height: 1.9;
+}
+.num {
+  font-family: var(--font-sans);
+  font-size: 0.6em;
+  font-weight: 600;
+  margin-right: 0.25em;
+  color: var(--color-accent-text);
+}
+.caption {
+  font-size: var(--font-size-sm);
+}
+.ref {
+  font-weight: 600;
+}
+.attr {
+  color: var(--color-text-muted);
+  font-size: var(--font-size-xs);
+}
+.error {
+  color: var(--color-text-muted);
+  margin: 0;
+}
+.dark .text {
+  color: var(--ivory-50);
+}
+.dark .ref {
+  color: var(--gold-300);
+}
+.dark .attr,
+.dark .num {
+  color: var(--ivory-200);
+}

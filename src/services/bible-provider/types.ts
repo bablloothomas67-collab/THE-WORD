@@ -47,6 +47,13 @@ export interface BibleChapter {
   verses: BibleVerse[];
 }
 
+export interface BiblePassage {
+  version: BibleVersion;
+  book: BibleBook;
+  chapter: number;
+  verses: BibleVerse[];
+}
+
 export interface SearchHit {
   bookCode: string;
   chapter: number;
@@ -77,6 +84,8 @@ export interface BibleProvider {
   listBooks(versionId: string): Promise<BibleBook[]>;
   getChapter(versionCode: string, bookCode: string, chapter: number): Promise<BibleChapter>;
   search(versionId: string, query: string): Promise<SearchResult>;
+  /** Verses start..end of one chapter (e.g. a daily verse or devotional reference). */
+  getPassage(versionCode: string, bookCode: string, chapter: number, start: number, end: number): Promise<BiblePassage>;
 }
 
 export const SEARCH_RESULT_CAP = 200;

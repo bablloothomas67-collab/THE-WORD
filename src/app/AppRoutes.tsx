@@ -4,6 +4,10 @@ import { HomePage } from '../pages/HomePage';
 import { BiblePage } from '../pages/BiblePage';
 import { ReaderPage } from '../pages/ReaderPage';
 import { SearchPage } from '../pages/SearchPage';
+import { PlansPage } from '../pages/PlansPage';
+import { PlanDetailPage } from '../pages/PlanDetailPage';
+import { PrayerPage } from '../pages/PrayerPage';
+import { DevotionalPage, DevotionalsPage } from '../pages/DevotionalsPage';
 import { AskPage } from '../pages/AskPage';
 import { DiscoverPage } from '../pages/DiscoverPage';
 import { JourneyPage } from '../pages/JourneyPage';
@@ -23,6 +27,18 @@ export function AppRoutes() {
         <Route path="bible/search" element={<SearchPage />} />
         <Route path="bible/:version/:book/:chapter" element={<ReaderPage />} />
         <Route path="ask" element={<AskPage />} />
+        <Route path="plans" element={<PlansPage />} />
+        <Route path="plans/:slug" element={<PlanDetailPage />} />
+        <Route path="devotionals" element={<DevotionalsPage />} />
+        <Route path="devotionals/:slug" element={<DevotionalPage />} />
+        <Route
+          path="prayer"
+          element={
+            <ProtectedRoute>
+              <PrayerPage />
+            </ProtectedRoute>
+          }
+        />
         <Route path="discover" element={<DiscoverPage />} />
         <Route
           path="journey"

@@ -148,3 +148,140 @@
   color: var(--green-700);
   font-weight: 600;
 }
+.cardSubtitle {
+  font-size: var(--font-size-md);
+  margin: 0 0 var(--space-3);
+}
+.cardFooterLink {
+  margin: var(--space-3) 0 0;
+  font-size: var(--font-size-sm);
+}
+.progressBar {
+  height: 8px;
+  border-radius: var(--radius-pill);
+  background: var(--color-border);
+  overflow: hidden;
+  margin: var(--space-2) 0;
+}
+.progressFill {
+  height: 100%;
+  background: var(--color-accent);
+}
+.dayList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: var(--space-2);
+}
+.dayRow {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-2) var(--space-3);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-surface);
+}
+.dayRow input[type='checkbox'] {
+  width: 22px;
+  height: 22px;
+  accent-color: var(--gold-600);
+  flex-shrink: 0;
+}
+.dayDone {
+  opacity: 0.7;
+}
+.dayLabel {
+  font-weight: 600;
+  min-width: 5.5rem;
+  font-size: var(--font-size-sm);
+}
+.dayReading {
+  flex: 1;
+}
+.actionsRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  align-items: center;
+  margin: var(--space-4) 0;
+}
+.formStack {
+  display: grid;
+  gap: var(--space-3);
+}
+.select,
+.textarea2 {
+  width: 100%;
+  min-height: 44px;
+  padding: var(--space-2) var(--space-3);
+  border: 1px solid var(--color-border-strong);
+  border-radius: var(--radius-md);
+  background: var(--color-surface-raised);
+  color: var(--color-text);
+  font: inherit;
+}
+.textarea2 {
+  min-height: 140px;
+  resize: vertical;
+}
+.prayerItem {
+  padding: var(--space-4);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  background: var(--color-surface);
+}
+.prayerItem h3 {
+  margin: var(--space-1) 0 var(--space-2);
+  font-family: var(--font-sans);
+  font-size: var(--font-size-md);
+}
+.prayerBody {
+  white-space: pre-wrap;
+  margin: 0 0 var(--space-3);
+}
+.answered {
+  border-left: 4px solid var(--green-700);
+}
+.meta {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-muted);
+}
+.devSection {
+  max-width: var(--reading-max);
+  margin-bottom: var(--space-5);
+}
+.devSection h2 {
+  font-size: var(--font-size-lg);
+}
+.devText {
+  white-space: pre-wrap;
+  font-size: var(--font-size-lg);
+  line-height: 1.75;
+}
+.devText:lang(ml) {
+  line-height: 1.95;
+}
+.scriptureBox {
+  padding: var(--space-4);
+  border-radius: var(--radius-lg);
+  background: var(--color-surface-raised);
+  border-left: 4px solid var(--color-accent);
+  margin-bottom: var(--space-3);
+}
+.prayerBox {
+  padding: var(--space-4);
+  border-radius: var(--radius-lg);
+  background: var(--color-surface);
+  border: 1px dashed var(--color-accent);
+  font-style: italic;
+}
+a.listItem {
+  color: var(--color-text);
+  text-decoration: none;
+  font-weight: 600;
+}
+a.listItem:hover {
+  border-color: var(--color-accent);
+}

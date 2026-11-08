@@ -5,7 +5,7 @@
 A multilingual, broadly ecumenical Bible and Christian learning platform — responsive
 website first, Android and iPhone later. Launch languages: English and Malayalam.
 
-> Status: **Phase 2 — Bible reader, search and study tools complete and tested** (Phase 1 approved). Task 001 foundation complete. App shell, design system,
+> Status: **Phase 3 — verse of the day, reading plans, prayer journal and devotionals built and tested** (Phases 1–2 approved). Deploy config for Vercel included — see docs/DEPLOYMENT.md.
 > navigation, English/Malayalam localisation and the authentication structure are in
 > place. Accounts, Bible text, the AI assistant and payments are **not connected yet**,
 > and the app says so on screen rather than faking them.

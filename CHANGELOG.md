@@ -1,5 +1,25 @@
 # Changelog
 
+## 0.4.0 — 2026-11-08 — Phase 3: Spiritual features
+
+### Added
+- Verse of the day on Home: one of 87 approved references, same for everyone each local day,
+  text from the reader's chosen version.
+- Reading plans: John in 21 days, Psalms in 30 days, New Testament in 260 days — start, tick
+  days, progress, next reading on Home, leave plan.
+- Private prayer journal (`/prayer`, sign-in required): categories, answered/praying filter,
+  edit, delete, JSON download, delete all. Never sent to analytics or AI.
+- Devotionals (list + detail) with editorial workflow; 7 Week 1 devotionals in English and
+  Malayalam awaiting owner approval (`content/devotionals/week-01.json`).
+- `getPassage` on the Bible provider (refuses partial passages).
+- Deploy config: `vercel.json` (SPA rewrite, security headers, asset caching) and `public/_redirects`.
+- Tests: spiritual features unit tests; RLS for plans, prayer and devotionals; plans service
+  against the real API.
+
+### Fixed
+- Plan detail embed ambiguity (`reading_plan_days!reading_plan_days_plan_id_fkey`).
+- `npm run test:rls` loads `.env.test.local` automatically.
+
 ## 0.3.0 — 2026-11-08 — Phase 2: Bible
 
 ### Added

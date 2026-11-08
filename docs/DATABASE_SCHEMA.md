@@ -49,5 +49,20 @@ Study tables reference `bible_verses` by composite foreign key, so a note can ne
 verse that does not exist. `public.has_role()` is SECURITY DEFINER and reveals only the caller's
 own roles (used by RLS). Storage: `bible_verses` ≈ 117 MB including the trigram index.
 
-Remaining tables from the Implementation Package (bookmarks, notes, prayer entries, etc.)
-are added in their own phases.
+## Applied in Phase 3 — `20261108120000_spiritual_features.sql`
+
+| Table | Purpose | RLS |
+|---|---|---|
+| `daily_verse_refs` | 87 approved references (book, chapter, verse range, position) — no Bible text | public read (approved); no client writes |
+| `reading_plans`, `reading_plan_localisations`, `reading_plan_days` | john-21, psalms-30, new-testament-260 (EN + ML titles) | public read (published); no client writes |
+| `user_reading_plans` | plans a user follows | owner only |
+| `user_reading_progress` | completed days; FK to (plan, day) | owner only |
+| `prayer_entries` | title, body, category, answered_at | owner only; column-level update grants; never read by admins |
+| `devotionals`, `devotional_localisations` | original reflections; status draft → in_review → approved → published | public only when published, dated ≤ today and the localisation approved; status changes audited |
+
+Week 1 devotionals are stored `in_review` with draft localisations — invisible to users until
+the owner approves them. Devotionals store Scripture **references only**; the verse text is
+fetched from the reader's chosen licensed version.
+
+Remaining tables from the Implementation Package (AI conversations, content items,
+subscriptions, etc.) are added in their own phases.

@@ -38,7 +38,7 @@ describe('translation completeness', () => {
     const notMalayalam = Object.entries(flat).filter(
       ([k, v]) =>
         !allowedLatin.has(k) &&
-        v.replace(/\{\{\w+\}\}/g, '').replace(/[\s:.,]/g, '') !== '' && // placeholder-only, e.g. "{{book}} {{chapter}}"
+        v.replace(/\{\{\w+\}\}/g, '').replace(/[\s:.,–-]/g, '') !== '' && // placeholder-only, e.g. "{{book}} {{chapter}}"
         !/[ഀ-ൿ]/.test(v),
     );
     expect(notMalayalam).toEqual([]);

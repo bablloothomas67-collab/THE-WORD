@@ -7,6 +7,7 @@ import {
   SEARCH_MIN_LENGTH,
   SEARCH_RESULT_CAP,
   type BibleBook,
+  type BiblePassage,
   type BibleChapter,
   type BibleProvider,
   type BibleVersion,
@@ -180,7 +181,38 @@ export function createSupabaseBibleProvider(client: SupabaseClient | null = defa
     return { hits: hits.slice(0, SEARCH_RESULT_CAP), truncated: hits.length > SEARCH_RESULT_CAP };
   }
 
-  return { listVersions, listBooks, getChapter, search };
+  async function getPassage(
+    versionCode: string,
+    bookCode: string,
+    chapter: number,
+    start: number,
+    end: number,
+  ): Promise<BiblePassage> {
+    const version = (await listVersions()).find((v) => v.code === versionCode);
+    if (!version) throw new BibleProviderError('not_found', `Version ${versionCode}`);
+    const book = (await listBooks(version.id)).find((b) => b.code === bookCode);
+    if (!book || start < 1 || end < start || end - start > 30) throw new BibleProviderError('not_found');
+    const { data, error } = await requireClient()
+      .from('bible_verses')
+      .select('verse, label, text')
+      .eq('version_id', version.id)
+      .eq('book_code', bookCode)
+      .eq('chapter', chapter)
+      .gte('verse', start)
+      .lte('verse', end)
+      .order('verse');
+    if (error) throw new BibleProviderError('unavailable', error.message);
+    const verses = ((data ?? []) as Row[]).map((r) => ({
+      verse: num(r, 'verse'),
+      label: str(r, 'label') || String(r.verse),
+      text: str(r, 'text'),
+    }));
+    // Every requested verse must exist — never show a partial passage silently.
+    if (verses.length !== end - start + 1) throw new BibleProviderError('not_found', `${bookCode} ${chapter}:${start}-${end}`);
+    return { version, book, chapter, verses };
+  }
+
+  return { listVersions, listBooks, getChapter, search, getPassage };
 }
 
 export const bibleProvider = createSupabaseBibleProvider();

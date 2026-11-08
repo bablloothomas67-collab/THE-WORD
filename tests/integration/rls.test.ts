@@ -11,6 +11,7 @@
  */
 import { createClient, type SupabaseClient } from '@supabase/supabase-js';
 import { afterAll, beforeAll, describe, expect, it } from 'vitest';
+import { createPlansService } from '../../src/features/plans/plansService';
 
 const env = process.env;
 const ready = Boolean(
@@ -193,5 +194,87 @@ describe.skipIf(!ready)('Row Level Security: Bible text and study tools', () => 
     expect(badRef.error).not.toBeNull();
     const badColour = await a.client.from('highlights').update({ colour_key: 'purple' }).match(ref());
     expect(badColour.error).not.toBeNull();
+  });
+});
+
+describe.skipIf(!ready)('Row Level Security: plans, prayer journal, devotionals', () => {
+  let a: Awaited<ReturnType<typeof signedIn>>;
+  let b: Awaited<ReturnType<typeof signedIn>>;
+  let planId = '';
+
+  beforeAll(async () => {
+    a = await signedIn(env.TEST_USER_A_EMAIL!, env.TEST_USER_A_PASSWORD!);
+    b = await signedIn(env.TEST_USER_B_EMAIL!, env.TEST_USER_B_PASSWORD!);
+    const { data } = await newClient().from('reading_plans').select('id').eq('slug', 'john-21').single();
+    planId = data!.id as string;
+    await a.client.from('user_reading_progress').delete().eq('plan_id', planId);
+    await a.client.from('user_reading_plans').delete().eq('plan_id', planId);
+    await a.client.from('prayer_entries').delete().eq('user_id', a.userId);
+  });
+
+  afterAll(async () => {
+    await a?.client.from('user_reading_progress').delete().eq('plan_id', planId);
+    await a?.client.from('user_reading_plans').delete().eq('plan_id', planId);
+    await a?.client.from('prayer_entries').delete().eq('user_id', a.userId);
+    await a?.client.auth.signOut();
+    await b?.client.auth.signOut();
+  });
+
+  it('published plans and approved daily verses are public; nobody can change them', async () => {
+    const anon = newClient();
+    expect((await anon.from('reading_plans').select('slug')).data).toHaveLength(3);
+    expect((await anon.from('reading_plan_days').select('day_number').eq('plan_id', planId)).data).toHaveLength(21);
+    expect((await anon.from('daily_verse_refs').select('position')).data).toHaveLength(87);
+    const write = await a.client.from('reading_plans').insert({ slug: 'x', duration_days: 1, status: 'published' });
+    expect(write.error).not.toBeNull();
+  });
+
+  it('the app plans service loads every plan with its days against the real API', async () => {
+    const service = createPlansService(newClient());
+    const plans = await service.listPlans('ml');
+    expect(plans.map((p) => p.slug)).toEqual(['john-21', 'psalms-30', 'new-testament-260']);
+    for (const p of plans) {
+      const detail = await service.getPlan(p.slug, 'en');
+      expect(detail?.days).toHaveLength(p.durationDays);
+    }
+  });
+
+  it("plan progress is private to its owner", async () => {
+    expect((await a.client.from('user_reading_plans').insert({ plan_id: planId })).error).toBeNull();
+    expect((await a.client.from('user_reading_progress').insert({ plan_id: planId, day_number: 1 })).error).toBeNull();
+    expect((await b.client.from('user_reading_progress').select('day_number').eq('plan_id', planId)).data ?? []).toHaveLength(0);
+    await b.client.from('user_reading_progress').delete().eq('plan_id', planId);
+    expect((await a.client.from('user_reading_progress').select('day_number').eq('plan_id', planId)).data).toHaveLength(1);
+    const invalidDay = await a.client.from('user_reading_progress').insert({ plan_id: planId, day_number: 99 });
+    expect(invalidDay.error).not.toBeNull();
+  });
+
+  it("prayer entries are private: other users and anonymous visitors see nothing and cannot change them", async () => {
+    const created = await a.client
+      .from('prayer_entries')
+      .insert({ title: 'Private test prayer', body: 'Only A may read this', category: 'petition' })
+      .select('id')
+      .single();
+    expect(created.error).toBeNull();
+    const id = created.data!.id as string;
+
+    expect((await b.client.from('prayer_entries').select('id').eq('id', id)).data ?? []).toHaveLength(0);
+    expect((await newClient().from('prayer_entries').select('id')).data ?? []).toHaveLength(0);
+
+    await b.client.from('prayer_entries').update({ title: 'HACKED' }).eq('id', id);
+    await b.client.from('prayer_entries').delete().eq('id', id);
+    const still = await a.client.from('prayer_entries').select('title').eq('id', id).single();
+    expect(still.data?.title).toBe('Private test prayer');
+
+    const spoof = await b.client.from('prayer_entries').insert({ title: 'x', user_id: a.userId });
+    expect(spoof.error).not.toBeNull();
+  });
+
+  it('unpublished devotionals are hidden and devotionals cannot be written by users', async () => {
+    const anon = newClient();
+    const visible = await anon.from('devotionals').select('status');
+    expect((visible.data ?? []).every((d) => d.status === 'published')).toBe(true);
+    const write = await a.client.from('devotionals').insert({ slug: 'hack', publication_date: '2026-01-01', status: 'published' });
+    expect(write.error).not.toBeNull();
   });
 });

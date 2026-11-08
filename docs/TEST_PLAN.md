@@ -3,6 +3,27 @@
 Automated tests: Vitest + Testing Library (`tests/`). Run `npm run check` before
 every commit. Release gates follow section 13 of the Implementation Package.
 
+## Phase 3 (Spiritual features) test report — 8 November 2026
+
+| Check | Result |
+|---|---|
+| Typecheck / lint | Pass, 0 warnings |
+| Unit + component tests | **90/90 pass** (9 files) |
+| RLS integration (`npm run test:rls`, now reads `.env.test.local` itself) | **20/20 pass** (profiles 9, Bible/study 6, plans/prayer/devotionals 5) |
+| Browser end-to-end (Chrome, real data, 390 px) | Pass, no console errors |
+
+End-to-end steps: signed out, Home shows the verse of the day from the database (John 1:14, KJV)
+→ Devotionals list is empty and a draft slug is not found (drafts hidden until approved)
+→ `/prayer` redirects to sign-in and returns there afterwards → start *John in 21 days*, tick
+day 1, reload: 1 of 21 kept → Home shows "Day 2 of 21: John 2" → prayer journal: create (with
+Malayalam text), mark answered, download JSON (contains the entry), delete all → leave plan.
+Test data removed.
+
+Bug found and fixed: the plan detail page failed with "more than one relationship" because
+`user_reading_progress` links plans and plan days; the embed now names
+`reading_plan_days_plan_id_fkey`, and an integration test loads every plan through the app's
+service against the real API.
+
 ## Phase 2 (Bible) test report — 8 November 2026
 
 | Check | Result |
