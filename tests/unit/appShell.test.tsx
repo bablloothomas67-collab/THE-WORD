@@ -35,9 +35,9 @@ describe('application shell', () => {
     expect(screen.getByRole('heading', { level: 1, name: heading })).toBeInTheDocument();
   });
 
-  it('never shows Bible text while no licensed provider is connected', async () => {
+  it('says the Bible service is not connected instead of showing other text', async () => {
     await renderApp('/bible');
-    expect(screen.getByText("Bible text isn't connected yet")).toBeInTheDocument();
+    expect(await screen.findByText("The Bible service isn't connected yet.")).toBeInTheDocument();
   });
 
   it('keeps the Ask the Word form disabled until the backend exists', async () => {

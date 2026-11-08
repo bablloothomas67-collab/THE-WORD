@@ -44,7 +44,8 @@
     "continue": {
       "title": "Continue reading",
       "empty": "You haven't started reading yet.",
-      "action": "Open the Bible"
+      "action": "Open the Bible",
+      "resume": "Continue {{reference}}"
     },
     "plan": {
       "title": "Reading plan",
@@ -66,8 +67,28 @@
     "intro": "Read the Old and New Testaments by book and chapter.",
     "oldTestament": "Old Testament",
     "newTestament": "New Testament",
-    "placeholderTitle": "Bible text isn't connected yet",
-    "placeholderBody": "THE WORD only shows Bible text from versions it is licensed to use. The reader will open once a licensed provider is connected."
+    "deuterocanon": "Deuterocanonical books",
+    "deuterocanonNote": "Read in Catholic and Orthodox Bibles; not included in most Protestant Bibles.",
+    "version": "Bible version",
+    "chapters": "Chapters",
+    "chapterLink": "{{book}} chapter {{chapter}}",
+    "reference": "{{book}} {{chapter}}",
+    "verseReference": "{{book}} {{chapter}}:{{verse}}",
+    "continue": "Continue reading",
+    "search": "Search the Bible",
+    "unavailable": "The Bible text couldn't be loaded. Please check your connection and try again.",
+    "notFound": "This passage isn't available in this version.",
+    "notConfigured": "The Bible service isn't connected yet.",
+    "bookMissing": "{{version}} doesn't include this book.",
+    "prev": "Previous chapter",
+    "next": "Next chapter",
+    "textSize": "Text size",
+    "smaller": "Smaller text",
+    "larger": "Larger text",
+    "copyright": "Copyright and licence",
+    "licence": "Licence: {{licence}}",
+    "source": "Source",
+    "openLibrary": "All books"
   },
   "ask": {
     "title": "Ask the Word",
@@ -130,7 +151,14 @@
       "saved": "Saved.",
       "loadError": "We couldn't load your profile. Please try again later.",
       "saveError": "We couldn't save your changes. Please try again."
-    }
+    },
+    "lists": {
+      "bookmarksEmpty": "No bookmarks yet.",
+      "highlightsEmpty": "No highlights yet.",
+      "notesEmpty": "No notes yet.",
+      "loadError": "We couldn't load this list. Please try again."
+    },
+    "studyTitle": "Bookmarks, highlights and notes"
   },
   "auth": {
     "loginTitle": "Sign in",
@@ -184,5 +212,47 @@
     "title": "Page not found",
     "body": "The page you're looking for doesn't exist.",
     "home": "Back to Home"
+  },
+  "reader": {
+    "versesLabel": "Verses",
+    "selectHint": "Tap a verse to bookmark, highlight or add a note.",
+    "selected": "{{reference}} selected",
+    "bookmark": "Bookmark",
+    "bookmarked": "Bookmarked",
+    "highlight": "Highlight",
+    "removeHighlight": "Remove highlight",
+    "colours": {
+      "gold": "Gold",
+      "blue": "Blue",
+      "green": "Green",
+      "rose": "Rose"
+    },
+    "note": "Note",
+    "editNote": "Edit note",
+    "notePlaceholder": "Write a private note…",
+    "saveNote": "Save note",
+    "deleteNote": "Delete note",
+    "cancel": "Cancel",
+    "copy": "Copy",
+    "copied": "Copied",
+    "close": "Close",
+    "signInToSave": "Sign in to save bookmarks, highlights and notes.",
+    "saveError": "Couldn't save that. Please try again.",
+    "hasNote": "Has a note",
+    "hasBookmark": "Bookmarked",
+    "notePrivate": "Notes are private. Only you can see them."
+  },
+  "search": {
+    "title": "Search the Bible",
+    "intro": "Find verses by words in English or Malayalam.",
+    "label": "Words to find",
+    "placeholder": "For example: light",
+    "submit": "Search",
+    "searchIn": "Search in",
+    "minLength": "Type at least 2 letters.",
+    "noResults": "No verses found.",
+    "resultCount_one": "{{count}} verse found",
+    "resultCount_other": "{{count}} verses found",
+    "truncated": "Showing the first 200 results. Add more words to narrow your search."
   }
 }

@@ -16,7 +16,8 @@ OpenAI via server-side functions only · licensed Bible provider via an adapter 
 Razorpay (later) · GitHub.
 
 ## Non-negotiable rules
-1. Never fabricate Bible quotations or references. No scripture text is bundled.
+1. Never fabricate Bible quotations or references. Scripture comes only from the licensed versions in the
+   database (imported from source and checksum-verified); none is hardcoded in the app.
 2. Never display a Bible translation without a confirmed licence for that use.
 3. Never put secrets in frontend code or `VITE_*` variables (only the Supabase URL and anon key are public).
 4. Never claim an integration works until it has been tested.
@@ -43,7 +44,8 @@ recommended next task. Wait for owner approval before the next phase.
 - `src/components/ui` — reusable design-system components
 - `src/components/navigation` — top bar, bottom nav, language selector, theme toggle
 - `src/features/<feature>` — feature logic (auth now; bible, prayer, etc. later)
-- `src/services` — external providers (Supabase now; bible-provider, ai, payments later)
+- `src/services` — external providers (Supabase, bible-provider adapter; ai, payments later)
+- `scripts/bible` — USFM parser, importer and search normaliser (keep in sync with SQL + TS)
 - `src/locales/<lang>` — interface translations
 - `src/styles/tokens.css` — design tokens (colours, type, spacing)
 - `supabase/` — migrations, edge functions, seed data

@@ -5,7 +5,7 @@
 A multilingual, broadly ecumenical Bible and Christian learning platform — responsive
 website first, Android and iPhone later. Launch languages: English and Malayalam.
 
-> Status: **Phase 1 — Task 002 (authentication) complete and tested against Supabase.** Task 001 foundation complete. App shell, design system,
+> Status: **Phase 2 — Bible reader, search and study tools complete and tested** (Phase 1 approved). Task 001 foundation complete. App shell, design system,
 > navigation, English/Malayalam localisation and the authentication structure are in
 > place. Accounts, Bible text, the AI assistant and payments are **not connected yet**,
 > and the app says so on screen rather than faking them.
@@ -60,6 +60,7 @@ Without Supabase variables the app still runs; sign-in forms show a
 - [docs/TEST_PLAN.md](docs/TEST_PLAN.md) — includes the Task 001 test report
 - [docs/DEPLOYMENT.md](docs/DEPLOYMENT.md) — environment variables, Supabase setup, hosting
 - [docs/DATABASE_SCHEMA.md](docs/DATABASE_SCHEMA.md)
+- [docs/BIBLE_CONTENT.md](docs/BIBLE_CONTENT.md) — versions, licences, import and verification
 - [CHANGELOG.md](CHANGELOG.md)
 
 PRD, database schema, API specifications and editorial guidelines are defined in the

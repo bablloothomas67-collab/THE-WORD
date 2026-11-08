@@ -4,12 +4,14 @@ import { Badge, ButtonLink, Card, EmptyState } from '../components/ui';
 import { formatDate } from '../utils/format';
 import { isEnabledLanguage } from '../config/languages';
 import { PageHeader } from './PageHeader';
+import { getReadingPosition, readerPath } from '../features/bible/readingState';
 import styles from './pages.module.css';
 
 export function HomePage() {
   const { t, i18n } = useTranslation();
   const lang = isEnabledLanguage(i18n.language) ? i18n.language : 'en';
   const [today] = useState(() => new Date());
+  const [position] = useState(getReadingPosition);
 
   return (
     <>
@@ -36,14 +38,22 @@ export function HomePage() {
         </Card>
 
         <Card title={t('home.continue.title')}>
-          <EmptyState
-            body={t('home.continue.empty')}
-            action={
-              <ButtonLink to="/bible" variant="secondary">
-                {t('home.continue.action')}
-              </ButtonLink>
-            }
-          />
+          {position ? (
+            <ButtonLink to={readerPath(position.versionCode, position.bookCode, position.chapter)}>
+              {t('home.continue.resume', {
+                reference: t('bible.reference', { book: position.bookName, chapter: position.chapter }),
+              })}
+            </ButtonLink>
+          ) : (
+            <EmptyState
+              body={t('home.continue.empty')}
+              action={
+                <ButtonLink to="/bible" variant="secondary">
+                  {t('home.continue.action')}
+                </ButtonLink>
+              }
+            />
+          )}
         </Card>
 
         <Card title={t('home.plan.title')} aside={<Badge>{t('states.comingSoon')}</Badge>}>

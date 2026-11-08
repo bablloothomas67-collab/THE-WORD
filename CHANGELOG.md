@@ -1,5 +1,20 @@
 # Changelog
 
+## 0.3.0 — 2026-11-08 — Phase 2: Bible
+
+### Added
+- Four licensed versions from eBible.org, verified against source: Malayalam 1910 (Free Bible
+  Foundation, CC BY-SA 4.0), IRV Malayalam (Bridge Communication Systems, CC BY-SA 4.0), KJV and
+  WEB with Deuterocanon (public domain). See docs/BIBLE_CONTENT.md.
+- Tables: bible providers/versions/books/book names/verses, admin_roles, audit_events,
+  bookmarks, highlights, study_notes — RLS throughout.
+- Bible provider adapter; library (OT/NT/Deuterocanon), reader (text size, version switch,
+  prev/next across books, Psalm titles, attribution), search (Malayalam-aware), verse actions
+  (bookmark, 4 highlight colours, private note, copy with attribution).
+- Continue reading on Home and Library; bookmarks/highlights/notes on My Journey.
+- USFM parser, importer and search normaliser scripts; SQL `normalise_search`.
+- Tests: provider, normaliser parity, navigation, reader screens; RLS for Bible text and study tools.
+
 ## 0.2.0 — 2026-11-06 — Task 002: Authentication
 
 ### Added

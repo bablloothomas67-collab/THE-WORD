@@ -2,6 +2,8 @@ import { Route, Routes } from 'react-router-dom';
 import { AppLayout } from '../layouts/AppLayout';
 import { HomePage } from '../pages/HomePage';
 import { BiblePage } from '../pages/BiblePage';
+import { ReaderPage } from '../pages/ReaderPage';
+import { SearchPage } from '../pages/SearchPage';
 import { AskPage } from '../pages/AskPage';
 import { DiscoverPage } from '../pages/DiscoverPage';
 import { JourneyPage } from '../pages/JourneyPage';
@@ -18,6 +20,8 @@ export function AppRoutes() {
       <Route element={<AppLayout />}>
         <Route index element={<HomePage />} />
         <Route path="bible" element={<BiblePage />} />
+        <Route path="bible/search" element={<SearchPage />} />
+        <Route path="bible/:version/:book/:chapter" element={<ReaderPage />} />
         <Route path="ask" element={<AskPage />} />
         <Route path="discover" element={<DiscoverPage />} />
         <Route

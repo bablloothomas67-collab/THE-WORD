@@ -63,6 +63,16 @@ Edge Function holding secrets server-side.
 - `ProtectedRoute` guards `/journey`; RLS is the real guarantee.
 - Password reset: email link → `/reset-password` recovery session → `updateUser({ password })`.
 
+## Bible (Phase 2)
+- `src/services/bible-provider/types.ts` — provider contract (`listVersions`, `listBooks`,
+  `getChapter`, `search`) and typed errors (`not_configured`, `unavailable`, `not_found`,
+  `invalid_query`). Screens depend only on this, so a commercial API can replace it later.
+- `supabaseProvider.ts` — reads public, RLS-protected tables; validates every row; caches
+  versions/books; never substitutes another version on failure.
+- Routes: `/bible` (library, `?v=`), `/bible/:version/:book/:chapter` (reader), `/bible/search?v=&q=`.
+- `features/study/studyService.ts` — bookmarks, highlights, notes; `StudyLists` on My Journey.
+- Reading position, preferred version per language and text size live in localStorage.
+
 ## Planned next layers
 - Phase 2: Bible provider adapter interface (`src/services/bible-provider/`) with a
   server-side implementation; UI depends only on the interface.

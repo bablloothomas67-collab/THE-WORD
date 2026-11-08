@@ -5,9 +5,10 @@ import { useAuth } from '../features/auth/useAuth';
 import { MAX_DISPLAY_NAME } from '../features/profile/profileService';
 import { getLanguage } from '../config/languages';
 import { PageHeader } from './PageHeader';
+import { StudyLists } from '../features/study/StudyLists';
 import styles from './pages.module.css';
 
-const SECTIONS = ['bookmarks', 'highlights', 'notes', 'history', 'plans', 'prayer', 'saved', 'preferences'] as const;
+const COMING_SOON = ['history', 'plans', 'prayer', 'saved', 'preferences'] as const;
 
 /** Protected route: only rendered for signed-in users (see AppRoutes). */
 export function JourneyPage() {
@@ -34,8 +35,11 @@ export function JourneyPage() {
         )}
       </Card>
 
-      <ul className={styles.list} style={{ marginTop: 'var(--space-5)' }}>
-        {SECTIONS.map((key) => (
+      <h2 className={styles.sectionTitle}>{t('journey.studyTitle')}</h2>
+      <StudyLists />
+
+      <ul className={styles.list} style={{ marginTop: 'var(--space-6)' }}>
+        {COMING_SOON.map((key) => (
           <li key={key} className={styles.listItem}>
             <span>{t(`journey.sections.${key}`)}</span>
             <Badge>{t('states.comingSoon')}</Badge>

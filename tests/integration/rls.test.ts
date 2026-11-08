@@ -119,3 +119,79 @@ describe.skipIf(!ready)('Row Level Security: profiles', () => {
     expect(write.data ?? []).toHaveLength(0);
   });
 });
+
+describe.skipIf(!ready)('Row Level Security: Bible text and study tools', () => {
+  let a: Awaited<ReturnType<typeof signedIn>>;
+  let b: Awaited<ReturnType<typeof signedIn>>;
+  let versionId = '';
+  const ref = () => ({ version_id: versionId, book_code: 'JHN', chapter: 3, verse: 16 });
+
+  beforeAll(async () => {
+    a = await signedIn(env.TEST_USER_A_EMAIL!, env.TEST_USER_A_PASSWORD!);
+    b = await signedIn(env.TEST_USER_B_EMAIL!, env.TEST_USER_B_PASSWORD!);
+    const { data } = await newClient().from('bible_versions').select('id').eq('code', 'kjv').single();
+    versionId = data!.id as string;
+    for (const t of ['bookmarks', 'highlights', 'study_notes']) await a.client.from(t).delete().match(ref());
+  });
+
+  afterAll(async () => {
+    for (const t of ['bookmarks', 'highlights', 'study_notes']) await a?.client.from(t).delete().match(ref());
+    await a?.client.auth.signOut();
+    await b?.client.auth.signOut();
+  });
+
+  it('anyone can read enabled Bible versions and verses', async () => {
+    const anon = newClient();
+    const versions = await anon.from('bible_versions').select('code').order('sort_order');
+    expect(versions.data?.map((v) => v.code)).toEqual(['mal1910', 'malirv', 'kjv', 'web']);
+    const verse = await anon.from('bible_verses').select('text').match(ref()).single();
+    expect(verse.data?.text).toMatch(/^For God so loved the world/);
+  });
+
+  it('ordinary users cannot add, change or delete Bible text', async () => {
+    const insert = await a.client.from('bible_verses').insert({ ...ref(), verse: 999, text: 'x', search_text: 'x' });
+    expect(insert.error).not.toBeNull();
+    await a.client.from('bible_verses').update({ text: 'changed' }).match(ref());
+    await a.client.from('bible_verses').delete().match(ref());
+    const still = await newClient().from('bible_verses').select('text').match(ref()).single();
+    expect(still.data?.text).toMatch(/^For God so loved the world/);
+    const roles = await a.client.from('admin_roles').insert({ user_id: a.userId, role: 'admin' });
+    expect(roles.error).not.toBeNull();
+  });
+
+  it("user A's bookmark, highlight and note are invisible to user B and anonymous visitors", async () => {
+    expect((await a.client.from('bookmarks').insert(ref())).error).toBeNull();
+    expect((await a.client.from('highlights').insert({ ...ref(), colour_key: 'gold' })).error).toBeNull();
+    expect((await a.client.from('study_notes').insert({ ...ref(), note_text: 'private test note' })).error).toBeNull();
+
+    for (const t of ['bookmarks', 'highlights', 'study_notes']) {
+      expect((await a.client.from(t).select('id').match(ref())).data).toHaveLength(1);
+      expect((await b.client.from(t).select('id').match(ref())).data ?? []).toHaveLength(0);
+      expect((await newClient().from(t).select('id')).data ?? []).toHaveLength(0);
+    }
+  });
+
+  it("user B cannot change or delete user A's study items", async () => {
+    await b.client.from('highlights').update({ colour_key: 'rose' }).match(ref());
+    await b.client.from('study_notes').update({ note_text: 'HACKED' }).match(ref());
+    for (const t of ['bookmarks', 'highlights', 'study_notes']) await b.client.from(t).delete().match(ref());
+    const h = await a.client.from('highlights').select('colour_key').match(ref()).single();
+    const n = await a.client.from('study_notes').select('note_text').match(ref()).single();
+    const bm = await a.client.from('bookmarks').select('id').match(ref());
+    expect(h.data?.colour_key).toBe('gold');
+    expect(n.data?.note_text).toBe('private test note');
+    expect(bm.data).toHaveLength(1);
+  });
+
+  it("user B cannot create items in user A's name", async () => {
+    const { error } = await b.client.from('bookmarks').insert({ ...ref(), user_id: a.userId });
+    expect(error).not.toBeNull();
+  });
+
+  it('rejects references to verses that do not exist and invalid colours', async () => {
+    const badRef = await a.client.from('bookmarks').insert({ ...ref(), chapter: 99 });
+    expect(badRef.error).not.toBeNull();
+    const badColour = await a.client.from('highlights').update({ colour_key: 'purple' }).match(ref());
+    expect(badColour.error).not.toBeNull();
+  });
+});

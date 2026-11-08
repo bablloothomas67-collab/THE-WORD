@@ -3,6 +3,23 @@
 Automated tests: Vitest + Testing Library (`tests/`). Run `npm run check` before
 every commit. Release gates follow section 13 of the Implementation Package.
 
+## Phase 2 (Bible) test report — 8 November 2026
+
+| Check | Result |
+|---|---|
+| Typecheck / lint | Pass, 0 warnings |
+| Unit + component tests | **82/82 pass** (9 files) |
+| RLS integration (`npm run test:rls`) | **15/15 pass** (profiles 9 + Bible/study 6) |
+| Source verification | Verse counts = raw markers; MD5 of every version's full text matches source |
+| Search normalisation | SQL, Python and TS identical (fixtures + MD5 of all 131k `search_text` values) |
+| Browser end-to-end (Chrome, real data, 390 px Malayalam + 1280 px English) | Pass, no console errors |
+| Supabase advisors | Leaked-password protection off (dashboard); `has_role` executable by signed-in users (intended, own roles only); `admin_roles.granted_by` unindexed (minor) |
+
+End-to-end steps: sign in → library (Malayalam names, OT/NT/DC) → John 3 in 1910 → bookmark,
+blue highlight and note on 3:16 → reload: all persisted → switch to IRV (attribution shown) →
+search "തന്റെ ഏകജാതനായ" finds John 3:16 in both 1910 and IRV → My Journey lists the note →
+Psalm 23 WEB shows its superscription. Test items deleted afterwards.
+
 ## Task 002 test report — 6 November 2026
 
 | Check | Result |
