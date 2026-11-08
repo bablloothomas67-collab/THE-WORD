@@ -278,3 +278,31 @@ describe.skipIf(!ready)('Row Level Security: plans, prayer journal, devotionals'
     expect(write.error).not.toBeNull();
   });
 });
+
+describe.skipIf(!ready)('Row Level Security: scripture audio', () => {
+  it('anyone can read the published catalogue; ordinary users cannot add or upload audio', async () => {
+    const anon = newClient();
+    const read = await anon.from('audio_tracks').select('kind, published').limit(5);
+    expect(read.error).toBeNull();
+    expect((read.data ?? []).every((r) => r.published === true)).toBe(true);
+
+    const a = await signedIn(env.TEST_USER_A_EMAIL!, env.TEST_USER_A_PASSWORD!);
+    const row = {
+      kind: 'devotional_prayer',
+      content_key: 'rls-test',
+      language_code: 'en',
+      storage_path: 'rls/test.mp3',
+      duration_secs: 1,
+      text_sha256: '0'.repeat(64),
+      voice_label: 'test',
+      published: true,
+    };
+    expect((await a.client.from('audio_tracks').insert(row)).error).not.toBeNull();
+    expect((await anon.from('audio_tracks').insert(row)).error).not.toBeNull();
+    const upload = await a.client.storage
+      .from('scripture-audio')
+      .upload('rls/test.mp3', new Blob([new Uint8Array([0xff, 0xfb])], { type: 'audio/mpeg' }));
+    expect(upload.error).not.toBeNull();
+    await a.client.auth.signOut();
+  });
+});

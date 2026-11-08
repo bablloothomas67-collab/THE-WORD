@@ -8,6 +8,8 @@ import { useUiLanguage } from '../features/bible/useBible';
 import { PassageView } from '../features/bible/PassageView';
 import { devotionalService } from '../features/devotionals/devotionalService';
 import { formatDate } from '../utils/format';
+import { AudioPlayer } from '../features/audio/AudioPlayer';
+import { audioService, scriptureAudioKey } from '../features/audio/audioService';
 import styles from './pages.module.css';
 
 export function DevotionalsPage() {
@@ -82,6 +84,7 @@ export function DevotionalPage() {
               verseStart={r.verseStart}
               verseEnd={r.verseEnd}
               errorKey="devotionals.passageError"
+              audio={{ kind: 'devotional_scripture', contentKey: scriptureAudioKey(dev.slug, r) }}
             />
           </div>
         ))}
@@ -111,6 +114,7 @@ export function DevotionalPage() {
       <section className={styles.devSection} aria-labelledby="dev-prayer">
         <h2 id="dev-prayer">{t('devotionals.prayer')}</h2>
         <p className={`${styles.devText} ${styles.prayerBox}`}>{dev.prayer}</p>
+        <PrayerAudio slug={dev.slug} label={t('devotionals.prayer')} />
       </section>
 
       <footer className={styles.devSection}>
@@ -123,5 +127,28 @@ export function DevotionalPage() {
         </Button>
       </footer>
     </article>
+  );
+}
+
+/** "Pray along" player for a devotional's prayer; renders nothing until a recording exists. */
+function PrayerAudio({ slug, label }: { slug: string; label: string }) {
+  const { t } = useTranslation();
+  const lang = useUiLanguage();
+  const track = useAsync(
+    () =>
+      audioService.getTrack('devotional_prayer', slug, lang).catch((e: unknown) => {
+        console.warn(e);
+        return null;
+      }),
+    [slug, lang],
+  );
+  if (!track.data) return null;
+  return (
+    <AudioPlayer
+      src={track.data.url}
+      durationSecs={track.data.durationSecs}
+      label={label}
+      caption={t('audio.captionPrayer')}
+    />
   );
 }

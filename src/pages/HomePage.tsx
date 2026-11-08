@@ -38,6 +38,7 @@ export function HomePage() {
               verseStart={daily.data.verseStart}
               verseEnd={daily.data.verseEnd}
               errorKey="home.dailyVerse.unavailable"
+              audio={{ kind: 'daily_verse', contentKey: String(daily.data.position) }}
             />
           ) : (
             <p>{t('home.dailyVerse.unavailable')}</p>

@@ -64,5 +64,14 @@ Week 1 devotionals are stored `in_review` with draft localisations — invisible
 the owner approves them. Devotionals store Scripture **references only**; the verse text is
 fetched from the reader's chosen licensed version.
 
+## Applied — `20261108140000_scripture_audio.sql`
+
+| Table / bucket | Purpose | RLS |
+|---|---|---|
+| `audio_tracks` | catalogue of recordings: kind (daily_verse / devotional_scripture / devotional_prayer), content key, language, Bible version (null for prayers), storage path, duration, SHA-256 of spoken text, voice, published | public read when published; insert/update only for `content_importer`; no deletes |
+| Storage `scripture-audio` | public MP3 files, 5 MB cap | public read by URL; writes only for `content_importer` |
+
+See docs/AUDIO.md.
+
 Remaining tables from the Implementation Package (AI conversations, content items,
 subscriptions, etc.) are added in their own phases.

@@ -1,5 +1,17 @@
 # Changelog
 
+## 0.4.1 — 2026-11-08 — Listen: Scripture and prayer audio
+
+### Added
+- "Listen" player (play/pause, seek, time, AI-voice caption; loads only on press) on the verse
+  of the day and on devotional Scripture and prayers, in English and Malayalam.
+- Designed ElevenLabs voice "THE WORD – Ammachi"; all 87 daily verses recorded in KJV and
+  Malayalam 1910 from the stored text.
+- Migration `20261108140000_scripture_audio.sql`: `audio_tracks` catalogue + public
+  `scripture-audio` bucket, importer-only writes.
+- `scripts/audio/generate_audio.py` and `upload_audio.py`; docs/AUDIO.md.
+- Tests: audio service, player and formatter; RLS for the audio catalogue and bucket.
+
 ## 0.4.0 — 2026-11-08 — Phase 3: Spiritual features
 
 ### Added
