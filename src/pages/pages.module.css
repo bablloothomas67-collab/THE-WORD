@@ -285,3 +285,97 @@ a.listItem {
 a.listItem:hover {
   border-color: var(--color-accent);
 }
+
+/* Ask the Word */
+.askWrap {
+  max-width: var(--reading-max);
+}
+.askThread {
+  display: grid;
+  gap: var(--space-4);
+  margin-bottom: var(--space-4);
+}
+.askQuestion {
+  justify-self: end;
+  max-width: 85%;
+  padding: var(--space-3) var(--space-4);
+  border-radius: var(--radius-lg);
+  background: var(--color-primary);
+  color: var(--ivory-50);
+  white-space: pre-wrap;
+}
+.askAnswer {
+  padding: var(--space-4);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  background: var(--color-surface);
+  line-height: 1.7;
+}
+.askAnswer p {
+  margin: 0 0 var(--space-3);
+}
+.askCite {
+  font-size: var(--font-size-sm);
+  white-space: nowrap;
+}
+.askNote {
+  padding: var(--space-2) var(--space-3);
+  border-left: 3px solid var(--color-accent);
+  background: color-mix(in srgb, var(--color-accent) 10%, transparent);
+  font-size: var(--font-size-sm);
+}
+.askPassages h3 {
+  margin: var(--space-4) 0 var(--space-2);
+  font-family: var(--font-sans);
+  font-size: var(--font-size-sm);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--color-text-muted);
+}
+.askPassage {
+  border-top: 1px solid var(--color-border);
+  padding: var(--space-2) 0;
+}
+.askPassage summary {
+  cursor: pointer;
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+}
+.askPassage summary:focus-visible,
+.linkButton:focus-visible {
+  outline: 3px solid var(--color-focus);
+  outline-offset: 2px;
+}
+.askHistory {
+  margin-top: var(--space-6);
+}
+.askHistory h2 {
+  font-size: var(--font-size-md);
+  font-family: var(--font-sans);
+}
+.askHistoryItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2);
+  border-bottom: 1px solid var(--color-border);
+}
+.linkButton {
+  flex: 1;
+  min-height: 44px;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--color-text);
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.linkButton[aria-current='true'] {
+  font-weight: 700;
+}

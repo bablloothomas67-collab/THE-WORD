@@ -3,6 +3,21 @@
 Automated tests: Vitest + Testing Library (`tests/`). Run `npm run check` before
 every commit. Release gates follow section 13 of the Implementation Package.
 
+## Phase 4 (Ask the Word) test report — 12 November 2026
+
+| Check | Result |
+|---|---|
+| Typecheck / lint | Pass |
+| Unit + component tests | **113/113 pass** |
+| RLS + function integration (`npm run test:rls`) | **23/23 pass** |
+| Evaluation, 30 live questions (EN + ML) | **30/30 pass automatic checks**; 92 references cited, all re-verified; 1 removed by validation |
+| Browser end-to-end (Chrome, 390 px, Malayalam) | Pass, no console errors, no browser request to OpenAI |
+
+Manual two-account check: account B sees none of account A's 32 conversations, 62 messages or
+usage rows and cannot delete them; visitors are denied. After 32 questions account A is refused
+with HTTP 429. Bug found and fixed during testing: bulk insert sent null for `refs` on the
+question row.
+
 ## Phase 3 (Spiritual features) test report — 8 November 2026
 
 | Check | Result |

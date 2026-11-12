@@ -40,10 +40,10 @@ describe('application shell', () => {
     expect(await screen.findByText("The Bible service isn't connected yet.")).toBeInTheDocument();
   });
 
-  it('keeps the Ask the Word form disabled until the backend exists', async () => {
+  it('offers no Ask the Word form to signed-out visitors', async () => {
     await renderApp('/ask');
-    expect(screen.getByRole('textbox', { name: 'Your question' })).toBeDisabled();
-    expect(screen.getByRole('button', { name: 'Ask' })).toBeDisabled();
+    expect(screen.getByRole('heading', { name: 'Ask the Word' })).toBeInTheDocument();
+    expect(screen.queryByRole('textbox', { name: 'Your question' })).not.toBeInTheDocument();
   });
 });
 

@@ -306,3 +306,47 @@ describe.skipIf(!ready)('Row Level Security: scripture audio', () => {
     await a.client.auth.signOut();
   });
 });
+
+describe.skipIf(!ready)('Row Level Security: Ask the Word', () => {
+  it('users cannot forge conversations, answers or usage, and cannot reserve questions directly', async () => {
+    const b = await signedIn(env.TEST_USER_B_EMAIL!, env.TEST_USER_B_PASSWORD!);
+    const conv = await b.client.from('ai_conversations').insert({ user_id: b.userId, title: 'forged', language_code: 'en' });
+    expect(conv.error).not.toBeNull();
+    const msg = await b.client
+      .from('ai_messages')
+      .insert({ conversation_id: crypto.randomUUID(), user_id: b.userId, role: 'assistant', content: 'forged answer' });
+    expect(msg.error).not.toBeNull();
+    expect((await b.client.from('usage_events').insert({ user_id: b.userId, event_type: 'ask_question' })).error).not.toBeNull();
+    expect((await b.client.from('usage_events').delete().eq('user_id', b.userId)).error).not.toBeNull();
+    expect((await b.client.rpc('reserve_ask_question', { p_user: b.userId, p_limit: 999 })).error).not.toBeNull();
+
+    const anon = newClient();
+    expect((await anon.from('ai_conversations').select('id')).error).not.toBeNull();
+    expect((await anon.from('ai_messages').select('id')).error).not.toBeNull();
+    await b.client.auth.signOut();
+  });
+
+  it('the function refuses visitors, reports the free daily limit and rejects bad requests without spending a question', async () => {
+    const anon = newClient();
+    const visitor = await anon.functions.invoke('ask-the-word', { body: { action: 'status' } });
+    expect((visitor.error as { context?: { status?: number } } | null)?.context?.status).toBe(401);
+
+    const b = await signedIn(env.TEST_USER_B_EMAIL!, env.TEST_USER_B_PASSWORD!);
+    const before = await b.client.functions.invoke('ask-the-word', { body: { action: 'status' } });
+    expect(before.error).toBeNull();
+    expect(before.data.limit).toBe(5);
+
+    const bad = await b.client.functions.invoke('ask-the-word', { body: { question: 'x'.repeat(1001), language: 'en' } });
+    expect((bad.error as { context?: { status?: number } } | null)?.context?.status).toBe(400);
+    const noLang = await b.client.functions.invoke('ask-the-word', { body: { question: 'Who was Ruth?', language: 'fr' } });
+    expect((noLang.error as { context?: { status?: number } } | null)?.context?.status).toBe(400);
+    const notMine = await b.client.functions.invoke('ask-the-word', {
+      body: { question: 'Who was Ruth?', language: 'en', conversationId: crypto.randomUUID() },
+    });
+    expect((notMine.error as { context?: { status?: number } } | null)?.context?.status).toBe(404);
+
+    const after = await b.client.functions.invoke('ask-the-word', { body: { action: 'status' } });
+    expect(after.data.remaining).toBe(before.data.remaining);
+    await b.client.auth.signOut();
+  });
+});

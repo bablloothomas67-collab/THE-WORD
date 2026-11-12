@@ -73,5 +73,16 @@ fetched from the reader's chosen licensed version.
 
 See docs/AUDIO.md.
 
-Remaining tables from the Implementation Package (AI conversations, content items,
+## Applied in Phase 4 — `20261112150000_ask_the_word.sql`
+
+| Table / function | Purpose | RLS |
+|---|---|---|
+| `ai_conversations` | one row per Ask the Word conversation | owner reads and deletes; no client insert/update |
+| `ai_messages` | questions and validated answers; `refs` holds checked references only (no Bible text) | owner reads; written only by the Edge Function |
+| `usage_events` | one row per question (no content) for the daily limit | owner reads; written only by the Edge Function |
+| `reserve_ask_question(user, limit)` | atomic limit check + usage row | service role only |
+
+See docs/ASK_THE_WORD.md.
+
+Remaining tables from the Implementation Package (content items,
 subscriptions, etc.) are added in their own phases.

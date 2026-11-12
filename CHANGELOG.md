@@ -1,5 +1,19 @@
 # Changelog
 
+## 0.5.0 — 2026-11-12 — Phase 4: Ask the Word
+
+### Added
+- Ask the Word page: questions and follow-ups in English and Malayalam, private conversation
+  history with delete, remaining-questions counter, citations linked to the reader, passage
+  text loaded from the licensed Bibles on demand.
+- Edge Function `ask-the-word`: server-side OpenAI call, structured answers, every Scripture
+  reference validated against the Bible database, daily limit (5 free), refunds on failure.
+- Migration `20261112150000_ask_the_word.sql`: `ai_conversations`, `ai_messages`,
+  `usage_events`, `reserve_ask_question`.
+- 30-question evaluation script and report; unit tests for reference handling, prompt rules,
+  service and page; RLS tests for the new tables and function.
+- docs/ASK_THE_WORD.md.
+
 ## 0.4.1 — 2026-11-08 — Listen: Scripture and prayer audio
 
 ### Added

@@ -1,36 +1,268 @@
-import { useId } from 'react';
+import { useEffect, useId, useRef, useState, type FormEvent } from 'react';
+import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import { Button, Notice } from '../components/ui';
+import { Button, ButtonLink, ErrorState, LoadingState, Notice } from '../components/ui';
 import { PageHeader } from './PageHeader';
+import { useAsync } from '../hooks/useAsync';
+import { useAuth } from '../features/auth/useAuth';
+import { pickDefaultVersion, useBooks, useUiLanguage, useVersions } from '../features/bible/useBible';
+import { readerPath } from '../features/bible/readingState';
+import { PassageView } from '../features/bible/PassageView';
+import { splitAnswer, verseLabel, type AnswerRef } from '../features/ask/answerParts';
+import {
+  AskError,
+  askService,
+  MAX_QUESTION,
+  validateQuestion,
+  type AskMessage,
+  type AskQuota,
+} from '../features/ask/askService';
 import styles from './pages.module.css';
 
 /**
- * Placeholder only. The study assistant (Phase 4) will call a server-side
- * Supabase Edge Function — never an AI provider directly from the browser.
- * The form is shown disabled so the layout can be reviewed.
+ * Ask the Word. Answers come from the server-side "ask-the-word" function; every
+ * citation shown here was checked against the Bible database, and the passage text
+ * is loaded from the licensed Bible versions — never from the AI.
  */
 export function AskPage() {
   const { t } = useTranslation();
-  const inputId = useId();
+  const { user, loading, isConfigured } = useAuth();
+
   return (
     <>
       <PageHeader title={t('ask.title')} lead={t('ask.intro')} />
-      <Notice>
-        <strong>{t('ask.placeholderTitle')}</strong>
-        <br />
-        {t('ask.placeholderBody')}
-      </Notice>
-      <form className={styles.askForm} onSubmit={(e) => e.preventDefault()} aria-disabled="true">
+      {!isConfigured ? (
+        <Notice>{t('ask.errors.not_configured')}</Notice>
+      ) : loading ? (
+        <LoadingState />
+      ) : !user ? (
+        <Notice>
+          <p>{t('ask.signInPrompt')}</p>
+          <ButtonLink to="/login" state={{ from: '/ask' }}>
+            {t('nav.signIn')}
+          </ButtonLink>
+        </Notice>
+      ) : (
+        <AskAssistant key={user.id} />
+      )}
+      <p className={styles.disclaimer}>{t('ask.disclaimer')}</p>
+    </>
+  );
+}
+
+function AskAssistant() {
+  const { t } = useTranslation();
+  const lang = useUiLanguage();
+  const inputId = useId();
+  const [conversationId, setConversationId] = useState<string | null>(null);
+  const [messages, setMessages] = useState<AskMessage[]>([]);
+  const [question, setQuestion] = useState('');
+  const [pending, setPending] = useState(false);
+  const [errorKey, setErrorKey] = useState<string | null>(null);
+  const [quota, setQuota] = useState<AskQuota | null>(null);
+  const history = useAsync(() => askService.listConversations(), []);
+  const initialQuota = useAsync(() => askService.quota(), []);
+  const threadEnd = useRef<HTMLDivElement>(null);
+
+  const shownQuota = quota ?? initialQuota.data ?? null;
+  const outOfQuestions = shownQuota !== null && shownQuota.remaining <= 0;
+
+  useEffect(() => {
+    if (messages.length > 0) threadEnd.current?.scrollIntoView?.({ block: 'end', behavior: 'smooth' });
+  }, [messages.length, pending]);
+
+  async function submit(e: FormEvent) {
+    e.preventDefault();
+    const invalid = validateQuestion(question);
+    if (invalid) return setErrorKey(invalid);
+    setErrorKey(null);
+    setPending(true);
+    try {
+      const result = await askService.ask(question, lang, conversationId);
+      setMessages((m) => [...m, ...result.messages]);
+      setConversationId(result.conversationId);
+      setQuota(result.quota);
+      setQuestion('');
+      history.reload();
+    } catch (err) {
+      const code = err instanceof AskError ? err.code : 'unavailable';
+      // Code only: the error must never carry the question text into the console.
+      console.error(`Ask the Word failed: ${code}`);
+      if (code === 'limit' && shownQuota) setQuota({ ...shownQuota, remaining: 0 });
+      setErrorKey(`ask.errors.${code}`);
+    } finally {
+      setPending(false);
+    }
+  }
+
+  async function open(id: string) {
+    setErrorKey(null);
+    try {
+      setMessages(await askService.getMessages(id));
+      setConversationId(id);
+    } catch {
+      setErrorKey('ask.errors.unavailable');
+    }
+  }
+
+  async function remove(id: string) {
+    if (!window.confirm(t('ask.deleteConfirm'))) return;
+    try {
+      await askService.deleteConversation(id);
+      if (id === conversationId) startNew();
+      history.reload();
+    } catch {
+      setErrorKey('ask.errors.unavailable');
+    }
+  }
+
+  function startNew() {
+    setConversationId(null);
+    setMessages([]);
+    setErrorKey(null);
+  }
+
+  return (
+    <div className={styles.askWrap}>
+      {messages.length > 0 && (
+        <section aria-label={t('ask.conversation')} className={styles.askThread}>
+          {messages.map((m) =>
+            m.role === 'user' ? (
+              <div key={m.id} className={styles.askQuestion}>
+                <span className="visually-hidden">{t('ask.youAsked')} </span>
+                {m.content}
+              </div>
+            ) : (
+              <Answer key={m.id} message={m} />
+            ),
+          )}
+          <div ref={threadEnd} />
+        </section>
+      )}
+
+      {pending && <LoadingState label={t('ask.thinking')} />}
+      {errorKey && <ErrorState message={t(errorKey, { max: MAX_QUESTION })} />}
+
+      <form className={styles.askForm} onSubmit={(e) => void submit(e)}>
         <label htmlFor={inputId} className="visually-hidden">
           {t('ask.inputLabel')}
         </label>
-        <textarea id={inputId} className={styles.textarea} placeholder={t('ask.inputPlaceholder')} disabled />
-        <p />
-        <Button type="submit" disabled>
-          {t('ask.submit')}
-        </Button>
-        <p className={styles.disclaimer}>{t('ask.disclaimer')}</p>
+        <textarea
+          id={inputId}
+          className={styles.textarea}
+          placeholder={messages.length > 0 ? t('ask.followUpPlaceholder') : t('ask.inputPlaceholder')}
+          value={question}
+          maxLength={MAX_QUESTION}
+          disabled={pending || outOfQuestions}
+          onChange={(e) => setQuestion(e.target.value)}
+        />
+        <div className={styles.actionsRow}>
+          <Button type="submit" disabled={pending || outOfQuestions || question.trim().length === 0}>
+            {t('ask.submit')}
+          </Button>
+          {messages.length > 0 && (
+            <Button type="button" variant="secondary" onClick={startNew} disabled={pending}>
+              {t('ask.newConversation')}
+            </Button>
+          )}
+          {shownQuota && (
+            <span className={styles.meta} role="status">
+              {outOfQuestions ? t('ask.quotaNone', { limit: shownQuota.limit }) : t('ask.quota', { ...shownQuota })}
+            </span>
+          )}
+        </div>
       </form>
-    </>
+
+      {(history.data?.length ?? 0) > 0 && (
+        <section className={styles.askHistory}>
+          <h2>{t('ask.history')}</h2>
+          <ul className={styles.list}>
+            {history.data!.map((c) => (
+              <li key={c.id} className={styles.askHistoryItem}>
+                <button type="button" className={styles.linkButton} onClick={() => void open(c.id)} aria-current={c.id === conversationId}>
+                  {c.title}
+                </button>
+                <Button variant="ghost" onClick={() => void remove(c.id)} aria-label={`${t('ask.delete')}: ${c.title}`}>
+                  {t('ask.delete')}
+                </Button>
+              </li>
+            ))}
+          </ul>
+          <p className={styles.meta}>{t('ask.privacy')}</p>
+        </section>
+      )}
+    </div>
+  );
+}
+
+function Answer({ message }: { message: AskMessage }) {
+  const { t } = useTranslation();
+  const lang = useUiLanguage();
+  const versions = useVersions();
+  const version = versions.data ? pickDefaultVersion(versions.data, lang) : undefined;
+  const books = useBooks(version?.id);
+
+  function label(ref: AnswerRef) {
+    const name = books.data?.find((b) => b.code === ref.book)?.name ?? ref.book;
+    return t('bible.verseReference', { book: name, chapter: ref.chapter, verse: verseLabel(ref) });
+  }
+
+  return (
+    <article className={styles.askAnswer} aria-label={t('ask.answerLabel')}>
+      {message.content.split(/\n{2,}/).map((paragraph, i) => (
+        <p key={i}>
+          {splitAnswer(paragraph, message.refs.length).map((part, j) =>
+            part.kind === 'text' ? (
+              part.text
+            ) : (
+              <span key={j} className={styles.askCite}>
+                {' ('}
+                {version ? (
+                  <Link to={readerPath(version.code, message.refs[part.index].book, message.refs[part.index].chapter)}>
+                    {label(message.refs[part.index])}
+                  </Link>
+                ) : (
+                  label(message.refs[part.index])
+                )}
+                {')'}
+              </span>
+            ),
+          )}
+        </p>
+      ))}
+
+      {message.uncertain && <p className={styles.askNote}>{t('ask.uncertain')}</p>}
+      {message.removedRefCount > 0 && <p className={styles.askNote}>{t('ask.removedRefs', { count: message.removedRefCount })}</p>}
+      {message.uncheckedCitation && <p className={styles.askNote}>{t('ask.uncheckedCitation')}</p>}
+
+      {message.refs.length > 0 && (
+        <div className={styles.askPassages}>
+          <h3>{t('ask.passages')}</h3>
+          {message.refs.map((ref, i) => (
+            <PassageDetails key={i} title={label(ref)} passage={ref} />
+          ))}
+        </div>
+      )}
+      <p className={styles.meta}>{t('ask.aiLabel')}</p>
+    </article>
+  );
+}
+
+/** Loads the passage text from the licensed Bible only when the reader opens it. */
+function PassageDetails({ title, passage }: { title: string; passage: AnswerRef }) {
+  const [opened, setOpened] = useState(false);
+  return (
+    <details className={styles.askPassage} onToggle={(e) => e.currentTarget.open && setOpened(true)}>
+      <summary>{title}</summary>
+      {opened && (
+        <PassageView
+          bookCode={passage.book}
+          chapter={passage.chapter}
+          verseStart={passage.verseStart}
+          verseEnd={passage.verseEnd}
+          errorKey="ask.passageError"
+        />
+      )}
+    </details>
   );
 }
