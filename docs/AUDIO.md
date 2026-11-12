@@ -37,3 +37,4 @@ app never calls ElevenLabs.
 ## Status (8 Nov 2026)
 - 174 daily-verse clips and 30 devotional clips (Week 1: Scripture + prayer, EN + ML) published.
 - Characters billed: 25,349 (daily) + 5,934 (devotionals) + ~1,900 samples.
+- 12 Nov 2026: Week 2 devotionals (16–22 Nov) — 28 clips, 7,139 characters billed. Total published: 232 clips.

@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.5.1 — 2026-11-12 — Week 2 devotionals and import script
+
+- Week 2 devotionals (16–22 Nov, EN + ML) approved by the owner, published with audio.
+- `scripts/content/import_devotionals.py` + migration `20261112170000_devotional_import.sql`:
+  the content-importer account loads unpublished drafts straight from the reviewed JSON file
+  and verifies the stored text against it.
+- Live site: https://the-word-lac.vercel.app (Vercel, deploys on every push to main).
+
 ## 0.5.0 — 2026-11-12 — Phase 4: Ask the Word
 
 ### Added
