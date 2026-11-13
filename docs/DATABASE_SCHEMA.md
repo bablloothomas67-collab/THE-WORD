@@ -95,4 +95,18 @@ See docs/ASK_THE_WORD.md.
 
 See docs/DISCOVER.md.
 
-Remaining tables from the Implementation Package (subscriptions, entitlements, etc.) are added in their own phases.
+## Applied in Phase 6 — `20261113100000_premium_and_billing.sql`
+
+| Table / function | Purpose | RLS |
+|---|---|---|
+| `app_settings` | `paywall_live` switch (starts false) | public read; no client writes |
+| `subscriptions` | one row per purchase: plan, status, amount, Razorpay order/payment ids, period | owner reads; written only by the billing function |
+| `entitlements` | `premium_until` per user | owner reads; written only by `activate_subscription` / `refund_subscription` |
+| `payment_events` | webhook event ids already handled | no client access |
+| `is_premium()`, `paywall_live()` | booleans used by policies | callable by anyone; reveal only the caller's own status / the public switch |
+| `activate_subscription`, `refund_subscription` | grant / withdraw access, audited | service role only |
+| `admin_overview()` | counts for the admin page | refuses callers without the `admin` role |
+| Storage `premium-audio` | private plan-chapter recordings | read by subscribers (or any signed-in user while the paywall is off); write by `content_importer` |
+
+Changed policies: `content_localisations`, `reading_plan_days`, `audio_tracks` (see docs/PREMIUM.md).
+New columns: `reading_plans.is_premium`, `audio_tracks.bucket`; `audio_tracks.kind` gains `plan_chapter`.

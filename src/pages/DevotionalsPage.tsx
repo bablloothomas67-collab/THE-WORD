@@ -10,6 +10,9 @@ import { devotionalService } from '../features/devotionals/devotionalService';
 import { formatDate } from '../utils/format';
 import { AudioPlayer } from '../features/audio/AudioPlayer';
 import { audioService, scriptureAudioKey } from '../features/audio/audioService';
+import { usePremium } from '../features/billing/usePremium';
+import { PremiumHint } from '../features/billing/PremiumHint';
+import { isCurrentWeek } from '../features/devotionals/devotionalService';
 import styles from './pages.module.css';
 
 export function DevotionalsPage() {
@@ -44,6 +47,7 @@ export function DevotionalPage() {
   const { slug = '' } = useParams();
   const d = useAsync(() => devotionalService.get(slug, lang), [slug, lang]);
   const [shared, setShared] = useState(false);
+  const premium = usePremium();
 
   if (d.loading) return <LoadingState />;
   if (d.error) return <ErrorState message={t('devotionals.error')} onRetry={d.reload} />;
@@ -115,6 +119,7 @@ export function DevotionalPage() {
         <h2 id="dev-prayer">{t('devotionals.prayer')}</h2>
         <p className={`${styles.devText} ${styles.prayerBox}`}>{dev.prayer}</p>
         <PrayerAudio slug={dev.slug} label={t('devotionals.prayer')} />
+        {premium.locked && !isCurrentWeek(dev.publicationDate) && <PremiumHint messageKey="premium.locked.devotionalAudio" />}
       </section>
 
       <footer className={styles.devSection}>

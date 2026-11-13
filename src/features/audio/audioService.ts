@@ -4,6 +4,8 @@ import type { LanguageCode } from '../../config/languages';
 
 export const AUDIO_BUCKET = 'scripture-audio';
 
+export const PREMIUM_AUDIO_BUCKET = 'premium-audio';
+
 export type AudioKind = 'daily_verse' | 'devotional_scripture' | 'devotional_prayer';
 
 export interface AudioTrack {
@@ -55,6 +57,28 @@ export function createAudioService(client: SupabaseClient | null = defaultClient
         versionCode: typeof row.version_code === 'string' ? row.version_code : null,
         durationSecs: Number(row.duration_secs),
       };
+    },
+
+    /**
+     * English audio for one reading-plan chapter. `available` says a recording exists;
+     * `url` is a short-lived private link, present only when this reader may listen
+     * (the private bucket refuses everyone else).
+     */
+    async getPlanChapter(bookCode: string, chapter: number): Promise<{ available: boolean; url: string | null; durationSecs: number }> {
+      const none = { available: false, url: null, durationSecs: 0 };
+      if (!client) return none;
+      const { data, error } = await client
+        .from('audio_tracks')
+        .select('storage_path, duration_secs')
+        .eq('kind', 'plan_chapter')
+        .eq('content_key', `${bookCode}.${chapter}`)
+        .eq('language_code', 'en')
+        .limit(1);
+      if (error) throw new Error(`Load plan audio: ${error.message}`);
+      const row = ((data ?? []) as Row[])[0];
+      if (!row || typeof row.storage_path !== 'string') return none;
+      const signed = await client.storage.from(PREMIUM_AUDIO_BUCKET).createSignedUrl(row.storage_path, 3600);
+      return { available: true, url: signed.data?.signedUrl ?? null, durationSecs: Number(row.duration_secs) };
     },
   };
 }

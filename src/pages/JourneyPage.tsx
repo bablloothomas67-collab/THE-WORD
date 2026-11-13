@@ -11,6 +11,9 @@ import { useAsync } from '../hooks/useAsync';
 import { useUiLanguage } from '../features/bible/useBible';
 import { contentService } from '../features/discover/contentService';
 import { ContentList } from './DiscoverPage';
+import { billingService } from '../features/billing/billingService';
+import { usePremium } from '../features/billing/usePremium';
+import { formatDate } from '../utils/format';
 import styles from './pages.module.css';
 
 const COMING_SOON = ['history', 'preferences'] as const;
@@ -45,6 +48,8 @@ export function JourneyPage() {
         )}
       </Card>
 
+      <PremiumCard />
+
       <ul className={styles.list} style={{ marginTop: 'var(--space-5)' }}>
         {LINKS.map((l) => (
           <li key={l.to}>
@@ -70,6 +75,31 @@ export function JourneyPage() {
         ))}
       </ul>
     </>
+  );
+}
+
+function PremiumCard() {
+  const { t } = useTranslation();
+  const lang = useUiLanguage();
+  const premium = usePremium();
+  const admin = useAsync(() => billingService.isAdmin().catch(() => false), []);
+  return (
+    <div style={{ marginTop: 'var(--space-5)' }}>
+      <Card title={t('premium.journey.title')}>
+        <p>
+          {premium.premium && premium.premiumUntil
+            ? `${t('premium.active')} ${t('premium.until', { date: formatDate(new Date(premium.premiumUntil), lang) })}`
+            : t('premium.journey.none')}
+        </p>
+        <Link to="/premium">{t('premium.journey.link')}</Link>
+        {admin.data && (
+          <>
+            {' · '}
+            <Link to="/admin">{t('admin.link')}</Link>
+          </>
+        )}
+      </Card>
+    </div>
   );
 }
 

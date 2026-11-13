@@ -10,6 +10,8 @@ import { PrayerPage } from '../pages/PrayerPage';
 import { DevotionalPage, DevotionalsPage } from '../pages/DevotionalsPage';
 import { AskPage } from '../pages/AskPage';
 import { ContentPage, DiscoverPage, DiscoverSectionPage } from '../pages/DiscoverPage';
+import { PremiumPage } from '../pages/PremiumPage';
+import { AdminPage } from '../pages/AdminPage';
 import { JourneyPage } from '../pages/JourneyPage';
 import { LoginPage } from '../pages/LoginPage';
 import { RegisterPage } from '../pages/RegisterPage';
@@ -47,6 +49,15 @@ export function AppRoutes() {
           element={
             <ProtectedRoute>
               <JourneyPage />
+            </ProtectedRoute>
+          }
+        />
+        <Route path="premium" element={<PremiumPage />} />
+        <Route
+          path="admin"
+          element={
+            <ProtectedRoute>
+              <AdminPage />
             </ProtectedRoute>
           }
         />

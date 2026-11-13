@@ -29,6 +29,16 @@ export interface Devotional {
 
 type Row = Record<string, unknown>;
 
+/**
+ * Devotional audio is free for seven days from publication (the same rule the
+ * database applies); earlier devotionals' audio is part of Premium.
+ */
+export function isCurrentWeek(publicationDate: string, today = new Date()): boolean {
+  const published = Date.parse(`${publicationDate}T00:00:00Z`);
+  const utcToday = Date.UTC(today.getUTCFullYear(), today.getUTCMonth(), today.getUTCDate());
+  return Number.isFinite(published) && published >= utcToday - 6 * 86_400_000;
+}
+
 export function parseRefs(v: unknown): ScriptureRef[] {
   if (!Array.isArray(v)) return [];
   return v.flatMap((r) => {

@@ -15,6 +15,8 @@ import {
   type AskMessage,
   type AskQuota,
 } from '../features/ask/askService';
+import { usePremium } from '../features/billing/usePremium';
+import { PremiumHint } from '../features/billing/PremiumHint';
 import styles from './pages.module.css';
 
 /**
@@ -64,6 +66,7 @@ function AskAssistant() {
 
   const shownQuota = quota ?? initialQuota.data ?? null;
   const outOfQuestions = shownQuota !== null && shownQuota.remaining <= 0;
+  const premium = usePremium();
 
   useEffect(() => {
     if (messages.length > 0) threadEnd.current?.scrollIntoView?.({ block: 'end', behavior: 'smooth' });
@@ -170,6 +173,7 @@ function AskAssistant() {
           )}
         </div>
       </form>
+      {outOfQuestions && !premium.premium && <PremiumHint messageKey="premium.locked.askLimit" />}
 
       {(history.data?.length ?? 0) > 0 && (
         <section className={styles.askHistory}>

@@ -18,6 +18,7 @@ import {
   MAX_QUESTION_CHARS,
   MAX_REFS,
   normaliseRef,
+  PREMIUM_DAILY_LIMIT,
   REVIEWER_DAILY_LIMIT,
   rewriteMarkers,
   type ScriptureRef,
@@ -91,7 +92,15 @@ async function referenceExists(admin: SupabaseClient, ref: ScriptureRef): Promis
 async function dailyLimit(admin: SupabaseClient, userId: string): Promise<number> {
   const { data, error } = await admin.from('admin_roles').select('role').eq('user_id', userId).in('role', ['admin', 'reviewer']);
   if (error) throw new Error(`roles: ${error.message}`);
-  return data.length > 0 ? REVIEWER_DAILY_LIMIT : DEFAULT_DAILY_LIMIT;
+  if (data.length > 0) return REVIEWER_DAILY_LIMIT;
+  const { data: ent, error: entError } = await admin
+    .from('entitlements')
+    .select('premium_until')
+    .eq('user_id', userId)
+    .gt('premium_until', new Date().toISOString())
+    .maybeSingle();
+  if (entError) throw new Error(`entitlement: ${entError.message}`);
+  return ent ? PREMIUM_DAILY_LIMIT : DEFAULT_DAILY_LIMIT;
 }
 
 async function usedToday(admin: SupabaseClient, userId: string): Promise<number> {

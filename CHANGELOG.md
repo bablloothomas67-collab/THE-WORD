@@ -1,5 +1,23 @@
 # Changelog
 
+## 0.7.0 — 2026-11-13 — Phase 6: Premium and payments (test mode not yet exercised)
+
+### Added
+- Premium page with the owner's prices (Rs 149 / month, Rs 1,199 / year), upgrade hints where a
+  premium feature is locked, Premium status in My Journey, admin overview page (`/admin`).
+- Edge Function `billing`: Razorpay orders, signature-verified payment confirmation, signed webhook
+  (capture and refund), all idempotent; prices held on the server.
+- Migration `20261113100000_premium_and_billing.sql`: `app_settings` (paywall switch, starts OFF),
+  `subscriptions`, `entitlements`, `payment_events`, `is_premium()`, `activate_subscription()`,
+  `refund_subscription()`, `admin_overview()`, private bucket `premium-audio`, premium rules for
+  Discover text, plan days and audio.
+- Reading-plan chapter audio player (shows only when a recording exists).
+- docs/PREMIUM.md; draft Terms, Privacy and Refund pages in docs/legal/DRAFTS.md.
+
+### Not yet done
+- No Razorpay keys exist, so no real or test payment has been made.
+- `ask-the-word` premium limit (50/day) is in the repo but not redeployed.
+
 ## 0.6.0 — 2026-11-13 — Phase 5: Discover
 
 ### Added

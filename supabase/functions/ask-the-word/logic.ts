@@ -15,6 +15,8 @@ export const MAX_REFS = 8;
 export const MAX_VERSES_PER_REF = 30;
 export const DEFAULT_DAILY_LIMIT = 5;
 export const REVIEWER_DAILY_LIMIT = 200;
+/** Subscribers (an entitlement that has not expired). */
+export const PREMIUM_DAILY_LIMIT = 50;
 
 /** Cleans a model-supplied reference; returns null when it is not even well-formed. */
 export function normaliseRef(raw: unknown, bookCodes: ReadonlySet<string>): ScriptureRef | null {

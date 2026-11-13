@@ -345,7 +345,9 @@
     "myPlans": "My plans",
     "allPlans": "All plans",
     "complete": "Completed",
-    "range": "{{book}} {{start}}–{{end}}"
+    "range": "{{book}} {{start}}–{{end}}",
+    "listen": "Listen to today's reading",
+    "audioCaption": "English recording"
   },
   "prayer": {
     "title": "Prayer journal",
@@ -414,5 +416,79 @@
     "captionOtherVersion": "Read aloud by an AI voice from the {{version}} version",
     "captionPrayer": "Pray along · read aloud by an AI voice",
     "error": "The audio couldn't be played. Please try again later."
+  },
+  "premium": {
+    "title": "THE WORD Premium",
+    "intro": "Support THE WORD and go deeper. Everything you use today for reading the Bible stays free.",
+    "seePlans": "See Premium",
+    "active": "You have Premium.",
+    "thankYou": "Thank you — your payment is confirmed and Premium is active.",
+    "until": "Valid until {{date}}.",
+    "featuresTitle": "What Premium adds",
+    "features": {
+      "ask": "Ask the Word: 50 questions a day instead of 5",
+      "devotionalAudio": "Listen to every past devotional and prayer (this week's are always free)",
+      "planAudio": "English audio for your reading-plan chapters, as recordings are added",
+      "discover": "Premium articles and courses in Discover, as they are published",
+      "plans": "Extra reading plans, as they are added"
+    },
+    "freeStays": "Always free: the Bible in four versions, search, notes and highlights, the verse of the day with audio, this week's devotionals, the prayer journal, today's three reading plans and all current Discover articles and quizzes.",
+    "plans": {
+      "monthly": {
+        "name": "One month",
+        "detail": "Premium for one month. Does not renew by itself."
+      },
+      "yearly": {
+        "name": "One year",
+        "detail": "Premium for twelve months. Does not renew by itself."
+      }
+    },
+    "bestValue": "Best value",
+    "buy": "Get Premium",
+    "extend": "Add more time",
+    "opening": "Opening payment…",
+    "signInToBuy": "Sign in to get Premium",
+    "notOpen": "Payments are not open yet. Nothing is locked in the meantime.",
+    "terms": "Payments are handled by Razorpay. THE WORD never sees or stores your card or UPI details. If you buy while Premium is still running, the new period is added to the end.",
+    "errors": {
+      "auth": "Please sign in again and retry.",
+      "not_configured": "Payments are not open yet.",
+      "too_many": "Too many payment attempts today. Please try again tomorrow.",
+      "not_paid": "The payment was not completed, so nothing was charged to Premium. Please try again.",
+      "invalid": "This payment could not be confirmed. If money was taken, it will be matched automatically within a few minutes; otherwise please try again.",
+      "unavailable": "The payment service is not available right now. Please try again later.",
+      "checkout": "The payment window could not be opened. Check your connection and try again."
+    },
+    "locked": {
+      "devotionalAudio": "Audio for earlier devotionals is part of Premium.",
+      "planAudio": "Audio for this chapter is part of Premium.",
+      "askLimit": "Premium gives you 50 questions a day."
+    },
+    "journey": {
+      "title": "Premium",
+      "none": "You are on the free plan.",
+      "link": "See what Premium adds"
+    }
+  },
+  "admin": {
+    "title": "Admin overview",
+    "intro": "Numbers only. No personal content is shown here.",
+    "denied": "This page is only for administrators.",
+    "none": "Nothing yet.",
+    "users": "Users",
+    "total": "Total",
+    "last7": "New in 7 days",
+    "premiumUsers": "Premium now",
+    "payments": "Payments",
+    "paywallOn": "Premium locks are ON.",
+    "paywallOff": "Premium locks are OFF (everything is open).",
+    "revenue": "Confirmed payments",
+    "content": "Discover content (kind:status)",
+    "devotionals": "Devotionals",
+    "audio": "Published recordings",
+    "usage": "Usage",
+    "askLast7": "Ask the Word questions in 7 days",
+    "audit": "Recent activity",
+    "link": "Admin overview"
   }
 }

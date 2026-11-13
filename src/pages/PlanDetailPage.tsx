@@ -7,7 +7,11 @@ import { useAsync } from '../hooks/useAsync';
 import { useAuth } from '../features/auth/useAuth';
 import { pickDefaultVersion, useBooks, useUiLanguage, useVersions } from '../features/bible/useBible';
 import { readerPath } from '../features/bible/readingState';
-import { plansService } from '../features/plans/plansService';
+import { nextDay, plansService } from '../features/plans/plansService';
+import { audioService } from '../features/audio/audioService';
+import { AudioPlayer } from '../features/audio/AudioPlayer';
+import { usePremium } from '../features/billing/usePremium';
+import { PremiumHint } from '../features/billing/PremiumHint';
 import styles from './pages.module.css';
 
 export function PlanDetailPage() {
@@ -56,6 +60,8 @@ export function PlanDetailPage() {
   const p = plan.data;
   const enrolled = progress.data?.enrolled ?? false;
   const completed = progress.data?.completed ?? new Set<number>();
+  const todayNumber = nextDay(p.durationDays, completed);
+  const today = p.days.find((d) => d.dayNumber === todayNumber);
 
   return (
     <>
@@ -80,6 +86,7 @@ export function PlanDetailPage() {
         </div>
       )}
       {saveError && <ErrorState message={t('plans.saveError')} />}
+      {enrolled && today && <PlanDayAudio bookCode={today.bookCode} chapterStart={today.chapterStart} chapterEnd={today.chapterEnd} bookName={names.get(today.bookCode) ?? today.bookCode} />}
 
       <ol className={styles.dayList} style={{ marginTop: 'var(--space-4)' }}>
         {p.days.map((d) => {
@@ -126,5 +133,43 @@ export function PlanDetailPage() {
         </div>
       )}
     </>
+  );
+}
+
+/**
+ * English recordings for the chapters of the reader's next unread day. Shows nothing
+ * until a recording exists; shows a Premium line when it exists but is locked.
+ */
+function PlanDayAudio({ bookCode, chapterStart, chapterEnd, bookName }: { bookCode: string; chapterStart: number; chapterEnd: number; bookName: string }) {
+  const { t } = useTranslation();
+  const premium = usePremium();
+  const chapters = Array.from({ length: chapterEnd - chapterStart + 1 }, (_, i) => chapterStart + i);
+  const tracks = useAsync(
+    () =>
+      Promise.all(chapters.map((c) => audioService.getPlanChapter(bookCode, c))).catch((e: unknown) => {
+        console.warn(e);
+        return [];
+      }),
+    [bookCode, chapterStart, chapterEnd, premium.premium],
+  );
+  const available = (tracks.data ?? []).map((tr, i) => ({ ...tr, chapter: chapters[i] })).filter((tr) => tr.available);
+  if (available.length === 0) return null;
+  if (premium.locked || available.every((tr) => !tr.url)) return <PremiumHint messageKey="premium.locked.planAudio" />;
+  return (
+    <section aria-label={t('plans.listen')}>
+      <h2 className={styles.sectionTitle}>{t('plans.listen')}</h2>
+      {available.map(
+        (tr) =>
+          tr.url && (
+            <AudioPlayer
+              key={tr.chapter}
+              src={tr.url}
+              durationSecs={tr.durationSecs}
+              label={t('bible.reference', { book: bookName, chapter: tr.chapter })}
+              caption={t('plans.audioCaption')}
+            />
+          ),
+      )}
+    </section>
   );
 }

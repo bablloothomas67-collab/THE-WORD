@@ -445,3 +445,74 @@ describe.skipIf(!ready)('Row Level Security: Discover content, saved items and q
     expect(Array.isArray(await svc.listSaved('en'))).toBe(true);
   });
 });
+
+describe.skipIf(!ready)('Row Level Security: Premium, payments and admin', () => {
+  let a: Awaited<ReturnType<typeof signedIn>>;
+  const anon = newClient();
+  beforeAll(async () => {
+    a = await signedIn(env.TEST_USER_A_EMAIL!, env.TEST_USER_A_PASSWORD!);
+  });
+  afterAll(async () => {
+    await a.client.auth.signOut();
+  });
+  const status = (r: { error: unknown }) => (r.error as { context?: { status?: number } } | null)?.context?.status;
+
+  it('users cannot give themselves Premium or touch payment records', async () => {
+    const until = new Date(Date.now() + 86_400_000).toISOString();
+    expect((await a.client.from('entitlements').insert({ user_id: a.userId, premium_until: until })).error).not.toBeNull();
+    expect((await a.client.from('entitlements').update({ premium_until: until }).eq('user_id', a.userId)).error).not.toBeNull();
+    const sub = { user_id: a.userId, plan: 'yearly', amount_paise: 1, provider_order_id: 'order_FORGED1234', status: 'active' };
+    expect((await a.client.from('subscriptions').insert(sub)).error).not.toBeNull();
+    expect((await a.client.rpc('activate_subscription', { p_order_id: 'order_FORGED1234', p_payment_id: 'pay_FORGED1234' })).error).not.toBeNull();
+    expect((await a.client.rpc('refund_subscription', { p_payment_id: 'pay_FORGED1234' })).error).not.toBeNull();
+    expect((await a.client.from('payment_events').select('provider_event_id')).error).not.toBeNull();
+    expect((await anon.from('subscriptions').select('id')).error).not.toBeNull();
+    expect((await anon.from('entitlements').select('user_id')).error).not.toBeNull();
+    expect((await a.client.rpc('is_premium')).data).toBe(false);
+  });
+
+  it('nobody can flip the paywall switch from the app, and it starts off', async () => {
+    const before = await anon.from('app_settings').select('value').eq('key', 'paywall_live').single();
+    expect(before.data?.value).toBe(false);
+    expect((await a.client.from('app_settings').update({ value: true }).eq('key', 'paywall_live')).error).not.toBeNull();
+    expect((await a.client.from('app_settings').insert({ key: 'x', value: true })).error).not.toBeNull();
+    expect((await anon.rpc('paywall_live')).data).toBe(false);
+  });
+
+  it('the admin overview refuses ordinary users and visitors', async () => {
+    expect((await a.client.rpc('admin_overview')).error).not.toBeNull();
+    expect((await anon.rpc('admin_overview')).error).not.toBeNull();
+  });
+
+  it('the private audio bucket cannot be listed or written by ordinary users or visitors', async () => {
+    const up = await a.client.storage.from('premium-audio').upload('rls/test.mp3', new Blob([new Uint8Array([0xff, 0xfb])], { type: 'audio/mpeg' }));
+    expect(up.error).not.toBeNull();
+    expect((await anon.storage.from('premium-audio').createSignedUrl('plans/jhn/1.mp3', 60)).error).not.toBeNull();
+  });
+
+  it('the billing function refuses visitors, reports that payments are not open, and creates no order', async () => {
+    expect(status(await anon.functions.invoke('billing', { body: { action: 'status' } }))).toBe(401);
+    const s = await a.client.functions.invoke('billing', { body: { action: 'status' } });
+    expect(s.error).toBeNull();
+    expect(s.data.plans.monthly.amountPaise).toBe(14900);
+    expect(s.data.plans.yearly.amountPaise).toBe(119900);
+    if (s.data.configured) {
+      console.warn('Razorpay keys are set: skipping the not-configured checks');
+      return;
+    }
+    expect(s.data.keyId).toBeNull();
+    expect(status(await a.client.functions.invoke('billing', { body: { action: 'create_order', plan: 'monthly' } }))).toBe(503);
+    expect(status(await a.client.functions.invoke('billing', { body: { action: 'verify', orderId: 'order_FORGED1234', paymentId: 'pay_FORGED1234', signature: 'a'.repeat(64) } }))).toBe(503);
+    expect((await a.client.from('subscriptions').select('id')).data).toEqual([]);
+  });
+
+  it('a forged webhook call changes nothing', async () => {
+    const res = await fetch(`${env.SUPABASE_URL}/functions/v1/billing`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'x-razorpay-signature': 'a'.repeat(64), 'x-razorpay-event-id': 'evt_forged123' },
+      body: JSON.stringify({ event: 'payment.captured', payload: { payment: { entity: { id: 'pay_FORGED1234', order_id: 'order_FORGED1234', status: 'captured' } } } }),
+    });
+    expect([401, 503]).toContain(res.status);
+    expect((await a.client.rpc('is_premium')).data).toBe(false);
+  });
+});

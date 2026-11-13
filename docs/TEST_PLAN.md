@@ -3,6 +3,23 @@
 Automated tests: Vitest + Testing Library (`tests/`). Run `npm run check` before
 every commit. Release gates follow section 13 of the Implementation Package.
 
+## Phase 6 (Premium and payments) test report — 13 November 2026
+
+| Check | Result |
+|---|---|
+| `npm run check` | pass — 151 unit tests in 15 files |
+| `npm run test:rls` against the real project | pass — 34 tests |
+| Payment and webhook signature rules, amount check, event handling (unit, generated signatures) | pass |
+| Users cannot insert/alter entitlements or subscriptions, call activate/refund, or read payment events | pass |
+| Paywall switch readable by all, writable by no client, starts off | pass |
+| Admin overview refuses ordinary users and visitors | pass |
+| Private audio bucket refuses uploads and signed URLs for non-entitled callers | pass |
+| Deployed `billing`: 401 for visitors; correct prices; 503 while keys are missing; no order rows created; forged webhook rejected | pass |
+| Existing features with the paywall off (audio, Discover, plans, Ask) | pass (earlier suites unchanged) |
+| Real Razorpay test-mode purchase, webhook delivery, refund | **NOT RUN — no Razorpay keys yet** |
+| Premium Ask limit on the live function | **NOT RUN — function not yet redeployed** |
+| Behaviour with the paywall ON (locks appear, subscriber sees content) | **NOT RUN on live data** — needs a paid test account |
+
 ## Phase 5 (Discover) test report — 13 November 2026
 
 | Check | Result |
