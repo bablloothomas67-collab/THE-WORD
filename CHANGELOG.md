@@ -8,7 +8,8 @@
 - Save to My Journey; "Saved content" list in My Journey; quiz results kept for signed-in readers.
 - Migration `20261113080000_discover_content.sql`: `content_items`, `content_localisations`,
   `saved_content`, `quiz_attempts` with RLS, audit of status changes, reserved premium flag.
-- Starter content drafted (NOT published, awaiting owner review): 6 Bible stories, 6 history
+- Starter content approved by the owner with two Malayalam wording corrections and published
+  on 13 Nov 2026: 6 Bible stories, 6 history
   articles, 6 theology articles, 6 apologetics articles, 5 quizzes of 10 questions.
 - `scripts/content/validate_discover.py`, `build_discover_review.py`, `import_discover.py`.
 - docs/DISCOVER.md.

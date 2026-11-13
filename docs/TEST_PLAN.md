@@ -10,13 +10,13 @@ every commit. Release gates follow section 13 of the Implementation Package.
 | `npm run check` (typecheck, lint, unit tests, build) | pass — 134 unit tests in 14 files |
 | `npm run test:rls` against the real project, two accounts | pass — 28 tests |
 | Users/visitors cannot create, publish, edit or delete content | pass |
-| Only published + approved + non-premium text readable | pass (nothing is published yet, so nothing is readable) |
+| Only published + approved + non-premium text readable | pass |
 | Saved items / quiz results cannot point at unpublished content | pass |
-| Two-account isolation of saved items and quiz results | **not yet run** — needs published content; test is written and runs automatically once content is published |
+| Two-account isolation of saved items and quiz results | pass (run 13 Nov after publishing) |
 | Content files: 29 items, EN/ML shaped alike, markers match references | pass (unit test + validator) |
 | 117 Scripture references exist in all 4 Bible versions | pass after one fix (Acts 8:37 is absent from the WEB) |
 | Browser (Chrome, 390 px and 1280 px): hub, section list, empty and not-found states, Malayalam, no horizontal scroll, no console errors | pass |
-| Browser check of a real article and quiz on the live site | **not yet run** — needs published content |
+| Browser check of a real article and quiz on the live site (phone width): counts, citations open the reader, passage loads from the Bible, 10-question quiz marked, Malayalam lists | pass (13 Nov after publishing) |
 | Ask the Word page after moving citation rendering into shared components | pass (existing tests unchanged) |
 
 ## Phase 4 (Ask the Word) test report — 12 November 2026
