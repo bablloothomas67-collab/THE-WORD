@@ -9,7 +9,7 @@ import { PlanDetailPage } from '../pages/PlanDetailPage';
 import { PrayerPage } from '../pages/PrayerPage';
 import { DevotionalPage, DevotionalsPage } from '../pages/DevotionalsPage';
 import { AskPage } from '../pages/AskPage';
-import { DiscoverPage } from '../pages/DiscoverPage';
+import { ContentPage, DiscoverPage, DiscoverSectionPage } from '../pages/DiscoverPage';
 import { JourneyPage } from '../pages/JourneyPage';
 import { LoginPage } from '../pages/LoginPage';
 import { RegisterPage } from '../pages/RegisterPage';
@@ -40,6 +40,8 @@ export function AppRoutes() {
           }
         />
         <Route path="discover" element={<DiscoverPage />} />
+        <Route path="discover/:section" element={<DiscoverSectionPage />} />
+        <Route path="discover/:section/:slug" element={<ContentPage />} />
         <Route
           path="journey"
           element={

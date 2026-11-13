@@ -350,3 +350,98 @@ describe.skipIf(!ready)('Row Level Security: Ask the Word', () => {
     await b.client.auth.signOut();
   });
 });
+
+describe.skipIf(!ready)('Row Level Security: Discover content, saved items and quiz results', () => {
+  let a: Awaited<ReturnType<typeof signedIn>>;
+  let b: Awaited<ReturnType<typeof signedIn>>;
+  const anon = newClient();
+
+  beforeAll(async () => {
+    a = await signedIn(env.TEST_USER_A_EMAIL!, env.TEST_USER_A_PASSWORD!);
+    b = await signedIn(env.TEST_USER_B_EMAIL!, env.TEST_USER_B_PASSWORD!);
+  });
+  afterAll(async () => {
+    await a.client.from('saved_content').delete().eq('user_id', a.userId);
+    await a.client.from('quiz_attempts').delete().eq('user_id', a.userId);
+    await a.client.auth.signOut();
+    await b.client.auth.signOut();
+  });
+
+  it('ordinary users and visitors cannot create, publish, change or delete content', async () => {
+    const item = { slug: `rls-forged-${Date.now()}`, kind: 'story', status: 'published' };
+    expect((await a.client.from('content_items').insert(item)).error).not.toBeNull();
+    expect((await a.client.from('content_items').insert({ ...item, status: 'draft' })).error).not.toBeNull();
+    expect((await anon.from('content_items').insert(item)).error).not.toBeNull();
+    const loc = { content_id: crypto.randomUUID(), language_code: 'en', title: 'forged', summary: '', review_status: 'approved' };
+    expect((await a.client.from('content_localisations').insert(loc)).error).not.toBeNull();
+    expect((await a.client.from('content_items').update({ status: 'withdrawn' }).neq('slug', '')).error).not.toBeNull();
+    expect((await a.client.from('content_items').delete().neq('slug', '')).error).not.toBeNull();
+    expect((await a.client.from('content_localisations').update({ title: 'x' }).neq('title', '')).error).not.toBeNull();
+  });
+
+  it('only published items with approved text are readable', async () => {
+    for (const client of [anon, a.client]) {
+      const items = await client.from('content_items').select('status');
+      expect(items.error).toBeNull();
+      expect((items.data ?? []).every((r) => r.status === 'published')).toBe(true);
+      const texts = await client.from('content_localisations').select('review_status, content_items!inner(status, is_premium)');
+      expect(texts.error).toBeNull();
+      for (const t of (texts.data ?? []) as unknown as { review_status: string; content_items: { status: string; is_premium: boolean } }[]) {
+        expect(t.review_status).toBe('approved');
+        expect(t.content_items.status).toBe('published');
+        expect(t.content_items.is_premium).toBe(false);
+      }
+    }
+  });
+
+  it('saved items and quiz results cannot be attached to content that is not published', async () => {
+    const missing = crypto.randomUUID();
+    expect((await a.client.from('saved_content').insert({ content_id: missing })).error).not.toBeNull();
+    expect((await a.client.from('quiz_attempts').insert({ content_id: missing, score: 1, total: 10 })).error).not.toBeNull();
+    expect((await anon.from('saved_content').select('content_id')).error).not.toBeNull();
+    expect((await anon.from('quiz_attempts').select('id')).error).not.toBeNull();
+  });
+
+  it("one user's saved items and quiz results are invisible to and unchangeable by another", async () => {
+    const published = await anon.from('content_items').select('id, kind').limit(200);
+    const article = published.data?.find((c) => c.kind !== 'quiz');
+    const quiz = published.data?.find((c) => c.kind === 'quiz');
+    if (!article || !quiz) {
+      console.warn('SKIPPED isolation check: no published Discover content yet');
+      return;
+    }
+    expect((await a.client.from('saved_content').upsert({ content_id: article.id }, { onConflict: 'user_id,content_id', ignoreDuplicates: true })).error).toBeNull();
+    expect((await a.client.from('quiz_attempts').insert({ content_id: quiz.id, score: 7, total: 10 })).error).toBeNull();
+
+    // B and visitors see nothing of A's
+    expect((await b.client.from('saved_content').select('content_id').eq('user_id', a.userId)).data).toEqual([]);
+    expect((await b.client.from('quiz_attempts').select('id').eq('user_id', a.userId)).data).toEqual([]);
+    // B cannot write in A's name, alter A's rows or delete them
+    expect((await b.client.from('saved_content').insert({ user_id: a.userId, content_id: quiz.id })).error).not.toBeNull();
+    expect((await b.client.from('quiz_attempts').insert({ user_id: a.userId, content_id: quiz.id, score: 10, total: 10 })).error).not.toBeNull();
+    await b.client.from('saved_content').delete().eq('user_id', a.userId);
+    await b.client.from('quiz_attempts').delete().eq('user_id', a.userId);
+    expect((await a.client.from('saved_content').select('content_id')).data).toHaveLength(1);
+    const mine = await a.client.from('quiz_attempts').select('id, score');
+    expect(mine.data).toHaveLength(1);
+    // results cannot be edited after the fact, and impossible scores are refused
+    expect((await a.client.from('quiz_attempts').update({ score: 10 }).eq('id', mine.data![0].id)).error).not.toBeNull();
+    expect((await a.client.from('quiz_attempts').insert({ content_id: quiz.id, score: 11, total: 10 })).error).not.toBeNull();
+    // a quiz result cannot be recorded against an article
+    expect((await a.client.from('quiz_attempts').insert({ content_id: article.id, score: 1, total: 10 })).error).not.toBeNull();
+  });
+
+  it('the app content service works against the real API', async () => {
+    const { createContentService } = await import('../../src/features/discover/contentService');
+    const svc = createContentService(a.client);
+    for (const lang of ['en', 'ml'] as const) {
+      const list = await svc.list(lang);
+      expect(Array.isArray(list)).toBe(true);
+      if (list[0]) {
+        const item = await svc.get(list[0].slug, lang);
+        expect(item?.title).toBe(list[0].title);
+      }
+    }
+    expect(Array.isArray(await svc.listSaved('en'))).toBe(true);
+  });
+});

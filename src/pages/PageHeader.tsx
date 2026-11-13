@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 import styles from './pages.module.css';
 
 interface PageHeaderProps {
-  eyebrow?: string;
+  eyebrow?: ReactNode;
   title: string;
   lead?: ReactNode;
 }

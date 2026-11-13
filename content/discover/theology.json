@@ -1,0 +1,374 @@
+[
+  {
+    "slug": "the-trinity",
+    "kind": "theology",
+    "sort_order": 10,
+    "scripture_refs": [
+      { "book": "DEU", "chapter": 6, "verse_start": 4, "verse_end": 5 },
+      { "book": "MAT", "chapter": 28, "verse_start": 19, "verse_end": 19 },
+      { "book": "MAT", "chapter": 3, "verse_start": 16, "verse_end": 17 },
+      { "book": "2CO", "chapter": 13, "verse_start": 14, "verse_end": 14 }
+    ],
+    "sources": [
+      { "label": "The Nicene-Constantinopolitan Creed (AD 381)", "url": null },
+      { "label": "Catechism of the Catholic Church, paragraphs 232–267", "url": null },
+      { "label": "Kallistos Ware, The Orthodox Way (revised edition 1995), chapter 2", "url": null },
+      { "label": "Westminster Confession of Faith (1646), chapter 2", "url": null }
+    ],
+    "en": {
+      "title": "One God in three persons: the Trinity",
+      "summary": "What Christians mean when they say that God is Father, Son and Holy Spirit, and why they do not mean three gods.",
+      "sections": [
+        {
+          "heading": "What Christians confess",
+          "body": "Christians believe in one God. This is the faith of Israel, which Jesus himself affirmed [[1]]. Yet the New Testament also speaks of the Father, the Son and the Holy Spirit together. Jesus commands baptism in one name that is threefold [[2]]; at his own baptism the Son is in the water, the Spirit descends, and the Father's voice is heard [[3]]; and Paul blesses the church in the name of all three [[4]].\n\nThe doctrine of the Trinity is the Church's way of holding these together: there is one God, and this one God exists eternally as three persons, Father, Son and Holy Spirit, equal in glory and one in being."
+        },
+        {
+          "heading": "What it does not mean",
+          "body": "It does not mean three gods. It does not mean one God who merely appears in three roles at different times. And it does not mean that the Son and the Spirit are lesser beings. The word 'Trinity' is not in the Bible; it was coined to summarise what Christians found there, and it was stated formally at the councils of Nicaea (325) and Constantinople (381)."
+        },
+        {
+          "heading": "Where traditions agree and differ",
+          "body": "Catholic, Orthodox and the great majority of Protestant churches confess the Trinity in the words of the same creed. This is one of the deepest points of Christian unity.\n\nOne difference concerns the Holy Spirit. The Western churches (Catholic and most Protestant) say that the Spirit proceeds from the Father and the Son; the Orthodox churches keep the original wording, that the Spirit proceeds from the Father. Some groups that use the name Christian, such as Oneness Pentecostals and Jehovah's Witnesses, do not accept the doctrine of the Trinity."
+        },
+        {
+          "heading": "Why it matters",
+          "body": "If God is Father, Son and Spirit from all eternity, then love is not something God began to do when he made the world. It is who God is. And when Christians pray, they pray to the Father, through the Son, in the Spirit."
+        }
+      ]
+    },
+    "ml": {
+      "title": "മൂന്ന് ആളത്തങ്ങളിൽ ഏകദൈവം: ത്രിത്വം",
+      "summary": "ദൈവം പിതാവും പുത്രനും പരിശുദ്ധാത്മാവുമാണ് എന്നു ക്രിസ്ത്യാനികൾ പറയുമ്പോൾ അർത്ഥമാക്കുന്നത് എന്ത്; അതു മൂന്നു ദൈവങ്ങൾ എന്നല്ലാത്തത് എന്തുകൊണ്ട്.",
+      "sections": [
+        {
+          "heading": "ക്രിസ്ത്യാനികൾ ഏറ്റുപറയുന്നത്",
+          "body": "ക്രിസ്ത്യാനികൾ ഏകദൈവത്തിൽ വിശ്വസിക്കുന്നു. ഇത് യിസ്രായേലിന്റെ വിശ്വാസമാണ്; യേശു തന്നെ അത് ഉറപ്പിച്ചു പറഞ്ഞു [[1]]. എങ്കിലും പുതിയ നിയമം പിതാവിനെയും പുത്രനെയും പരിശുദ്ധാത്മാവിനെയും കുറിച്ച് ഒരുമിച്ചു സംസാരിക്കുന്നു. ത്രിവിധമായ ഒരേ നാമത്തിൽ സ്നാനം കഴിപ്പിക്കാൻ യേശു കല്പിക്കുന്നു [[2]]; അവന്റെ സ്വന്തം സ്നാനത്തിൽ പുത്രൻ വെള്ളത്തിലാണ്, ആത്മാവ് ഇറങ്ങിവരുന്നു, പിതാവിന്റെ ശബ്ദം കേൾക്കുന്നു [[3]]; പൗലൊസ് മൂവരുടെയും നാമത്തിൽ സഭയെ ആശീർവദിക്കുന്നു [[4]].\n\nഇവയെ ഒരുമിച്ചു ചേർത്തുപിടിക്കാനുള്ള സഭയുടെ മാർഗ്ഗമാണ് ത്രിത്വോപദേശം: ദൈവം ഒരുവനേയുള്ളൂ; ഈ ഏകദൈവം പിതാവ്, പുത്രൻ, പരിശുദ്ധാത്മാവ് എന്നീ മൂന്ന് ആളത്തങ്ങളായി നിത്യമായി നിലകൊള്ളുന്നു; അവർ മഹത്വത്തിൽ തുല്യരും സാരാംശത്തിൽ ഒന്നുമാണ്."
+        },
+        {
+          "heading": "ഇതിന്റെ അർത്ഥമല്ലാത്തത്",
+          "body": "മൂന്നു ദൈവങ്ങൾ എന്നല്ല ഇതിന്റെ അർത്ഥം. ഒരേ ദൈവം പല സമയങ്ങളിൽ മൂന്നു വേഷങ്ങളിൽ പ്രത്യക്ഷപ്പെടുന്നു എന്നുമല്ല. പുത്രനും ആത്മാവും താഴ്ന്ന നിലയിലുള്ളവരാണ് എന്നുമല്ല. 'ത്രിത്വം' എന്ന വാക്ക് ബൈബിളിൽ ഇല്ല; ക്രിസ്ത്യാനികൾ അവിടെ കണ്ടെത്തിയതിനെ സംഗ്രഹിക്കാൻ രൂപപ്പെടുത്തിയ പദമാണത്. നിഖ്യാ (325), കുസ്തന്തീനോപ്പൊലീസ് (381) സുന്നഹദോസുകളിൽ അത് ഔപചാരികമായി പ്രസ്താവിക്കപ്പെട്ടു."
+        },
+        {
+          "heading": "പാരമ്പര്യങ്ങൾ യോജിക്കുന്നതും വ്യത്യാസപ്പെടുന്നതും",
+          "body": "കത്തോലിക്കാ, ഓർത്തഡോക്സ് സഭകളും ബഹുഭൂരിപക്ഷം പ്രൊട്ടസ്റ്റന്റ് സഭകളും ഒരേ വിശ്വാസപ്രമാണത്തിന്റെ വാക്കുകളിൽ ത്രിത്വത്തെ ഏറ്റുപറയുന്നു. ക്രിസ്തീയ ഐക്യത്തിന്റെ ഏറ്റവും ആഴമേറിയ ബിന്ദുക്കളിലൊന്നാണിത്.\n\nഒരു വ്യത്യാസം പരിശുദ്ധാത്മാവിനെ സംബന്ധിച്ചാണ്. ആത്മാവ് പിതാവിൽനിന്നും പുത്രനിൽനിന്നും പുറപ്പെടുന്നു എന്ന് പാശ്ചാത്യസഭകൾ (കത്തോലിക്കരും മിക്ക പ്രൊട്ടസ്റ്റന്റുകാരും) പറയുന്നു; ആത്മാവ് പിതാവിൽനിന്നു പുറപ്പെടുന്നു എന്ന ആദ്യപാഠം ഓർത്തഡോക്സ് സഭകൾ നിലനിർത്തുന്നു. ക്രിസ്ത്യാനി എന്ന പേർ ഉപയോഗിക്കുന്ന ചില വിഭാഗങ്ങൾ, ഉദാഹരണത്തിന് വൺനെസ് പെന്തെക്കൊസ്തുകാരും യഹോവയുടെ സാക്ഷികളും, ത്രിത്വോപദേശം അംഗീകരിക്കുന്നില്ല."
+        },
+        {
+          "heading": "ഇതിന്റെ പ്രാധാന്യം",
+          "body": "ദൈവം നിത്യത മുതൽ പിതാവും പുത്രനും ആത്മാവുമാണെങ്കിൽ, സ്നേഹം ലോകത്തെ സൃഷ്ടിച്ചപ്പോൾ ദൈവം ചെയ്യാൻ തുടങ്ങിയ ഒന്നല്ല; അതു ദൈവത്തിന്റെ സ്വഭാവം തന്നെയാണ്. ക്രിസ്ത്യാനികൾ പ്രാർത്ഥിക്കുമ്പോൾ, പുത്രനിലൂടെ, ആത്മാവിൽ, പിതാവിനോടാണ് പ്രാർത്ഥിക്കുന്നത്."
+        }
+      ]
+    }
+  },
+  {
+    "slug": "who-is-jesus",
+    "kind": "theology",
+    "sort_order": 20,
+    "scripture_refs": [
+      { "book": "JHN", "chapter": 1, "verse_start": 14, "verse_end": 14 },
+      { "book": "PHP", "chapter": 2, "verse_start": 5, "verse_end": 11 },
+      { "book": "HEB", "chapter": 4, "verse_start": 15, "verse_end": 15 },
+      { "book": "MAT", "chapter": 16, "verse_start": 15, "verse_end": 16 }
+    ],
+    "sources": [
+      { "label": "The Definition of the Council of Chalcedon (AD 451)", "url": null },
+      { "label": "Common Declaration of Pope John Paul II and Patriarch Mar Ignatius Zakka I Iwas (1984)", "url": null },
+      { "label": "Catechism of the Catholic Church, paragraphs 456–483", "url": null },
+      { "label": "Athanasius of Alexandria, On the Incarnation", "url": null }
+    ],
+    "en": {
+      "title": "Who is Jesus? True God and true man",
+      "summary": "The central Christian claim about Jesus Christ, and how the churches have expressed it.",
+      "sections": [
+        {
+          "heading": "The question Jesus asked",
+          "body": "Jesus once asked his disciples who they said he was, and Peter answered that he was the Christ, the Son of the living God [[4]]. Every Christian tradition begins from that confession."
+        },
+        {
+          "heading": "Fully God, fully human",
+          "body": "The New Testament says two things about Jesus and refuses to let go of either. He is the eternal Word who became flesh [[1]]: truly God. And he was born, grew, was hungry and tired, wept, suffered and died: truly human, tempted as we are, yet without sin [[3]]. Paul's letter to the Philippians holds both together in what may be an early hymn, tracing Christ's path from equality with God, down to death on a cross, and up to the name above every name [[2]].\n\nChristians call this the incarnation: God the Son took a complete human nature without ceasing to be God."
+        },
+        {
+          "heading": "How the churches have said it",
+          "body": "The Council of Chalcedon (AD 451) taught that Christ is one person 'in two natures', divine and human, without confusion and without separation. Catholic, Eastern Orthodox and Protestant churches accept this definition.\n\nThe Oriental Orthodox churches, among them the Syrian Orthodox tradition to which many Kerala Christians belong, did not accept Chalcedon's wording. Following Cyril of Alexandria they confess 'one united nature of God the Word incarnate', fully divine and fully human. For centuries each side suspected the other of error. In modern dialogues, including a common declaration by the Pope and the Syrian Orthodox Patriarch in 1984, the churches have stated that the difference lies largely in terminology and that they share the same faith in Christ."
+        },
+        {
+          "heading": "Why it matters",
+          "body": "Early teachers such as Athanasius argued that only God can save, and that what was to be healed in us had to be taken up by him. If Jesus is truly God, we meet God himself in him. If he is truly human, he knows our life from the inside."
+        }
+      ]
+    },
+    "ml": {
+      "title": "യേശു ആരാണ്? സത്യദൈവവും സത്യമനുഷ്യനും",
+      "summary": "യേശുക്രിസ്തുവിനെക്കുറിച്ചുള്ള ക്രിസ്തീയ വിശ്വാസത്തിന്റെ കേന്ദ്രം; സഭകൾ അതു പ്രകടിപ്പിച്ചിട്ടുള്ള വിധം.",
+      "sections": [
+        {
+          "heading": "യേശു ചോദിച്ച ചോദ്യം",
+          "body": "താൻ ആരാണെന്നാണ് നിങ്ങൾ പറയുന്നത് എന്ന് യേശു ഒരിക്കൽ ശിഷ്യന്മാരോടു ചോദിച്ചു; അവൻ ജീവനുള്ള ദൈവത്തിന്റെ പുത്രനായ ക്രിസ്തു എന്ന് പത്രൊസ് ഉത്തരം പറഞ്ഞു [[4]]. എല്ലാ ക്രിസ്തീയ പാരമ്പര്യങ്ങളും ആ ഏറ്റുപറച്ചിലിൽനിന്നാണ് തുടങ്ങുന്നത്."
+        },
+        {
+          "heading": "പൂർണ്ണദൈവം, പൂർണ്ണമനുഷ്യൻ",
+          "body": "പുതിയ നിയമം യേശുവിനെക്കുറിച്ചു രണ്ടു കാര്യങ്ങൾ പറയുന്നു; രണ്ടിൽ ഒന്നും വിട്ടുകളയുന്നില്ല. അവൻ ജഡമായിത്തീർന്ന നിത്യവചനമാണ് [[1]]: സത്യദൈവം. അവൻ ജനിച്ചു, വളർന്നു, വിശന്നു, ക്ഷീണിച്ചു, കരഞ്ഞു, കഷ്ടം സഹിച്ചു, മരിച്ചു: സത്യമനുഷ്യൻ; നമ്മെപ്പോലെ പരീക്ഷിക്കപ്പെട്ടവൻ, എങ്കിലും പാപമില്ലാത്തവൻ [[3]]. ഫിലിപ്പിയർക്കുള്ള പൗലൊസിന്റെ ലേഖനം, ഒരുപക്ഷേ ആദിമസഭയുടെ ഒരു ഗീതത്തിലൂടെ, രണ്ടിനെയും ഒരുമിച്ചു ചേർക്കുന്നു: ദൈവത്തോടുള്ള സമത്വത്തിൽനിന്നു ക്രൂശിലെ മരണത്തോളം താഴ്ന്ന്, സകല നാമത്തിനും മേലായ നാമത്തിലേക്ക് ഉയർത്തപ്പെട്ട ക്രിസ്തുവിന്റെ വഴി അതു വിവരിക്കുന്നു [[2]].\n\nക്രിസ്ത്യാനികൾ ഇതിനെ മനുഷ്യാവതാരം എന്നു വിളിക്കുന്നു: പുത്രനായ ദൈവം, ദൈവമല്ലാതാകാതെ തന്നെ, പൂർണ്ണമായ മനുഷ്യസ്വഭാവം സ്വീകരിച്ചു."
+        },
+        {
+          "heading": "സഭകൾ ഇതു പറഞ്ഞിട്ടുള്ള വിധം",
+          "body": "ക്രിസ്തു ദൈവികവും മാനുഷികവുമായ 'രണ്ടു സ്വഭാവങ്ങളിൽ' ഉള്ള ഒരേ ആളാണെന്നും, അവ കലർപ്പോ വേർപാടോ ഇല്ലാതെയാണെന്നും കൽക്കിദോൻ സുന്നഹദോസ് (എ.ഡി. 451) പഠിപ്പിച്ചു. കത്തോലിക്കാ, കിഴക്കൻ ഓർത്തഡോക്സ്, പ്രൊട്ടസ്റ്റന്റ് സഭകൾ ഈ നിർവചനം അംഗീകരിക്കുന്നു.\n\nകേരളത്തിലെ അനേകം ക്രിസ്ത്യാനികൾ ഉൾപ്പെടുന്ന സുറിയാനി ഓർത്തഡോക്സ് പാരമ്പര്യം അടക്കമുള്ള ഓറിയന്റൽ ഓർത്തഡോക്സ് സഭകൾ കൽക്കിദോന്റെ പദപ്രയോഗം അംഗീകരിച്ചില്ല. അലക്സാണ്ട്രിയയിലെ കൂറിലോസിനെ പിന്തുടർന്ന് അവർ, പൂർണ്ണദൈവവും പൂർണ്ണമനുഷ്യനുമായ, 'മനുഷ്യനായിത്തീർന്ന വചനമായ ദൈവത്തിന്റെ ഏക സംയുക്ത സ്വഭാവം' ഏറ്റുപറയുന്നു. നൂറ്റാണ്ടുകളോളം ഇരുകൂട്ടരും പരസ്പരം തെറ്റു സംശയിച്ചു. ആധുനിക സംവാദങ്ങളിൽ, 1984-ൽ മാർപാപ്പയും സുറിയാനി ഓർത്തഡോക്സ് പാത്രിയർക്കീസും നടത്തിയ പൊതുപ്രഖ്യാപനം ഉൾപ്പെടെ, വ്യത്യാസം പ്രധാനമായും പദപ്രയോഗത്തിലാണെന്നും ക്രിസ്തുവിലുള്ള ഒരേ വിശ്വാസമാണ് തങ്ങൾ പങ്കിടുന്നതെന്നും സഭകൾ പ്രസ്താവിച്ചിട്ടുണ്ട്."
+        },
+        {
+          "heading": "ഇതിന്റെ പ്രാധാന്യം",
+          "body": "രക്ഷിക്കാൻ ദൈവത്തിനു മാത്രമേ കഴിയൂ എന്നും, നമ്മിൽ സൗഖ്യമാകേണ്ടതിനെ അവൻ ഏറ്റെടുക്കേണ്ടിയിരുന്നു എന്നും അത്താനാസിയോസിനെപ്പോലുള്ള ആദിമ ഗുരുക്കന്മാർ വാദിച്ചു. യേശു സത്യദൈവമാണെങ്കിൽ, അവനിൽ നാം ദൈവത്തെത്തന്നെ കണ്ടുമുട്ടുന്നു. അവൻ സത്യമനുഷ്യനാണെങ്കിൽ, നമ്മുടെ ജീവിതം അവൻ ഉള്ളിൽനിന്ന് അറിയുന്നു."
+        }
+      ]
+    }
+  },
+  {
+    "slug": "grace-faith-and-salvation",
+    "kind": "theology",
+    "sort_order": 30,
+    "scripture_refs": [
+      { "book": "EPH", "chapter": 2, "verse_start": 8, "verse_end": 10 },
+      { "book": "ROM", "chapter": 3, "verse_start": 23, "verse_end": 24 },
+      { "book": "JAS", "chapter": 2, "verse_start": 14, "verse_end": 17 },
+      { "book": "2PE", "chapter": 1, "verse_start": 3, "verse_end": 4 }
+    ],
+    "sources": [
+      { "label": "Lutheran World Federation and Catholic Church, Joint Declaration on the Doctrine of Justification (1999)", "url": null },
+      { "label": "Canons and Decrees of the Council of Trent, Session 6 (1547)", "url": null },
+      { "label": "The Augsburg Confession (1530), article 4", "url": null },
+      { "label": "Kallistos Ware, The Orthodox Way (revised edition 1995)", "url": null }
+    ],
+    "en": {
+      "title": "Grace, faith and salvation",
+      "summary": "All Christians say that we are saved by the grace of God in Christ. Here is what they share, and where they explain it differently.",
+      "sections": [
+        {
+          "heading": "What all traditions share",
+          "body": "Scripture teaches that all have sinned and that being put right with God is a gift [[2]]. Salvation is by grace: no one earns it. It comes through Jesus Christ, his death and resurrection. And it changes how we live: we are saved for good works, not by them [[1]]. Catholic, Orthodox and Protestant Christians all affirm these things."
+        },
+        {
+          "heading": "The Protestant emphasis",
+          "body": "The Reformers taught that a person is justified, that is, declared righteous before God, by faith alone, on the basis of Christ's righteousness and not of anything in us. Good works necessarily follow, as fruit follows from a living tree, but they are not the ground of our acceptance. Protestants read James's warning about faith without works [[3]] as describing a faith that is not genuine."
+        },
+        {
+          "heading": "The Catholic emphasis",
+          "body": "The Catholic Church teaches that justification is entirely God's gift, begun in baptism, and that it truly makes a person righteous within, not only declares them so. Faith is the beginning and root; it is lived out in love, and the believer, moved by grace, cooperates with grace. The Council of Trent rejected the idea that anyone can be justified by their own works without grace."
+        },
+        {
+          "heading": "The Orthodox emphasis",
+          "body": "Orthodox Christians speak less of a legal verdict and more of healing and union. Salvation is theosis: sharing by grace in the life of God, becoming 'partakers of the divine nature' [[4]]. It is a lifelong journey in which God's grace and human freedom work together, lived in prayer, the sacraments and love."
+        },
+        {
+          "heading": "Closer than before",
+          "body": "In the Joint Declaration of 1999, Catholics and Lutherans confessed together that 'by grace alone, in faith in Christ's saving work and not because of any merit on our part, we are accepted by God'. Methodist, Reformed and Anglican bodies have since associated themselves with it. Real differences of explanation remain, and it is fairer to learn each view from those who hold it than from its critics."
+        }
+      ]
+    },
+    "ml": {
+      "title": "കൃപ, വിശ്വാസം, രക്ഷ",
+      "summary": "ക്രിസ്തുവിലുള്ള ദൈവകൃപയാലാണ് നാം രക്ഷിക്കപ്പെടുന്നത് എന്ന് എല്ലാ ക്രിസ്ത്യാനികളും പറയുന്നു. അവർ പങ്കിടുന്നതും വ്യത്യസ്തമായി വിശദീകരിക്കുന്നതും ഇവിടെ കാണാം.",
+      "sections": [
+        {
+          "heading": "എല്ലാ പാരമ്പര്യങ്ങളും പങ്കിടുന്നത്",
+          "body": "എല്ലാവരും പാപം ചെയ്തു എന്നും ദൈവത്തോടു നിരപ്പിക്കപ്പെടുന്നത് ഒരു ദാനമാണെന്നും തിരുവെഴുത്തു പഠിപ്പിക്കുന്നു [[2]]. രക്ഷ കൃപയാലാണ്: ആരും അതു സമ്പാദിക്കുന്നില്ല. അതു വരുന്നത് യേശുക്രിസ്തുവിലൂടെ, അവന്റെ മരണത്തിലൂടെയും പുനരുത്ഥാനത്തിലൂടെയുമാണ്. അതു നമ്മുടെ ജീവിതരീതിയെ മാറ്റുന്നു: നാം രക്ഷിക്കപ്പെടുന്നത് സൽപ്രവൃത്തികൾക്കായാണ്, സൽപ്രവൃത്തികളാലല്ല [[1]]. കത്തോലിക്കാ, ഓർത്തഡോക്സ്, പ്രൊട്ടസ്റ്റന്റ് ക്രിസ്ത്യാനികളെല്ലാം ഇവ അംഗീകരിക്കുന്നു."
+        },
+        {
+          "heading": "പ്രൊട്ടസ്റ്റന്റ് ഊന്നൽ",
+          "body": "ഒരു വ്യക്തി നീതീകരിക്കപ്പെടുന്നത്, അതായത് ദൈവമുമ്പാകെ നീതിമാൻ എന്നു പ്രഖ്യാപിക്കപ്പെടുന്നത്, വിശ്വാസത്താൽ മാത്രമാണെന്നും, അതിന്റെ അടിസ്ഥാനം നമ്മിലുള്ള ഒന്നുമല്ല, ക്രിസ്തുവിന്റെ നീതിയാണെന്നും നവീകരണനേതാക്കൾ പഠിപ്പിച്ചു. ജീവനുള്ള വൃക്ഷത്തിൽനിന്നു ഫലം ഉണ്ടാകുന്നതുപോലെ സൽപ്രവൃത്തികൾ നിശ്ചയമായും പിന്തുടരും; എന്നാൽ നാം അംഗീകരിക്കപ്പെടുന്നതിന്റെ അടിസ്ഥാനം അവയല്ല. പ്രവൃത്തികളില്ലാത്ത വിശ്വാസത്തെക്കുറിച്ചുള്ള യാക്കോബിന്റെ മുന്നറിയിപ്പ് [[3]] യഥാർത്ഥമല്ലാത്ത വിശ്വാസത്തെയാണ് വിവരിക്കുന്നത് എന്നു പ്രൊട്ടസ്റ്റന്റുകാർ മനസ്സിലാക്കുന്നു."
+        },
+        {
+          "heading": "കത്തോലിക്കാ ഊന്നൽ",
+          "body": "നീതീകരണം പൂർണ്ണമായും ദൈവത്തിന്റെ ദാനമാണെന്നും, അതു മാമ്മോദീസയിൽ തുടങ്ങുന്നുവെന്നും, അത് ഒരാളെ നീതിമാൻ എന്നു പ്രഖ്യാപിക്കുക മാത്രമല്ല, ഉള്ളിൽ യഥാർത്ഥത്തിൽ നീതിമാനാക്കുന്നുവെന്നും കത്തോലിക്കാ സഭ പഠിപ്പിക്കുന്നു. വിശ്വാസം തുടക്കവും വേരുമാണ്; അതു സ്നേഹത്തിൽ ജീവിക്കപ്പെടുന്നു; കൃപയാൽ പ്രേരിതനായ വിശ്വാസി കൃപയോടു സഹകരിക്കുന്നു. കൃപ കൂടാതെ സ്വന്തം പ്രവൃത്തികളാൽ ആർക്കെങ്കിലും നീതീകരിക്കപ്പെടാം എന്ന ആശയത്തെ ത്രെന്തോസ് സുന്നഹദോസ് തള്ളിക്കളഞ്ഞു."
+        },
+        {
+          "heading": "ഓർത്തഡോക്സ് ഊന്നൽ",
+          "body": "ഓർത്തഡോക്സ് ക്രിസ്ത്യാനികൾ നിയമപരമായ ഒരു വിധിയെക്കുറിച്ചല്ല, സൗഖ്യത്തെയും ഐക്യത്തെയും കുറിച്ചാണ് കൂടുതൽ സംസാരിക്കുന്നത്. രക്ഷ തെയോസിസ് (ദൈവീകരണം) ആണ്: കൃപയാൽ ദൈവത്തിന്റെ ജീവനിൽ പങ്കുചേരുക, 'ദിവ്യസ്വഭാവത്തിന്നു കൂട്ടാളികൾ' ആകുക [[4]]. ദൈവകൃപയും മനുഷ്യസ്വാതന്ത്ര്യവും ഒരുമിച്ചു പ്രവർത്തിക്കുന്ന ആജീവനാന്ത യാത്രയാണത്; പ്രാർത്ഥനയിലും കൂദാശകളിലും സ്നേഹത്തിലും അതു ജീവിക്കപ്പെടുന്നു."
+        },
+        {
+          "heading": "മുമ്പത്തേക്കാൾ അടുത്ത്",
+          "body": "1999-ലെ സംയുക്ത പ്രഖ്യാപനത്തിൽ കത്തോലിക്കരും ലൂഥറൻകാരും ഒരുമിച്ച് ഏറ്റുപറഞ്ഞു: 'നമ്മുടെ ഭാഗത്തുള്ള യാതൊരു യോഗ്യതയും നിമിത്തമല്ല, കൃപയാൽ മാത്രം, ക്രിസ്തുവിന്റെ രക്ഷാകരപ്രവൃത്തിയിലുള്ള വിശ്വാസത്തിൽ, നാം ദൈവത്താൽ സ്വീകരിക്കപ്പെടുന്നു.' മെഥഡിസ്റ്റ്, റിഫോംഡ്, ആംഗ്ലിക്കൻ സമൂഹങ്ങളും പിന്നീട് അതിനോടു ചേർന്നു. വിശദീകരണത്തിലെ യഥാർത്ഥ വ്യത്യാസങ്ങൾ നിലനിൽക്കുന്നു; ഓരോ കാഴ്ചപ്പാടും അതിന്റെ വിമർശകരിൽനിന്നല്ല, അതു വിശ്വസിക്കുന്നവരിൽനിന്നു പഠിക്കുന്നതാണ് ന്യായം."
+        }
+      ]
+    }
+  },
+  {
+    "slug": "the-bible-and-its-books",
+    "kind": "theology",
+    "sort_order": 40,
+    "scripture_refs": [
+      { "book": "2TI", "chapter": 3, "verse_start": 16, "verse_end": 17 },
+      { "book": "LUK", "chapter": 24, "verse_start": 44, "verse_end": 45 }
+    ],
+    "sources": [
+      { "label": "F. F. Bruce, The Canon of Scripture (InterVarsity Press, 1988)", "url": null },
+      { "label": "Bruce M. Metzger, The Canon of the New Testament (Oxford University Press, 1987)", "url": null },
+      { "label": "Athanasius of Alexandria, Thirty-Ninth Festal Letter (AD 367)", "url": null },
+      { "label": "Council of Trent, Session 4 (1546), Decree concerning the Canonical Scriptures", "url": null },
+      { "label": "Second Vatican Council, Dei Verbum (1965)", "url": null }
+    ],
+    "en": {
+      "title": "The Bible and its books",
+      "summary": "Why Christian Bibles do not all contain the same number of books, and how the traditions understand the authority of Scripture.",
+      "sections": [
+        {
+          "heading": "A library, not a single book",
+          "body": "The Bible is a collection of writings composed over many centuries: law, history, poetry, prophecy, Gospels and letters. Christians of every tradition receive it as inspired by God and given for teaching and for training in righteousness [[1]]. Jesus himself read the Scriptures of Israel as speaking of him [[2]]."
+        },
+        {
+          "heading": "One New Testament",
+          "body": "All the major traditions share the same 27 books of the New Testament. The earliest surviving list that matches them exactly is in a letter written by Athanasius of Alexandria in AD 367, although most of these books had been read in the churches as Scripture long before."
+        },
+        {
+          "heading": "Different Old Testaments",
+          "body": "The difference lies in the Old Testament. Protestant Bibles have 39 Old Testament books, the same writings as the Hebrew Bible of Judaism. Catholic Bibles have 46: they include Tobit, Judith, Wisdom, Sirach, Baruch and 1 and 2 Maccabees, with longer forms of Esther and Daniel. These books were in the ancient Greek translation, the Septuagint, used by the early Church. Catholics call them deuterocanonical and Protestants usually call them the Apocrypha. Orthodox Bibles include these and a few more, with some variation between churches.\n\nAt the Reformation, Protestants followed the Hebrew canon; many early Protestant Bibles still printed the other books in a separate section as useful reading. The Catholic Church formally defined its list at the Council of Trent in 1546.\n\nIn this app, the World English Bible includes the deuterocanonical books so that readers of every tradition can find them."
+        },
+        {
+          "heading": "Scripture and tradition",
+          "body": "The traditions also explain the authority of the Bible differently. Protestants hold that Scripture alone is the final rule of faith, by which every tradition must be tested. Catholics hold that Scripture and sacred Tradition together hand on the word of God, authentically interpreted by the Church's teaching office. Orthodox Christians understand Scripture as the heart of the Church's living Tradition, read within its worship and the consensus of the Fathers. All three read, preach and pray the Bible."
+        }
+      ]
+    },
+    "ml": {
+      "title": "ബൈബിളും അതിലെ പുസ്തകങ്ങളും",
+      "summary": "എല്ലാ ക്രിസ്തീയ ബൈബിളുകളിലും ഒരേ എണ്ണം പുസ്തകങ്ങൾ ഇല്ലാത്തത് എന്തുകൊണ്ട്; തിരുവെഴുത്തിന്റെ അധികാരത്തെ വിവിധ പാരമ്പര്യങ്ങൾ മനസ്സിലാക്കുന്ന വിധം.",
+      "sections": [
+        {
+          "heading": "ഒരു പുസ്തകമല്ല, ഒരു ഗ്രന്ഥശാല",
+          "body": "അനേകം നൂറ്റാണ്ടുകൾകൊണ്ട് രചിക്കപ്പെട്ട എഴുത്തുകളുടെ സമാഹാരമാണ് ബൈബിൾ: ന്യായപ്രമാണം, ചരിത്രം, കാവ്യം, പ്രവചനം, സുവിശേഷങ്ങൾ, ലേഖനങ്ങൾ. എല്ലാ പാരമ്പര്യങ്ങളിലെയും ക്രിസ്ത്യാനികൾ അതിനെ ദൈവശ്വാസീയവും ഉപദേശത്തിനും നീതിയിലെ അഭ്യാസത്തിനും നൽകപ്പെട്ടതുമായി സ്വീകരിക്കുന്നു [[1]]. യിസ്രായേലിന്റെ തിരുവെഴുത്തുകൾ തന്നെക്കുറിച്ചു പറയുന്നവയായി യേശു തന്നെ വായിച്ചു [[2]]."
+        },
+        {
+          "heading": "ഒരേ പുതിയ നിയമം",
+          "body": "പ്രധാന പാരമ്പര്യങ്ങളെല്ലാം പുതിയ നിയമത്തിലെ ഒരേ 27 പുസ്തകങ്ങൾ പങ്കിടുന്നു. അവയുമായി കൃത്യമായി യോജിക്കുന്ന, ഇന്നു ലഭ്യമായ ഏറ്റവും പഴയ പട്ടിക എ.ഡി. 367-ൽ അലക്സാണ്ട്രിയയിലെ അത്താനാസിയോസ് എഴുതിയ ഒരു കത്തിലാണ്; എങ്കിലും ഈ പുസ്തകങ്ങളിൽ മിക്കതും അതിനു വളരെ മുമ്പേ സഭകളിൽ തിരുവെഴുത്തായി വായിക്കപ്പെട്ടിരുന്നു."
+        },
+        {
+          "heading": "വ്യത്യസ്തമായ പഴയ നിയമങ്ങൾ",
+          "body": "വ്യത്യാസം പഴയ നിയമത്തിലാണ്. പ്രൊട്ടസ്റ്റന്റ് ബൈബിളുകളിൽ പഴയ നിയമത്തിൽ 39 പുസ്തകങ്ങളുണ്ട്; യെഹൂദമതത്തിന്റെ എബ്രായ ബൈബിളിലെ അതേ എഴുത്തുകൾ. കത്തോലിക്കാ ബൈബിളുകളിൽ 46 ഉണ്ട്: തോബിത്, യൂദിത്ത്, ജ്ഞാനം, പ്രഭാഷകൻ, ബാറൂക്ക്, 1, 2 മക്കബായർ എന്നിവയും എസ്ഥേറിന്റെയും ദാനീയേലിന്റെയും ദീർഘരൂപങ്ങളും അതിൽ ഉൾപ്പെടുന്നു. ആദിമസഭ ഉപയോഗിച്ചിരുന്ന പുരാതന ഗ്രീക്ക് വിവർത്തനമായ സെപ്റ്റ്വജിന്റിൽ ഈ പുസ്തകങ്ങൾ ഉണ്ടായിരുന്നു. കത്തോലിക്കർ ഇവയെ ഉത്തരകാനോനിക ഗ്രന്ഥങ്ങൾ എന്നും പ്രൊട്ടസ്റ്റന്റുകാർ സാധാരണയായി അപ്പോക്രിഫ എന്നും വിളിക്കുന്നു. ഓർത്തഡോക്സ് ബൈബിളുകളിൽ ഇവയും ഏതാനും പുസ്തകങ്ങൾ കൂടിയും ഉണ്ട്; സഭകൾ തമ്മിൽ ചെറിയ വ്യത്യാസങ്ങളോടെ.\n\nനവീകരണകാലത്ത് പ്രൊട്ടസ്റ്റന്റുകാർ എബ്രായ കാനോൻ പിന്തുടർന്നു; ആദ്യകാല പ്രൊട്ടസ്റ്റന്റ് ബൈബിളുകളിൽ പലതും മറ്റു പുസ്തകങ്ങളെ പ്രയോജനകരമായ വായനയായി പ്രത്യേക വിഭാഗത്തിൽ അച്ചടിച്ചിരുന്നു. കത്തോലിക്കാ സഭ 1546-ൽ ത്രെന്തോസ് സുന്നഹദോസിൽ തങ്ങളുടെ പട്ടിക ഔപചാരികമായി നിർവചിച്ചു.\n\nഈ ആപ്പിൽ, എല്ലാ പാരമ്പര്യങ്ങളിലെയും വായനക്കാർക്കു കണ്ടെത്താൻ കഴിയേണ്ടതിന് വേൾഡ് ഇംഗ്ലീഷ് ബൈബിളിൽ ഉത്തരകാനോനിക ഗ്രന്ഥങ്ങൾ ഉൾപ്പെടുത്തിയിട്ടുണ്ട്."
+        },
+        {
+          "heading": "തിരുവെഴുത്തും പാരമ്പര്യവും",
+          "body": "ബൈബിളിന്റെ അധികാരത്തെയും പാരമ്പര്യങ്ങൾ വ്യത്യസ്തമായി വിശദീകരിക്കുന്നു. തിരുവെഴുത്തു മാത്രമാണ് വിശ്വാസത്തിന്റെ അന്തിമ മാനദണ്ഡം എന്നും എല്ലാ പാരമ്പര്യവും അതിനാൽ പരിശോധിക്കപ്പെടണമെന്നും പ്രൊട്ടസ്റ്റന്റുകാർ വിശ്വസിക്കുന്നു. തിരുവെഴുത്തും വിശുദ്ധ പാരമ്പര്യവും ഒരുമിച്ചു ദൈവവചനം കൈമാറുന്നുവെന്നും സഭയുടെ പ്രബോധനാധികാരം അതിനെ ആധികാരികമായി വ്യാഖ്യാനിക്കുന്നുവെന്നും കത്തോലിക്കർ വിശ്വസിക്കുന്നു. ഓർത്തഡോക്സ് ക്രിസ്ത്യാനികൾ തിരുവെഴുത്തിനെ സഭയുടെ ജീവനുള്ള പാരമ്പര്യത്തിന്റെ ഹൃദയമായി മനസ്സിലാക്കുന്നു; ആരാധനയ്ക്കുള്ളിലും സഭാപിതാക്കന്മാരുടെ ഏകാഭിപ്രായത്തിലും അതു വായിക്കപ്പെടുന്നു. മൂന്നു കൂട്ടരും ബൈബിൾ വായിക്കുകയും പ്രസംഗിക്കുകയും പ്രാർത്ഥിക്കുകയും ചെയ്യുന്നു."
+        }
+      ]
+    }
+  },
+  {
+    "slug": "baptism-and-the-lords-supper",
+    "kind": "theology",
+    "sort_order": 50,
+    "scripture_refs": [
+      { "book": "MAT", "chapter": 28, "verse_start": 19, "verse_end": 20 },
+      { "book": "ROM", "chapter": 6, "verse_start": 3, "verse_end": 4 },
+      { "book": "LUK", "chapter": 22, "verse_start": 19, "verse_end": 20 },
+      { "book": "1CO", "chapter": 11, "verse_start": 23, "verse_end": 26 }
+    ],
+    "sources": [
+      { "label": "World Council of Churches, Baptism, Eucharist and Ministry (Faith and Order Paper 111, 1982)", "url": null },
+      { "label": "Catechism of the Catholic Church, paragraphs 1210–1419", "url": null },
+      { "label": "Kallistos Ware, The Orthodox Church (Penguin, new edition 1993), chapter 14", "url": null },
+      { "label": "The Thirty-Nine Articles of Religion (1571), articles 25–31", "url": null }
+    ],
+    "en": {
+      "title": "Baptism and the Lord's Supper",
+      "summary": "Two acts that Jesus gave his followers, practised in almost every church and understood in several ways.",
+      "sections": [
+        {
+          "heading": "Given by Jesus",
+          "body": "Before he ascended, Jesus told his disciples to baptise in the name of the Father, the Son and the Holy Spirit [[1]]. On the night before he died, he took bread and a cup, gave them to his disciples and told them to do this in remembrance of him [[3]]. Paul hands on the same account as something he himself had received [[4]]. Nearly all Christians practise both."
+        },
+        {
+          "heading": "How many sacraments?",
+          "body": "Catholic and Orthodox churches recognise seven sacraments (the Orthodox often say 'mysteries'): baptism, confirmation or chrismation, the Eucharist, confession, anointing of the sick, marriage and ordination. Most Protestant churches recognise two, baptism and the Lord's Supper, as those directly instituted by Christ in the Gospels. Some, such as Baptists, prefer the word 'ordinances'."
+        },
+        {
+          "heading": "Baptism",
+          "body": "Paul describes baptism as being united with Christ in his death and resurrection [[2]]. Catholic, Orthodox, Anglican, Lutheran, Reformed and Methodist churches baptise the infant children of believers as well as adult converts. Baptist, Pentecostal and Brethren churches baptise only those who profess their own faith, usually by full immersion. The Orthodox baptise infants by immersion and give chrismation and communion at once.\n\nTraditions also differ on what baptism does: whether it is the means by which God gives new birth, or the sign and seal of grace, or the believer's public testimony."
+        },
+        {
+          "heading": "The Lord's Supper",
+          "body": "The names differ: Eucharist, Holy Qurbana, Mass, Divine Liturgy, Holy Communion, the Lord's Table. So do the understandings. Catholics teach that the bread and wine become the body and blood of Christ, a change they call transubstantiation, and that the Mass makes present the one sacrifice of Christ. The Orthodox confess the same real change without defining how. Lutherans hold that Christ's body and blood are truly present 'in, with and under' the bread and wine. Reformed churches teach a real spiritual presence received by faith. Many Baptist and Pentecostal churches see the Supper as a memorial that proclaims Christ's death.\n\nAll agree on this much: here the Church remembers the death of Jesus, gives thanks, and looks for his coming."
+        }
+      ]
+    },
+    "ml": {
+      "title": "സ്നാനവും കർത്താവിന്റെ അത്താഴവും",
+      "summary": "യേശു തന്റെ അനുയായികൾക്കു നൽകിയ രണ്ടു കർമ്മങ്ങൾ; മിക്കവാറും എല്ലാ സഭകളും ആചരിക്കുന്നു, പല വിധത്തിൽ മനസ്സിലാക്കുന്നു.",
+      "sections": [
+        {
+          "heading": "യേശു നൽകിയത്",
+          "body": "സ്വർഗ്ഗാരോഹണത്തിനു മുമ്പ് യേശു ശിഷ്യന്മാരോട് പിതാവിന്റെയും പുത്രന്റെയും പരിശുദ്ധാത്മാവിന്റെയും നാമത്തിൽ സ്നാനം കഴിപ്പിക്കാൻ കല്പിച്ചു [[1]]. മരണത്തിന്റെ തലേരാത്രി അവൻ അപ്പവും പാനപാത്രവും എടുത്തു ശിഷ്യന്മാർക്കു കൊടുത്തു; തന്റെ ഓർമ്മയ്ക്കായി ഇതു ചെയ്യാൻ പറഞ്ഞു [[3]]. തനിക്കു ലഭിച്ച ഒന്നായി പൗലൊസ് ഇതേ വിവരണം കൈമാറുന്നു [[4]]. മിക്കവാറും എല്ലാ ക്രിസ്ത്യാനികളും ഇവ രണ്ടും ആചരിക്കുന്നു."
+        },
+        {
+          "heading": "കൂദാശകൾ എത്ര?",
+          "body": "കത്തോലിക്കാ, ഓർത്തഡോക്സ് സഭകൾ ഏഴു കൂദാശകൾ അംഗീകരിക്കുന്നു: മാമ്മോദീസ, സ്ഥൈര്യലേപനം അഥവാ മൂറോൻ, വിശുദ്ധ കുർബാന, കുമ്പസാരം, രോഗീലേപനം, വിവാഹം, പട്ടത്വം. മിക്ക പ്രൊട്ടസ്റ്റന്റ് സഭകളും സുവിശേഷങ്ങളിൽ ക്രിസ്തു നേരിട്ടു സ്ഥാപിച്ചവയായി രണ്ടെണ്ണം അംഗീകരിക്കുന്നു: സ്നാനവും കർത്താവിന്റെ അത്താഴവും. ബാപ്റ്റിസ്റ്റുകളെപ്പോലെ ചിലർ 'അനുഷ്ഠാനങ്ങൾ' എന്ന വാക്കാണ് ഇഷ്ടപ്പെടുന്നത്."
+        },
+        {
+          "heading": "സ്നാനം",
+          "body": "ക്രിസ്തുവിന്റെ മരണത്തിലും പുനരുത്ഥാനത്തിലും അവനോട് ഏകീഭവിക്കുന്നതായി പൗലൊസ് സ്നാനത്തെ വിവരിക്കുന്നു [[2]]. കത്തോലിക്കാ, ഓർത്തഡോക്സ്, ആംഗ്ലിക്കൻ, ലൂഥറൻ, റിഫോംഡ്, മെഥഡിസ്റ്റ് സഭകൾ പ്രായപൂർത്തിയായ പുതുവിശ്വാസികളെയും വിശ്വാസികളുടെ ശിശുക്കളെയും സ്നാനപ്പെടുത്തുന്നു. ബാപ്റ്റിസ്റ്റ്, പെന്തെക്കൊസ്ത്, ബ്രദറൺ സഭകൾ സ്വന്തം വിശ്വാസം ഏറ്റുപറയുന്നവരെ മാത്രം, സാധാരണയായി പൂർണ്ണമായി മുക്കി, സ്നാനപ്പെടുത്തുന്നു. ഓർത്തഡോക്സ് സഭകൾ ശിശുക്കളെ മുക്കി സ്നാനപ്പെടുത്തി ഉടനെ മൂറോനും കുർബാനയും നൽകുന്നു.\n\nസ്നാനം എന്തു ചെയ്യുന്നു എന്നതിലും പാരമ്പര്യങ്ങൾ വ്യത്യാസപ്പെടുന്നു: ദൈവം പുതുജനനം നൽകുന്ന മാർഗ്ഗമാണോ, കൃപയുടെ അടയാളവും മുദ്രയുമാണോ, വിശ്വാസിയുടെ പരസ്യസാക്ഷ്യമാണോ എന്നതിൽ."
+        },
+        {
+          "heading": "കർത്താവിന്റെ അത്താഴം",
+          "body": "പേരുകൾ വ്യത്യസ്തമാണ്: വിശുദ്ധ കുർബാന, ദിവ്യബലി, തിരുവത്താഴം, കർത്തൃമേശ. ധാരണകളും വ്യത്യസ്തമാണ്. അപ്പവും വീഞ്ഞും ക്രിസ്തുവിന്റെ ശരീരവും രക്തവുമായി മാറുന്നുവെന്നും (ഈ മാറ്റത്തെ അവർ സത്താപരിവർത്തനം എന്നു വിളിക്കുന്നു) കുർബാന ക്രിസ്തുവിന്റെ ഏകബലിയെ സന്നിഹിതമാക്കുന്നുവെന്നും കത്തോലിക്കർ പഠിപ്പിക്കുന്നു. ഓർത്തഡോക്സ് സഭകൾ അതേ യഥാർത്ഥ മാറ്റം ഏറ്റുപറയുന്നു; അത് എങ്ങനെ എന്നു നിർവചിക്കുന്നില്ല. ക്രിസ്തുവിന്റെ ശരീരവും രക്തവും അപ്പത്തിലും വീഞ്ഞിലും അവയോടുകൂടെയും യഥാർത്ഥമായി സന്നിഹിതമാണെന്ന് ലൂഥറൻകാർ വിശ്വസിക്കുന്നു. വിശ്വാസത്താൽ സ്വീകരിക്കപ്പെടുന്ന യഥാർത്ഥ ആത്മീയ സാന്നിധ്യം റിഫോംഡ് സഭകൾ പഠിപ്പിക്കുന്നു. പല ബാപ്റ്റിസ്റ്റ്, പെന്തെക്കൊസ്ത് സഭകളും അത്താഴത്തെ ക്രിസ്തുവിന്റെ മരണത്തെ പ്രസ്താവിക്കുന്ന സ്മാരകമായി കാണുന്നു.\n\nഇത്രയും കാര്യത്തിൽ എല്ലാവരും യോജിക്കുന്നു: ഇവിടെ സഭ യേശുവിന്റെ മരണത്തെ ഓർക്കുന്നു, സ്തോത്രം ചെയ്യുന്നു, അവന്റെ വരവിനായി കാത്തിരിക്കുന്നു."
+        }
+      ]
+    }
+  },
+  {
+    "slug": "the-lords-prayer",
+    "kind": "theology",
+    "sort_order": 60,
+    "scripture_refs": [
+      { "book": "MAT", "chapter": 6, "verse_start": 9, "verse_end": 13 },
+      { "book": "LUK", "chapter": 11, "verse_start": 1, "verse_end": 4 },
+      { "book": "MAT", "chapter": 6, "verse_start": 5, "verse_end": 8 }
+    ],
+    "sources": [
+      { "label": "The Didache (Teaching of the Twelve Apostles), chapter 8", "url": null },
+      { "label": "Catechism of the Catholic Church, paragraphs 2759–2865", "url": null },
+      { "label": "Martin Luther, Small Catechism (1529), part 3", "url": null },
+      { "label": "Bruce M. Metzger, A Textual Commentary on the Greek New Testament (2nd edition, 1994), on Matthew 6:13", "url": null }
+    ],
+    "en": {
+      "title": "The Lord's Prayer",
+      "summary": "The prayer Jesus taught his disciples: what it asks for, and why its ending differs between churches.",
+      "sections": [
+        {
+          "heading": "Where it comes from",
+          "body": "When Jesus taught about prayer he warned against praying to be seen and against piling up empty words [[3]]. Then he gave his disciples a short pattern. Matthew records it in the Sermon on the Mount [[1]]; Luke gives a briefer form, in answer to a disciple who asked to be taught to pray [[2]]. An early Christian manual, the Didache, tells believers to pray it three times a day."
+        },
+        {
+          "heading": "What it asks",
+          "body": "The prayer begins with God, not with us. It addresses him as Father, and its first three requests are for his name to be honoured, his kingdom to come and his will to be done.\n\nOnly then does it turn to our needs, and it covers the whole of life in three more requests: bread for today, forgiveness for the past, and protection in the trials ahead. The request for forgiveness carries a condition that Jesus stresses immediately afterwards: we ask to be forgiven as we forgive others.\n\nIt is also a prayer said together. Every request is 'us' and 'our', never 'me' and 'my'."
+        },
+        {
+          "heading": "Why the ending differs",
+          "body": "Many Protestants end the prayer with the words 'For thine is the kingdom, and the power, and the glory, for ever. Amen.' Catholics traditionally end at 'deliver us from evil', and say a similar doxology separately in the Mass. The Orthodox liturgies have the priest say the doxology.\n\nThe reason lies in the manuscripts. The doxology is absent from the oldest surviving Greek copies of Matthew and is found in later ones; a form of it already appears in the Didache. Most scholars think it was added very early for use in worship. It is in the King James Version, and many modern translations place it in a footnote. No doctrine is at stake: all Christians gladly give God the kingdom, the power and the glory."
+        },
+        {
+          "heading": "Praying it",
+          "body": "The Lord's Prayer is said in nearly every church, in every language, every day. Try praying it slowly, pausing after each line to add your own words."
+        }
+      ]
+    },
+    "ml": {
+      "title": "കർത്താവിന്റെ പ്രാർത്ഥന",
+      "summary": "യേശു ശിഷ്യന്മാരെ പഠിപ്പിച്ച പ്രാർത്ഥന: അതിൽ അപേക്ഷിക്കുന്നത് എന്ത്; അതിന്റെ അവസാനഭാഗം സഭകൾ തമ്മിൽ വ്യത്യാസപ്പെടുന്നത് എന്തുകൊണ്ട്.",
+      "sections": [
+        {
+          "heading": "ഇതിന്റെ ഉറവിടം",
+          "body": "പ്രാർത്ഥനയെക്കുറിച്ചു പഠിപ്പിച്ചപ്പോൾ, മനുഷ്യർ കാണേണ്ടതിനു പ്രാർത്ഥിക്കുന്നതിനും വ്യർത്ഥവാക്കുകൾ ആവർത്തിക്കുന്നതിനും എതിരെ യേശു മുന്നറിയിപ്പു നൽകി [[3]]. പിന്നെ അവൻ ശിഷ്യന്മാർക്ക് ഒരു ചെറിയ മാതൃക നൽകി. മത്തായി അതു ഗിരിപ്രഭാഷണത്തിൽ രേഖപ്പെടുത്തുന്നു [[1]]; പ്രാർത്ഥിക്കാൻ പഠിപ്പിക്കണമെന്ന് അപേക്ഷിച്ച ഒരു ശിഷ്യനുള്ള മറുപടിയായി ലൂക്കൊസ് അതിന്റെ ഒരു ഹ്രസ്വരൂപം നൽകുന്നു [[2]]. ദിവസം മൂന്നു പ്രാവശ്യം ഇതു പ്രാർത്ഥിക്കാൻ ദിദാക്കേ എന്ന ആദിമ ക്രിസ്തീയ കൈപ്പുസ്തകം വിശ്വാസികളോടു പറയുന്നു."
+        },
+        {
+          "heading": "ഇതിലെ അപേക്ഷകൾ",
+          "body": "പ്രാർത്ഥന തുടങ്ങുന്നത് നമ്മിൽനിന്നല്ല, ദൈവത്തിൽനിന്നാണ്. അത് അവനെ പിതാവേ എന്നു വിളിക്കുന്നു; ആദ്യത്തെ മൂന്ന് അപേക്ഷകൾ അവന്റെ നാമം വിശുദ്ധീകരിക്കപ്പെടാനും അവന്റെ രാജ്യം വരാനും അവന്റെ ഇഷ്ടം നിറവേറാനുമാണ്.\n\nഅതിനു ശേഷം മാത്രമാണ് അതു നമ്മുടെ ആവശ്യങ്ങളിലേക്കു തിരിയുന്നത്; മൂന്ന് അപേക്ഷകളിൽ അതു ജീവിതത്തെ മുഴുവൻ ഉൾക്കൊള്ളുന്നു: ഇന്നത്തേക്കുള്ള അപ്പം, കഴിഞ്ഞതിനുള്ള ക്ഷമ, വരാനിരിക്കുന്ന പരീക്ഷകളിൽ സംരക്ഷണം. ക്ഷമയ്ക്കായുള്ള അപേക്ഷയ്ക്ക് ഒരു വ്യവസ്ഥയുണ്ട്; യേശു ഉടനെ അത് ഊന്നിപ്പറയുന്നു: മറ്റുള്ളവരോടു നാം ക്ഷമിക്കുന്നതുപോലെ നമ്മോടും ക്ഷമിക്കണമേ എന്നാണ് നാം അപേക്ഷിക്കുന്നത്.\n\nഇത് ഒരുമിച്ചു ചൊല്ലുന്ന പ്രാർത്ഥന കൂടിയാണ്. എല്ലാ അപേക്ഷയും 'ഞങ്ങൾ', 'ഞങ്ങളുടെ' എന്നാണ്; ഒരിക്കലും 'ഞാൻ', 'എന്റെ' എന്നല്ല."
+        },
+        {
+          "heading": "അവസാനഭാഗം വ്യത്യാസപ്പെടുന്നത് എന്തുകൊണ്ട്",
+          "body": "പല പ്രൊട്ടസ്റ്റന്റുകാരും 'രാജ്യവും ശക്തിയും മഹത്വവും എന്നേക്കും നിനക്കുള്ളതല്ലോ' എന്ന സ്തുതിവാക്യത്തോടെ പ്രാർത്ഥന അവസാനിപ്പിക്കുന്നു. കത്തോലിക്കർ പരമ്പരാഗതമായി 'ദുഷ്ടങ്കൽനിന്നു ഞങ്ങളെ വിടുവിക്കേണമേ' എന്നിടത്ത് അവസാനിപ്പിക്കുന്നു; സമാനമായ ഒരു സ്തുതിവാക്യം കുർബാനയിൽ പ്രത്യേകമായി ചൊല്ലുന്നു. ഓർത്തഡോക്സ് ആരാധനക്രമങ്ങളിൽ പുരോഹിതനാണ് സ്തുതിവാക്യം ചൊല്ലുന്നത്.\n\nകാരണം കൈയെഴുത്തുപ്രതികളിലാണ്. ഇന്നു ലഭ്യമായ മത്തായിയുടെ ഏറ്റവും പഴയ ഗ്രീക്ക് പ്രതികളിൽ ഈ സ്തുതിവാക്യം ഇല്ല; പിന്നീടുള്ളവയിൽ ഉണ്ട്. അതിന്റെ ഒരു രൂപം ദിദാക്കേയിൽത്തന്നെ കാണാം. ആരാധനയിൽ ഉപയോഗിക്കാനായി വളരെ നേരത്തേ അതു കൂട്ടിച്ചേർക്കപ്പെട്ടതാണെന്നു മിക്ക പണ്ഡിതന്മാരും കരുതുന്നു. കിംഗ് ജെയിംസ് വേർഷനിൽ അതുണ്ട്; പല ആധുനിക വിവർത്തനങ്ങളും അത് അടിക്കുറിപ്പിൽ നൽകുന്നു. ഇതിൽ ഉപദേശപരമായ തർക്കമൊന്നുമില്ല: രാജ്യവും ശക്തിയും മഹത്വവും എല്ലാ ക്രിസ്ത്യാനികളും സന്തോഷത്തോടെ ദൈവത്തിനു നൽകുന്നു."
+        },
+        {
+          "heading": "ഇതു പ്രാർത്ഥിക്കുക",
+          "body": "മിക്കവാറും എല്ലാ സഭകളിലും, എല്ലാ ഭാഷകളിലും, എല്ലാ ദിവസവും കർത്താവിന്റെ പ്രാർത്ഥന ചൊല്ലുന്നു. ഓരോ വരിക്കു ശേഷവും നിർത്തി നിങ്ങളുടെ സ്വന്തം വാക്കുകൾ ചേർത്ത്, സാവധാനം ഇതു പ്രാർത്ഥിച്ചുനോക്കുക."
+        }
+      ]
+    }
+  }
+]

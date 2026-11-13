@@ -1,14 +1,12 @@
 import { useEffect, useId, useRef, useState, type FormEvent } from 'react';
-import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { Button, ButtonLink, ErrorState, LoadingState, Notice } from '../components/ui';
 import { PageHeader } from './PageHeader';
 import { useAsync } from '../hooks/useAsync';
 import { useAuth } from '../features/auth/useAuth';
-import { pickDefaultVersion, useBooks, useUiLanguage, useVersions } from '../features/bible/useBible';
-import { readerPath } from '../features/bible/readingState';
-import { PassageView } from '../features/bible/PassageView';
-import { splitAnswer, verseLabel, type AnswerRef } from '../features/ask/answerParts';
+import { useUiLanguage } from '../features/bible/useBible';
+import { CitedText, PassageDetails } from '../features/bible/Citations';
+import { useRefLinks } from '../features/bible/useRefLinks';
 import {
   AskError,
   askService,
@@ -197,39 +195,11 @@ function AskAssistant() {
 
 function Answer({ message }: { message: AskMessage }) {
   const { t } = useTranslation();
-  const lang = useUiLanguage();
-  const versions = useVersions();
-  const version = versions.data ? pickDefaultVersion(versions.data, lang) : undefined;
-  const books = useBooks(version?.id);
-
-  function label(ref: AnswerRef) {
-    const name = books.data?.find((b) => b.code === ref.book)?.name ?? ref.book;
-    return t('bible.verseReference', { book: name, chapter: ref.chapter, verse: verseLabel(ref) });
-  }
+  const { label, link } = useRefLinks();
 
   return (
     <article className={styles.askAnswer} aria-label={t('ask.answerLabel')}>
-      {message.content.split(/\n{2,}/).map((paragraph, i) => (
-        <p key={i}>
-          {splitAnswer(paragraph, message.refs.length).map((part, j) =>
-            part.kind === 'text' ? (
-              part.text
-            ) : (
-              <span key={j} className={styles.askCite}>
-                {' ('}
-                {version ? (
-                  <Link to={readerPath(version.code, message.refs[part.index].book, message.refs[part.index].chapter)}>
-                    {label(message.refs[part.index])}
-                  </Link>
-                ) : (
-                  label(message.refs[part.index])
-                )}
-                {')'}
-              </span>
-            ),
-          )}
-        </p>
-      ))}
+      <CitedText text={message.content} refs={message.refs} link={link} />
 
       {message.uncertain && <p className={styles.askNote}>{t('ask.uncertain')}</p>}
       {message.removedRefCount > 0 && <p className={styles.askNote}>{t('ask.removedRefs', { count: message.removedRefCount })}</p>}
@@ -239,30 +209,11 @@ function Answer({ message }: { message: AskMessage }) {
         <div className={styles.askPassages}>
           <h3>{t('ask.passages')}</h3>
           {message.refs.map((ref, i) => (
-            <PassageDetails key={i} title={label(ref)} passage={ref} />
+            <PassageDetails key={i} title={label(ref)} passage={ref} errorKey="ask.passageError" />
           ))}
         </div>
       )}
       <p className={styles.meta}>{t('ask.aiLabel')}</p>
     </article>
-  );
-}
-
-/** Loads the passage text from the licensed Bible only when the reader opens it. */
-function PassageDetails({ title, passage }: { title: string; passage: AnswerRef }) {
-  const [opened, setOpened] = useState(false);
-  return (
-    <details className={styles.askPassage} onToggle={(e) => e.currentTarget.open && setOpened(true)}>
-      <summary>{title}</summary>
-      {opened && (
-        <PassageView
-          bookCode={passage.book}
-          chapter={passage.chapter}
-          verseStart={passage.verseStart}
-          verseEnd={passage.verseEnd}
-          errorKey="ask.passageError"
-        />
-      )}
-    </details>
   );
 }

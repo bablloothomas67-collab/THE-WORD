@@ -5,7 +5,7 @@
 A multilingual, broadly ecumenical Bible and Christian learning platform — responsive
 website first, Android and iPhone later. Launch languages: English and Malayalam.
 
-> Status: **Phase 4 — Ask the Word (AI study assistant with verified Scripture references) built and tested** (Phases 1–3 approved). See docs/ASK_THE_WORD.md.
+> Status: **Phase 5 — Discover (stories, history, theology, apologetics, quizzes) built and tested; starter content drafted and awaiting owner review** (Phases 1–4 approved). See docs/DISCOVER.md.
 > navigation, English/Malayalam localisation and the authentication structure are in
 > place. Accounts, Bible text, the AI assistant and payments are **not connected yet**,
 > and the app says so on screen rather than faking them.

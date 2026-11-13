@@ -1,5 +1,23 @@
 # Changelog
 
+## 0.6.0 — 2026-11-13 — Phase 5: Discover
+
+### Added
+- Discover hub, section lists, article reader and quizzes in English and Malayalam; Scripture
+  references open in the reader and passage text is loaded from the licensed Bibles.
+- Save to My Journey; "Saved content" list in My Journey; quiz results kept for signed-in readers.
+- Migration `20261113080000_discover_content.sql`: `content_items`, `content_localisations`,
+  `saved_content`, `quiz_attempts` with RLS, audit of status changes, reserved premium flag.
+- Starter content drafted (NOT published, awaiting owner review): 6 Bible stories, 6 history
+  articles, 6 theology articles, 6 apologetics articles, 5 quizzes of 10 questions.
+- `scripts/content/validate_discover.py`, `build_discover_review.py`, `import_discover.py`.
+- docs/DISCOVER.md.
+
+### Changed
+- Citation rendering moved from the Ask page into shared `Citations` / `useRefLinks` (no
+  behaviour change).
+- My Journey: "Saved content" is live (was "Coming soon").
+
 ## 0.5.1 — 2026-11-12 — Week 2 devotionals and import script
 
 - Week 2 devotionals (16–22 Nov, EN + ML) approved by the owner, published with audio.

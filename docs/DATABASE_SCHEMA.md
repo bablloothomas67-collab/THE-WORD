@@ -84,5 +84,15 @@ See docs/AUDIO.md.
 
 See docs/ASK_THE_WORD.md.
 
-Remaining tables from the Implementation Package (content items,
-subscriptions, etc.) are added in their own phases.
+## Applied in Phase 5 — `20261113080000_discover_content.sql`
+
+| Table | Purpose | RLS |
+|---|---|---|
+| `content_items` | one row per article or quiz: slug, kind (story / history / theology / apologetics / quiz), status, `is_premium` (reserved), order, author and reviewer labels | public read when `published`; importer may insert unpublished rows; no client update/delete; status changes audited |
+| `content_localisations` | per-language title, summary, article `sections`, quiz `questions`, `scripture_refs` (references only), `sources` | public read when approved AND item published AND not premium; importer may insert drafts |
+| `saved_content` | items a reader saved | owner only (read, insert for published items, delete) |
+| `quiz_attempts` | score and total per attempt | owner only (read, insert for published quizzes, delete); no updates; score checked 0..total |
+
+See docs/DISCOVER.md.
+
+Remaining tables from the Implementation Package (subscriptions, entitlements, etc.) are added in their own phases.

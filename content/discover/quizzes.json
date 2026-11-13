@@ -1,0 +1,247 @@
+[
+  {
+    "slug": "quiz-genesis",
+    "kind": "quiz",
+    "sort_order": 10,
+    "answers": [
+      { "correct": 2, "ref": { "book": "GEN", "chapter": 2, "verse_start": 2, "verse_end": 3 } },
+      { "correct": 1, "ref": { "book": "GEN", "chapter": 6, "verse_start": 13, "verse_end": 14 } },
+      { "correct": 0, "ref": { "book": "GEN", "chapter": 9, "verse_start": 13, "verse_end": 13 } },
+      { "correct": 3, "ref": { "book": "GEN", "chapter": 11, "verse_start": 31, "verse_end": 31 } },
+      { "correct": 1, "ref": { "book": "GEN", "chapter": 21, "verse_start": 3, "verse_end": 3 } },
+      { "correct": 2, "ref": { "book": "GEN", "chapter": 24, "verse_start": 67, "verse_end": 67 } },
+      { "correct": 0, "ref": { "book": "GEN", "chapter": 25, "verse_start": 34, "verse_end": 34 } },
+      { "correct": 3, "ref": { "book": "GEN", "chapter": 32, "verse_start": 28, "verse_end": 28 } },
+      { "correct": 1, "ref": { "book": "GEN", "chapter": 37, "verse_start": 28, "verse_end": 28 } },
+      { "correct": 2, "ref": { "book": "GEN", "chapter": 41, "verse_start": 41, "verse_end": 41 } }
+    ],
+    "en": {
+      "title": "Quiz: The book of Genesis",
+      "summary": "Ten questions on the first book of the Bible, from creation to Joseph in Egypt.",
+      "questions": [
+        { "prompt": "On which day did God rest from his work of creation?", "options": ["The first day", "The sixth day", "The seventh day", "The tenth day"], "explanation": "God finished his work, rested on the seventh day and blessed it." },
+        { "prompt": "Whom did God tell to build an ark?", "options": ["Abraham", "Noah", "Moses", "Enoch"], "explanation": "God warned Noah of the coming flood and told him to make an ark." },
+        { "prompt": "What did God give as the sign of his covenant after the flood?", "options": ["A rainbow", "A dove", "An altar", "A star"], "explanation": "God set his bow in the cloud as the token of the covenant." },
+        { "prompt": "From which city did Abram's family set out for Canaan?", "options": ["Babylon", "Nineveh", "Jericho", "Ur of the Chaldees"], "explanation": "Terah took Abram and his family from Ur of the Chaldees, and they came as far as Haran." },
+        { "prompt": "What was the name of the son born to Abraham and Sarah?", "options": ["Ishmael", "Isaac", "Jacob", "Esau"], "explanation": "Abraham named the son whom Sarah bore to him Isaac." },
+        { "prompt": "Who became the wife of Isaac?", "options": ["Rachel", "Leah", "Rebekah", "Hagar"], "explanation": "Rebekah came from Abraham's kindred and became Isaac's wife." },
+        { "prompt": "For what did Esau give up his birthright to Jacob?", "options": ["A meal of bread and lentil stew", "A flock of sheep", "A piece of land", "A coat"], "explanation": "Jacob gave Esau bread and a stew of lentils, and so Esau despised his birthright." },
+        { "prompt": "What new name was Jacob given after he wrestled through the night?", "options": ["Judah", "Abraham", "Joseph", "Israel"], "explanation": "He was told that his name would no longer be Jacob but Israel." },
+        { "prompt": "What did Joseph's brothers do to him?", "options": ["They made him their leader", "They sold him to traders going to Egypt", "They sent him home to their father", "They hid him in Canaan"], "explanation": "They drew Joseph out of the pit and sold him for twenty pieces of silver, and he was taken to Egypt." },
+        { "prompt": "Over which land did Pharaoh set Joseph?", "options": ["Canaan", "Assyria", "Egypt", "Midian"], "explanation": "Pharaoh set Joseph over all the land of Egypt." }
+      ]
+    },
+    "ml": {
+      "title": "ക്വിസ്: ഉല്പത്തി പുസ്തകം",
+      "summary": "സൃഷ്ടി മുതൽ മിസ്രയീമിലെ യോസേഫ് വരെ, ബൈബിളിലെ ആദ്യ പുസ്തകത്തെക്കുറിച്ചു പത്തു ചോദ്യങ്ങൾ.",
+      "questions": [
+        { "prompt": "സൃഷ്ടിയുടെ പ്രവൃത്തിയിൽനിന്നു ദൈവം വിശ്രമിച്ചത് ഏതു ദിവസമാണ്?", "options": ["ഒന്നാം ദിവസം", "ആറാം ദിവസം", "ഏഴാം ദിവസം", "പത്താം ദിവസം"], "explanation": "ദൈവം തന്റെ പ്രവൃത്തി തീർത്ത് ഏഴാം ദിവസം വിശ്രമിച്ചു; ആ ദിവസത്തെ അനുഗ്രഹിച്ചു." },
+        { "prompt": "പെട്ടകം പണിയാൻ ദൈവം ആരോടാണ് പറഞ്ഞത്?", "options": ["അബ്രാഹാം", "നോഹ", "മോശെ", "ഹാനോക്ക്"], "explanation": "വരാനിരിക്കുന്ന ജലപ്രളയത്തെക്കുറിച്ചു ദൈവം നോഹയോട് അറിയിച്ചു; ഒരു പെട്ടകം ഉണ്ടാക്കാൻ കല്പിച്ചു." },
+        { "prompt": "ജലപ്രളയത്തിനു ശേഷം തന്റെ നിയമത്തിന്റെ അടയാളമായി ദൈവം നൽകിയത് എന്താണ്?", "options": ["മഴവില്ല്", "പ്രാവ്", "യാഗപീഠം", "നക്ഷത്രം"], "explanation": "നിയമത്തിന്റെ അടയാളമായി ദൈവം തന്റെ വില്ല് മേഘത്തിൽ വെച്ചു." },
+        { "prompt": "അബ്രാമിന്റെ കുടുംബം കനാനിലേക്കു പുറപ്പെട്ടത് ഏതു പട്ടണത്തിൽനിന്നാണ്?", "options": ["ബാബേൽ", "നീനെവേ", "യെരീഹോ", "കൽദയരുടെ ഊർ"], "explanation": "തേരഹ് അബ്രാമിനെയും കുടുംബത്തെയും കൂട്ടി കൽദയരുടെ ഊരിൽനിന്നു പുറപ്പെട്ടു; അവർ ഹാരാൻ വരെ വന്നു." },
+        { "prompt": "അബ്രാഹാമിനും സാറായ്ക്കും ജനിച്ച മകന്റെ പേര് എന്താണ്?", "options": ["യിശ്മായേൽ", "യിസ്ഹാക്ക്", "യാക്കോബ്", "ഏശാവ്"], "explanation": "സാറാ തനിക്കു പ്രസവിച്ച മകന് അബ്രാഹാം യിസ്ഹാക്ക് എന്നു പേരിട്ടു." },
+        { "prompt": "യിസ്ഹാക്കിന്റെ ഭാര്യയായിത്തീർന്നത് ആരാണ്?", "options": ["റാഹേൽ", "ലേയാ", "റിബെക്കാ", "ഹാഗാർ"], "explanation": "അബ്രാഹാമിന്റെ ചാർച്ചക്കാരിൽനിന്നു വന്ന റിബെക്കാ യിസ്ഹാക്കിന്റെ ഭാര്യയായി." },
+        { "prompt": "എന്തിനുവേണ്ടിയാണ് ഏശാവ് തന്റെ ജ്യേഷ്ഠാവകാശം യാക്കോബിനു വിട്ടുകൊടുത്തത്?", "options": ["അപ്പവും പയറുപായസവും അടങ്ങിയ ഒരു ഭക്ഷണം", "ഒരു ആട്ടിൻകൂട്ടം", "ഒരു നിലം", "ഒരു അങ്കി"], "explanation": "യാക്കോബ് ഏശാവിന് അപ്പവും പയറുകൊണ്ടുള്ള പായസവും കൊടുത്തു; അങ്ങനെ ഏശാവ് ജ്യേഷ്ഠാവകാശത്തെ അലക്ഷ്യമാക്കി." },
+        { "prompt": "രാത്രി മുഴുവൻ മല്ലുപിടിച്ചതിനു ശേഷം യാക്കോബിനു ലഭിച്ച പുതിയ പേര് എന്താണ്?", "options": ["യെഹൂദാ", "അബ്രാഹാം", "യോസേഫ്", "യിസ്രായേൽ"], "explanation": "ഇനി അവന്റെ പേര് യാക്കോബ് എന്നല്ല, യിസ്രായേൽ എന്നായിരിക്കും എന്ന് അവനോടു പറഞ്ഞു." },
+        { "prompt": "യോസേഫിന്റെ സഹോദരന്മാർ അവനോട് എന്താണ് ചെയ്തത്?", "options": ["അവനെ തങ്ങളുടെ നേതാവാക്കി", "മിസ്രയീമിലേക്കു പോകുന്ന കച്ചവടക്കാർക്ക് അവനെ വിറ്റു", "അവനെ അപ്പന്റെ അടുക്കലേക്കു മടക്കി അയച്ചു", "അവനെ കനാനിൽ ഒളിപ്പിച്ചു"], "explanation": "അവർ യോസേഫിനെ കുഴിയിൽനിന്നു കയറ്റി ഇരുപതു വെള്ളിക്കാശിനു വിറ്റു; അവനെ മിസ്രയീമിലേക്കു കൊണ്ടുപോയി." },
+        { "prompt": "ഫറവോൻ യോസേഫിനെ ഏതു ദേശത്തിനു മേലധികാരിയാക്കി?", "options": ["കനാൻ", "അശ്ശൂർ", "മിസ്രയീം", "മിദ്യാൻ"], "explanation": "ഫറവോൻ യോസേഫിനെ മിസ്രയീംദേശത്തിനൊക്കെയും മേലധികാരിയാക്കി." }
+      ]
+    }
+  },
+  {
+    "slug": "quiz-life-of-jesus",
+    "kind": "quiz",
+    "sort_order": 20,
+    "answers": [
+      { "correct": 1, "ref": { "book": "MAT", "chapter": 2, "verse_start": 1, "verse_end": 1 } },
+      { "correct": 0, "ref": { "book": "MRK", "chapter": 1, "verse_start": 9, "verse_end": 9 } },
+      { "correct": 3, "ref": { "book": "MAT", "chapter": 4, "verse_start": 1, "verse_end": 2 } },
+      { "correct": 2, "ref": { "book": "JHN", "chapter": 2, "verse_start": 9, "verse_end": 11 } },
+      { "correct": 1, "ref": { "book": "LUK", "chapter": 6, "verse_start": 13, "verse_end": 13 } },
+      { "correct": 0, "ref": { "book": "MAT", "chapter": 14, "verse_start": 17, "verse_end": 21 } },
+      { "correct": 2, "ref": { "book": "LUK", "chapter": 22, "verse_start": 60, "verse_end": 62 } },
+      { "correct": 3, "ref": { "book": "MAT", "chapter": 26, "verse_start": 14, "verse_end": 15 } },
+      { "correct": 1, "ref": { "book": "MRK", "chapter": 15, "verse_start": 15, "verse_end": 15 } },
+      { "correct": 0, "ref": { "book": "JHN", "chapter": 20, "verse_start": 14, "verse_end": 16 } }
+    ],
+    "en": {
+      "title": "Quiz: The life of Jesus",
+      "summary": "Ten questions from the four Gospels, from Bethlehem to the empty tomb.",
+      "questions": [
+        { "prompt": "In which town was Jesus born?", "options": ["Nazareth", "Bethlehem", "Jerusalem", "Capernaum"], "explanation": "Jesus was born in Bethlehem of Judaea in the days of Herod the king." },
+        { "prompt": "Who baptised Jesus in the river Jordan?", "options": ["John", "Peter", "Andrew", "Elijah"], "explanation": "Jesus came from Nazareth of Galilee and was baptised by John in the Jordan." },
+        { "prompt": "How long did Jesus fast in the wilderness?", "options": ["Three days", "Seven days", "Twelve days", "Forty days and forty nights"], "explanation": "Jesus was led into the wilderness and fasted forty days and forty nights." },
+        { "prompt": "According to John's Gospel, what was the first of Jesus' signs, at Cana in Galilee?", "options": ["Healing a blind man", "Walking on the sea", "Turning water into wine", "Feeding a crowd"], "explanation": "At a wedding in Cana, Jesus turned water into wine; John calls this the beginning of his miracles." },
+        { "prompt": "How many of his disciples did Jesus choose and name apostles?", "options": ["Seven", "Twelve", "Forty", "Seventy"], "explanation": "Jesus called his disciples and chose twelve of them, whom he named apostles." },
+        { "prompt": "With what food did Jesus feed about five thousand men?", "options": ["Five loaves and two fishes", "Seven loaves and a few fishes", "Twelve baskets of bread", "Manna"], "explanation": "The disciples had only five loaves and two fishes; all ate and were filled." },
+        { "prompt": "Which disciple denied three times that he knew Jesus?", "options": ["Thomas", "Judas", "Peter", "John"], "explanation": "After the third denial the cock crew, and Peter remembered the Lord's word and wept bitterly." },
+        { "prompt": "Who agreed to betray Jesus to the chief priests for thirty pieces of silver?", "options": ["Simon the Zealot", "Bartholomew", "Matthew", "Judas Iscariot"], "explanation": "Judas Iscariot, one of the twelve, went to the chief priests, and they agreed on thirty pieces of silver." },
+        { "prompt": "Which Roman governor handed Jesus over to be crucified?", "options": ["Herod", "Pontius Pilate", "Felix", "Caesar Augustus"], "explanation": "Pilate, wishing to satisfy the crowd, released Barabbas and delivered Jesus to be crucified." },
+        { "prompt": "In John's Gospel, who is the first person to see the risen Jesus?", "options": ["Mary Magdalene", "Peter", "Thomas", "Nicodemus"], "explanation": "Mary Magdalene stood weeping at the tomb and recognised Jesus when he called her by name." }
+      ]
+    },
+    "ml": {
+      "title": "ക്വിസ്: യേശുവിന്റെ ജീവിതം",
+      "summary": "ബേത്ത്ലേഹെം മുതൽ ഒഴിഞ്ഞ കല്ലറ വരെ, നാലു സുവിശേഷങ്ങളിൽനിന്നു പത്തു ചോദ്യങ്ങൾ.",
+      "questions": [
+        { "prompt": "യേശു ജനിച്ചത് ഏതു പട്ടണത്തിലാണ്?", "options": ["നസറെത്ത്", "ബേത്ത്ലേഹെം", "യെരൂശലേം", "കഫർന്നഹൂം"], "explanation": "ഹെരോദാരാജാവിന്റെ കാലത്ത് യേശു യെഹൂദ്യയിലെ ബേത്ത്ലേഹെമിൽ ജനിച്ചു." },
+        { "prompt": "യോർദ്ദാൻ നദിയിൽ യേശുവിനെ സ്നാനം കഴിപ്പിച്ചത് ആരാണ്?", "options": ["യോഹന്നാൻ", "പത്രൊസ്", "അന്ത്രെയാസ്", "ഏലീയാവ്"], "explanation": "യേശു ഗലീലയിലെ നസറെത്തിൽനിന്നു വന്നു യോർദ്ദാനിൽ യോഹന്നാനാൽ സ്നാനം ഏറ്റു." },
+        { "prompt": "യേശു മരുഭൂമിയിൽ എത്രകാലം ഉപവസിച്ചു?", "options": ["മൂന്നു ദിവസം", "ഏഴു ദിവസം", "പന്ത്രണ്ടു ദിവസം", "നാല്പതു പകലും നാല്പതു രാവും"], "explanation": "യേശുവിനെ മരുഭൂമിയിലേക്കു നടത്തി; അവൻ നാല്പതു പകലും നാല്പതു രാവും ഉപവസിച്ചു." },
+        { "prompt": "യോഹന്നാന്റെ സുവിശേഷമനുസരിച്ച്, ഗലീലയിലെ കാനായിൽ യേശു ചെയ്ത ആദ്യ അടയാളം ഏതാണ്?", "options": ["കുരുടനെ സൗഖ്യമാക്കിയത്", "കടലിന്മേൽ നടന്നത്", "വെള്ളം വീഞ്ഞാക്കിയത്", "പുരുഷാരത്തെ പോഷിപ്പിച്ചത്"], "explanation": "കാനായിലെ ഒരു കല്യാണത്തിൽ യേശു വെള്ളം വീഞ്ഞാക്കി; ഇതിനെ യോഹന്നാൻ അടയാളങ്ങളുടെ ആരംഭം എന്നു വിളിക്കുന്നു." },
+        { "prompt": "തന്റെ ശിഷ്യന്മാരിൽ എത്രപേരെയാണ് യേശു തിരഞ്ഞെടുത്ത് അപ്പൊസ്തലന്മാർ എന്നു പേർ വിളിച്ചത്?", "options": ["ഏഴ്", "പന്ത്രണ്ട്", "നാല്പത്", "എഴുപത്"], "explanation": "യേശു ശിഷ്യന്മാരെ അടുക്കെ വിളിച്ച് അവരിൽ പന്ത്രണ്ടുപേരെ തിരഞ്ഞെടുത്തു; അവർക്ക് അപ്പൊസ്തലന്മാർ എന്നു പേർ വിളിച്ചു." },
+        { "prompt": "ഏകദേശം അയ്യായിരം പുരുഷന്മാരെ യേശു പോഷിപ്പിച്ചത് ഏതു ഭക്ഷണം കൊണ്ടാണ്?", "options": ["അഞ്ച് അപ്പവും രണ്ടു മീനും", "ഏഴ് അപ്പവും കുറെ മീനും", "പന്ത്രണ്ടു കൊട്ട അപ്പം", "മന്ന"], "explanation": "ശിഷ്യന്മാരുടെ പക്കൽ അഞ്ച് അപ്പവും രണ്ടു മീനും മാത്രമേ ഉണ്ടായിരുന്നുള്ളൂ; എല്ലാവരും തിന്നു തൃപ്തരായി." },
+        { "prompt": "യേശുവിനെ അറിയുന്നില്ല എന്നു മൂന്നു പ്രാവശ്യം തള്ളിപ്പറഞ്ഞ ശിഷ്യൻ ആരാണ്?", "options": ["തോമാസ്", "യൂദാ", "പത്രൊസ്", "യോഹന്നാൻ"], "explanation": "മൂന്നാമത്തെ തള്ളിപ്പറയലിനു ശേഷം കോഴി കൂകി; പത്രൊസ് കർത്താവിന്റെ വാക്ക് ഓർത്തു, അതിദുഃഖത്തോടെ കരഞ്ഞു." },
+        { "prompt": "മുപ്പതു വെള്ളിക്കാശിനു യേശുവിനെ മഹാപുരോഹിതന്മാർക്കു കാണിച്ചുകൊടുക്കാൻ സമ്മതിച്ചത് ആരാണ്?", "options": ["എരിവുകാരനായ ശിമോൻ", "ബർത്തൊലൊമായി", "മത്തായി", "ഈസ്കര്യോത്താ യൂദാ"], "explanation": "പന്തിരുവരിൽ ഒരുവനായ ഈസ്കര്യോത്താ യൂദാ മഹാപുരോഹിതന്മാരുടെ അടുക്കൽ ചെന്നു; അവർ മുപ്പതു വെള്ളിക്കാശ് നിശ്ചയിച്ചു." },
+        { "prompt": "യേശുവിനെ ക്രൂശിക്കാൻ ഏല്പിച്ചുകൊടുത്ത റോമൻ നാടുവാഴി ആരാണ്?", "options": ["ഹെരോദാവ്", "പൊന്തിയൊസ് പീലാത്തൊസ്", "ഫേലിക്സ്", "ഔഗുസ്തൊസ് കൈസർ"], "explanation": "പുരുഷാരത്തെ തൃപ്തിപ്പെടുത്താൻ ആഗ്രഹിച്ച പീലാത്തൊസ് ബറബ്ബാസിനെ വിട്ടുകൊടുത്തു; യേശുവിനെ ക്രൂശിക്കാൻ ഏല്പിച്ചു." },
+        { "prompt": "യോഹന്നാന്റെ സുവിശേഷത്തിൽ, ഉയിർത്തെഴുന്നേറ്റ യേശുവിനെ ആദ്യം കാണുന്നത് ആരാണ്?", "options": ["മഗ്ദലക്കാരത്തി മറിയ", "പത്രൊസ്", "തോമാസ്", "നിക്കൊദേമൊസ്"], "explanation": "മഗ്ദലക്കാരത്തി മറിയ കല്ലറയ്ക്കൽ കരഞ്ഞുകൊണ്ടു നിന്നു; യേശു അവളെ പേർ ചൊല്ലി വിളിച്ചപ്പോൾ അവൾ അവനെ തിരിച്ചറിഞ്ഞു." }
+      ]
+    }
+  },
+  {
+    "slug": "quiz-psalms-and-wisdom",
+    "kind": "quiz",
+    "sort_order": 30,
+    "answers": [
+      { "correct": 0, "ref": { "book": "PSA", "chapter": 23, "verse_start": 1, "verse_end": 2 } },
+      { "correct": 2, "ref": { "book": "PSA", "chapter": 119, "verse_start": 105, "verse_end": 105 } },
+      { "correct": 1, "ref": { "book": "PRO", "chapter": 9, "verse_start": 10, "verse_end": 10 } },
+      { "correct": 3, "ref": { "book": "PSA", "chapter": 117, "verse_start": 1, "verse_end": 2 } },
+      { "correct": 0, "ref": { "book": "ECC", "chapter": 3, "verse_start": 1, "verse_end": 2 } },
+      { "correct": 2, "ref": { "book": "JOB", "chapter": 1, "verse_start": 20, "verse_end": 22 } },
+      { "correct": 1, "ref": { "book": "PSA", "chapter": 46, "verse_start": 1, "verse_end": 1 } },
+      { "correct": 3, "ref": { "book": "PRO", "chapter": 3, "verse_start": 5, "verse_end": 6 } },
+      { "correct": 1, "ref": { "book": "PSA", "chapter": 1, "verse_start": 1, "verse_end": 3 } },
+      { "correct": 0, "ref": { "book": "PSA", "chapter": 150, "verse_start": 6, "verse_end": 6 } }
+    ],
+    "en": {
+      "title": "Quiz: Psalms and wisdom",
+      "summary": "Ten questions on the prayer book of the Bible and its books of wisdom.",
+      "questions": [
+        { "prompt": "In Psalm 23, how does the psalmist describe the LORD?", "options": ["As his shepherd", "As his judge", "As a mighty wind", "As a consuming fire"], "explanation": "Psalm 23 opens by calling the LORD a shepherd who leads to green pastures and still waters." },
+        { "prompt": "To what does Psalm 119 compare the word of God?", "options": ["A sword and a shield", "A river and a tree", "A lamp and a light", "A rock and a tower"], "explanation": "God's word is called a lamp to the feet and a light to the path." },
+        { "prompt": "According to Proverbs, what is the beginning of wisdom?", "options": ["Long life", "The fear of the LORD", "Much study", "Great riches"], "explanation": "Proverbs teaches that the fear of the LORD is the beginning of wisdom." },
+        { "prompt": "Which is the shortest psalm, with only two verses?", "options": ["Psalm 1", "Psalm 23", "Psalm 100", "Psalm 117"], "explanation": "Psalm 117 calls all nations to praise the LORD in just two verses." },
+        { "prompt": "What does Ecclesiastes chapter 3 say there is for everything under heaven?", "options": ["A season and a time", "A price and a reward", "A beginning without end", "A reason no one can know"], "explanation": "The chapter begins by saying there is a season for everything and a time for every purpose." },
+        { "prompt": "Who, after losing his children and his possessions, still blessed the name of the LORD?", "options": ["Jonah", "Elijah", "Job", "Jeremiah"], "explanation": "Job fell to the ground and worshipped, and did not charge God with wrong." },
+        { "prompt": "How does Psalm 46 describe God in its opening verse?", "options": ["A king on a distant throne", "Our refuge and strength", "A teacher of the wise", "A builder of cities"], "explanation": "Psalm 46 begins by calling God our refuge and strength, a very present help in trouble." },
+        { "prompt": "On what does Proverbs 3 tell us not to lean?", "options": ["Our neighbours", "Our wealth", "Our rulers", "Our own understanding"], "explanation": "We are told to trust in the LORD with all our heart and not to lean on our own understanding." },
+        { "prompt": "To what does Psalm 1 compare the person who delights in the law of the LORD?", "options": ["A lion in the forest", "A tree planted by rivers of water", "A tower on a hill", "A bird in its nest"], "explanation": "Such a person is like a tree planted by the rivers of water that bears fruit in its season." },
+        { "prompt": "How does the last verse of the book of Psalms end the book?", "options": ["With a call for everything that has breath to praise the LORD", "With a prayer for the king", "With a lament over Jerusalem", "With a list of the tribes of Israel"], "explanation": "Psalm 150 closes the book by calling on everything that has breath to praise the LORD." }
+      ]
+    },
+    "ml": {
+      "title": "ക്വിസ്: സങ്കീർത്തനങ്ങളും ജ്ഞാനവും",
+      "summary": "ബൈബിളിന്റെ പ്രാർത്ഥനാപുസ്തകത്തെയും ജ്ഞാനഗ്രന്ഥങ്ങളെയും കുറിച്ചു പത്തു ചോദ്യങ്ങൾ.",
+      "questions": [
+        { "prompt": "23-ാം സങ്കീർത്തനത്തിൽ സങ്കീർത്തനക്കാരൻ യഹോവയെ എങ്ങനെ വിശേഷിപ്പിക്കുന്നു?", "options": ["തന്റെ ഇടയനായി", "തന്റെ ന്യായാധിപനായി", "ശക്തിയുള്ള കാറ്റായി", "ദഹിപ്പിക്കുന്ന അഗ്നിയായി"], "explanation": "പച്ചയായ പുല്പുറങ്ങളിലേക്കും സ്വസ്ഥതയുള്ള വെള്ളത്തിനരികിലേക്കും നടത്തുന്ന ഇടയൻ എന്നു യഹോവയെ വിളിച്ചുകൊണ്ടാണ് 23-ാം സങ്കീർത്തനം തുടങ്ങുന്നത്." },
+        { "prompt": "119-ാം സങ്കീർത്തനം ദൈവവചനത്തെ എന്തിനോടാണ് ഉപമിക്കുന്നത്?", "options": ["വാളും പരിചയും", "നദിയും വൃക്ഷവും", "ദീപവും പ്രകാശവും", "പാറയും ഗോപുരവും"], "explanation": "ദൈവവചനത്തെ കാലിനു ദീപവും പാതയ്ക്കു പ്രകാശവും എന്നു വിളിക്കുന്നു." },
+        { "prompt": "സദൃശവാക്യങ്ങൾ അനുസരിച്ച്, ജ്ഞാനത്തിന്റെ ആരംഭം എന്താണ്?", "options": ["ദീർഘായുസ്സ്", "യഹോവാഭക്തി", "ഏറെ പഠനം", "വലിയ സമ്പത്ത്"], "explanation": "യഹോവാഭക്തി ജ്ഞാനത്തിന്റെ ആരംഭമാകുന്നു എന്നു സദൃശവാക്യങ്ങൾ പഠിപ്പിക്കുന്നു." },
+        { "prompt": "രണ്ടു വാക്യങ്ങൾ മാത്രമുള്ള, ഏറ്റവും ചെറിയ സങ്കീർത്തനം ഏതാണ്?", "options": ["സങ്കീർത്തനം 1", "സങ്കീർത്തനം 23", "സങ്കീർത്തനം 100", "സങ്കീർത്തനം 117"], "explanation": "117-ാം സങ്കീർത്തനം വെറും രണ്ടു വാക്യങ്ങളിൽ സകല ജാതികളെയും യഹോവയെ സ്തുതിക്കാൻ വിളിക്കുന്നു." },
+        { "prompt": "ആകാശത്തിൻ കീഴുള്ള എല്ലാറ്റിനും എന്തുണ്ട് എന്നാണ് സഭാപ്രസംഗി 3-ാം അധ്യായം പറയുന്നത്?", "options": ["ഒരു കാലവും സമയവും", "ഒരു വിലയും പ്രതിഫലവും", "അവസാനമില്ലാത്ത ഒരു തുടക്കം", "ആർക്കും അറിയാനാവാത്ത ഒരു കാരണം"], "explanation": "എല്ലാറ്റിനും ഒരു സമയമുണ്ട്; സകല കാര്യത്തിനും ഒരു കാലമുണ്ട് എന്നു പറഞ്ഞുകൊണ്ടാണ് അധ്യായം തുടങ്ങുന്നത്." },
+        { "prompt": "മക്കളെയും സമ്പത്തിനെയും നഷ്ടപ്പെട്ടിട്ടും യഹോവയുടെ നാമത്തെ വാഴ്ത്തിയത് ആരാണ്?", "options": ["യോനാ", "ഏലീയാവ്", "ഇയ്യോബ്", "യിരെമ്യാവ്"], "explanation": "ഇയ്യോബ് നിലത്തു വീണു നമസ്കരിച്ചു; ദൈവത്തിനു ഭോഷത്വം ആരോപിച്ചില്ല." },
+        { "prompt": "46-ാം സങ്കീർത്തനം അതിന്റെ ആദ്യ വാക്യത്തിൽ ദൈവത്തെ എങ്ങനെ വിശേഷിപ്പിക്കുന്നു?", "options": ["ദൂരെയുള്ള സിംഹാസനത്തിലെ രാജാവ്", "നമ്മുടെ സങ്കേതവും ബലവും", "ജ്ഞാനികളുടെ ഗുരു", "പട്ടണങ്ങൾ പണിയുന്നവൻ"], "explanation": "ദൈവം നമ്മുടെ സങ്കേതവും ബലവും, കഷ്ടങ്ങളിൽ ഏറ്റവും അടുത്ത തുണയും എന്നു പറഞ്ഞുകൊണ്ടാണ് 46-ാം സങ്കീർത്തനം തുടങ്ങുന്നത്." },
+        { "prompt": "എന്തിൽ ഊന്നരുത് എന്നാണ് സദൃശവാക്യങ്ങൾ 3 നമ്മോടു പറയുന്നത്?", "options": ["നമ്മുടെ അയൽക്കാരിൽ", "നമ്മുടെ സമ്പത്തിൽ", "നമ്മുടെ ഭരണാധികാരികളിൽ", "സ്വന്ത വിവേകത്തിൽ"], "explanation": "പൂർണ്ണഹൃദയത്തോടെ യഹോവയിൽ ആശ്രയിക്കാനും സ്വന്ത വിവേകത്തിൽ ഊന്നാതിരിക്കാനും നമ്മോടു പറയുന്നു." },
+        { "prompt": "യഹോവയുടെ ന്യായപ്രമാണത്തിൽ സന്തോഷിക്കുന്നവനെ ഒന്നാം സങ്കീർത്തനം എന്തിനോടാണ് ഉപമിക്കുന്നത്?", "options": ["കാട്ടിലെ സിംഹം", "ആറ്റരികത്തു നട്ടിരിക്കുന്ന വൃക്ഷം", "കുന്നിന്മേലുള്ള ഗോപുരം", "കൂട്ടിലെ പക്ഷി"], "explanation": "അങ്ങനെയുള്ളവൻ ആറ്റരികത്തു നട്ടിരിക്കുന്നതും തക്കകാലത്തു ഫലം കായ്ക്കുന്നതുമായ വൃക്ഷംപോലെയാണ്." },
+        { "prompt": "സങ്കീർത്തനപുസ്തകത്തിന്റെ അവസാന വാക്യം പുസ്തകത്തെ അവസാനിപ്പിക്കുന്നത് എങ്ങനെ?", "options": ["ജീവനുള്ളതൊക്കെയും യഹോവയെ സ്തുതിക്കാനുള്ള ആഹ്വാനത്തോടെ", "രാജാവിനുവേണ്ടിയുള്ള പ്രാർത്ഥനയോടെ", "യെരൂശലേമിനെക്കുറിച്ചുള്ള വിലാപത്തോടെ", "യിസ്രായേൽ ഗോത്രങ്ങളുടെ പട്ടികയോടെ"], "explanation": "ജീവനുള്ളതൊക്കെയും യഹോവയെ സ്തുതിക്കട്ടെ എന്ന് ആഹ്വാനം ചെയ്തുകൊണ്ട് 150-ാം സങ്കീർത്തനം പുസ്തകം അവസാനിപ്പിക്കുന്നു." }
+      ]
+    }
+  },
+  {
+    "slug": "quiz-acts-early-church",
+    "kind": "quiz",
+    "sort_order": 40,
+    "answers": [
+      { "correct": 2, "ref": { "book": "ACT", "chapter": 1, "verse_start": 26, "verse_end": 26 } },
+      { "correct": 0, "ref": { "book": "ACT", "chapter": 2, "verse_start": 1, "verse_end": 4 } },
+      { "correct": 3, "ref": { "book": "ACT", "chapter": 7, "verse_start": 59, "verse_end": 60 } },
+      { "correct": 1, "ref": { "book": "ACT", "chapter": 8, "verse_start": 38, "verse_end": 38 } },
+      { "correct": 0, "ref": { "book": "ACT", "chapter": 9, "verse_start": 3, "verse_end": 5 } },
+      { "correct": 2, "ref": { "book": "ACT", "chapter": 10, "verse_start": 1, "verse_end": 2 } },
+      { "correct": 1, "ref": { "book": "ACT", "chapter": 11, "verse_start": 26, "verse_end": 26 } },
+      { "correct": 3, "ref": { "book": "ACT", "chapter": 13, "verse_start": 2, "verse_end": 3 } },
+      { "correct": 0, "ref": { "book": "ACT", "chapter": 16, "verse_start": 25, "verse_end": 26 } },
+      { "correct": 2, "ref": { "book": "ACT", "chapter": 28, "verse_start": 16, "verse_end": 16 } }
+    ],
+    "en": {
+      "title": "Quiz: Acts and the early Church",
+      "summary": "Ten questions on the Acts of the Apostles, from Jerusalem to Rome.",
+      "questions": [
+        { "prompt": "Who was chosen to take the place of Judas among the apostles?", "options": ["Barnabas", "Stephen", "Matthias", "Silas"], "explanation": "The lot fell on Matthias, and he was numbered with the eleven apostles." },
+        { "prompt": "On which feast day did the Holy Spirit come upon the disciples in Jerusalem?", "options": ["Pentecost", "Passover", "Tabernacles", "The Day of Atonement"], "explanation": "When the day of Pentecost had come, they were all filled with the Holy Spirit." },
+        { "prompt": "Who is the first Christian martyr described in Acts?", "options": ["James", "Peter", "Philip", "Stephen"], "explanation": "Stephen was stoned, praying that the Lord would not hold this sin against those who killed him." },
+        { "prompt": "Who explained the Scriptures to an Ethiopian official on the road and baptised him?", "options": ["Peter", "Philip", "Paul", "Ananias"], "explanation": "Philip preached Jesus to him, and they went down into the water, where Philip baptised him." },
+        { "prompt": "Saul was travelling to which city when a light from heaven shone round him?", "options": ["Damascus", "Antioch", "Caesarea", "Tarsus"], "explanation": "As Saul came near Damascus a light shone round him and he heard the voice of Jesus." },
+        { "prompt": "Who was the Roman centurion at Caesarea whose household Peter visited?", "options": ["Julius", "Gallio", "Cornelius", "Festus"], "explanation": "Cornelius, a centurion of the Italian band, was a devout man who feared God with all his house." },
+        { "prompt": "In which city were the disciples first called Christians?", "options": ["Jerusalem", "Antioch", "Ephesus", "Rome"], "explanation": "Barnabas and Saul taught in Antioch for a whole year, and the disciples were first called Christians there." },
+        { "prompt": "Who was set apart with Saul for the work to which the Holy Spirit called them?", "options": ["Timothy", "Luke", "Apollos", "Barnabas"], "explanation": "The Holy Spirit said that Barnabas and Saul should be separated for the work; the church fasted, prayed and sent them." },
+        { "prompt": "What were Paul and Silas doing at midnight in prison when the earthquake came?", "options": ["Praying and singing praises to God", "Sleeping", "Planning their escape", "Writing letters"], "explanation": "At midnight Paul and Silas prayed and sang praises to God, and the prisoners heard them." },
+        { "prompt": "To which city has Paul come at the end of the book of Acts?", "options": ["Athens", "Corinth", "Rome", "Jerusalem"], "explanation": "Paul came to Rome and was allowed to live by himself with a soldier who guarded him." }
+      ]
+    },
+    "ml": {
+      "title": "ക്വിസ്: അപ്പൊസ്തലപ്രവൃത്തികളും ആദിമസഭയും",
+      "summary": "യെരൂശലേം മുതൽ റോം വരെ, അപ്പൊസ്തലപ്രവൃത്തികളെക്കുറിച്ചു പത്തു ചോദ്യങ്ങൾ.",
+      "questions": [
+        { "prompt": "അപ്പൊസ്തലന്മാരുടെ ഇടയിൽ യൂദായുടെ സ്ഥാനത്തേക്കു തിരഞ്ഞെടുക്കപ്പെട്ടത് ആരാണ്?", "options": ["ബർന്നബാസ്", "സ്തെഫാനൊസ്", "മത്ഥിയാസ്", "ശീലാസ്"], "explanation": "ചീട്ടു മത്ഥിയാസിനു വീണു; അവനെ പതിനൊന്ന് അപ്പൊസ്തലന്മാരോടുകൂടെ എണ്ണി." },
+        { "prompt": "യെരൂശലേമിൽ ശിഷ്യന്മാരുടെമേൽ പരിശുദ്ധാത്മാവ് വന്നത് ഏതു പെരുന്നാൾ ദിവസത്തിലാണ്?", "options": ["പെന്തെക്കൊസ്ത്", "പെസഹ", "കൂടാരപ്പെരുന്നാൾ", "പാപപരിഹാരദിവസം"], "explanation": "പെന്തെക്കൊസ്തുനാൾ വന്നപ്പോൾ എല്ലാവരും പരിശുദ്ധാത്മാവു നിറഞ്ഞവരായി." },
+        { "prompt": "അപ്പൊസ്തലപ്രവൃത്തികളിൽ വിവരിക്കുന്ന ആദ്യ ക്രിസ്തീയ രക്തസാക്ഷി ആരാണ്?", "options": ["യാക്കോബ്", "പത്രൊസ്", "ഫിലിപ്പൊസ്", "സ്തെഫാനൊസ്"], "explanation": "തന്നെ കൊന്നവർക്ക് ഈ പാപം കണക്കിടരുതേ എന്നു പ്രാർത്ഥിച്ചുകൊണ്ട് സ്തെഫാനൊസ് കല്ലേറേറ്റു മരിച്ചു." },
+        { "prompt": "വഴിയിൽവെച്ച് ഒരു എത്യോപ്യൻ ഉദ്യോഗസ്ഥനു തിരുവെഴുത്തു വിശദീകരിച്ചുകൊടുത്ത് അവനെ സ്നാനം കഴിപ്പിച്ചത് ആരാണ്?", "options": ["പത്രൊസ്", "ഫിലിപ്പൊസ്", "പൗലൊസ്", "അനന്യാസ്"], "explanation": "ഫിലിപ്പൊസ് അവനോടു യേശുവിനെക്കുറിച്ചു സുവിശേഷം അറിയിച്ചു; അവർ വെള്ളത്തിൽ ഇറങ്ങി, ഫിലിപ്പൊസ് അവനെ സ്നാനം കഴിപ്പിച്ചു." },
+        { "prompt": "ആകാശത്തുനിന്ന് ഒരു വെളിച്ചം ചുറ്റും മിന്നിയപ്പോൾ ശൗൽ ഏതു പട്ടണത്തിലേക്കു യാത്ര ചെയ്യുകയായിരുന്നു?", "options": ["ദമസ്കൊസ്", "അന്ത്യൊക്ക്യ", "കൈസര്യ", "തർസൊസ്"], "explanation": "ശൗൽ ദമസ്കൊസിനു സമീപിച്ചപ്പോൾ ഒരു വെളിച്ചം അവന്റെ ചുറ്റും മിന്നി; അവൻ യേശുവിന്റെ ശബ്ദം കേട്ടു." },
+        { "prompt": "പത്രൊസ് സന്ദർശിച്ച കൈസര്യയിലെ റോമൻ ശതാധിപൻ ആരാണ്?", "options": ["യൂലിയൊസ്", "ഗല്ലിയോൻ", "കൊർന്നേല്യൊസ്", "ഫെസ്തൊസ്"], "explanation": "ഇത്താലിക പട്ടാളത്തിലെ ശതാധിപനായ കൊർന്നേല്യൊസ് തന്റെ ഗൃഹത്തോടുകൂടെ ദൈവത്തെ ഭയപ്പെട്ടിരുന്ന ഭക്തനായിരുന്നു." },
+        { "prompt": "ശിഷ്യന്മാർക്ക് ആദ്യമായി ക്രിസ്ത്യാനികൾ എന്നു പേർ ഉണ്ടായത് ഏതു പട്ടണത്തിലാണ്?", "options": ["യെരൂശലേം", "അന്ത്യൊക്ക്യ", "എഫെസൊസ്", "റോം"], "explanation": "ബർന്നബാസും ശൗലും ഒരു വർഷം മുഴുവനും അന്ത്യൊക്ക്യയിൽ ഉപദേശിച്ചു; അവിടെവെച്ചാണ് ശിഷ്യന്മാർക്ക് ആദ്യം ക്രിസ്ത്യാനികൾ എന്നു പേർ ഉണ്ടായത്." },
+        { "prompt": "പരിശുദ്ധാത്മാവ് വിളിച്ച വേലയ്ക്കായി ശൗലിനോടൊപ്പം വേർതിരിക്കപ്പെട്ടത് ആരാണ്?", "options": ["തിമൊഥെയൊസ്", "ലൂക്കൊസ്", "അപ്പൊല്ലോസ്", "ബർന്നബാസ്"], "explanation": "ബർന്നബാസിനെയും ശൗലിനെയും വേലയ്ക്കായി വേർതിരിക്കാൻ പരിശുദ്ധാത്മാവ് പറഞ്ഞു; സഭ ഉപവസിച്ചു പ്രാർത്ഥിച്ച് അവരെ അയച്ചു." },
+        { "prompt": "ഭൂകമ്പം ഉണ്ടായപ്പോൾ അർദ്ധരാത്രിയിൽ പൗലൊസും ശീലാസും തടവിൽ എന്തു ചെയ്യുകയായിരുന്നു?", "options": ["പ്രാർത്ഥിച്ചു ദൈവത്തെ പാടിസ്തുതിക്കുകയായിരുന്നു", "ഉറങ്ങുകയായിരുന്നു", "രക്ഷപ്പെടാൻ ആലോചിക്കുകയായിരുന്നു", "ലേഖനങ്ങൾ എഴുതുകയായിരുന്നു"], "explanation": "അർദ്ധരാത്രിക്കു പൗലൊസും ശീലാസും പ്രാർത്ഥിച്ചു ദൈവത്തെ പാടിസ്തുതിച്ചു; തടവുകാർ അതു കേട്ടുകൊണ്ടിരുന്നു." },
+        { "prompt": "അപ്പൊസ്തലപ്രവൃത്തികളുടെ അവസാനത്തിൽ പൗലൊസ് ഏതു പട്ടണത്തിലാണ് എത്തിയിരിക്കുന്നത്?", "options": ["അഥേന", "കൊരിന്ത്", "റോം", "യെരൂശലേം"], "explanation": "പൗലൊസ് റോമിൽ എത്തി; തനിക്കു കാവലായ പടയാളിയോടുകൂടെ വേറിട്ടു പാർക്കാൻ അവന് അനുവാദം കിട്ടി." }
+      ]
+    }
+  },
+  {
+    "slug": "quiz-bible-basics",
+    "kind": "quiz",
+    "sort_order": 50,
+    "answers": [
+      { "correct": 1, "ref": { "book": "GEN", "chapter": 1, "verse_start": 1, "verse_end": 1 } },
+      { "correct": 3, "ref": { "book": "REV", "chapter": 22, "verse_start": 20, "verse_end": 21 } },
+      { "correct": 0, "ref": null },
+      { "correct": 2, "ref": null },
+      { "correct": 1, "ref": { "book": "EXO", "chapter": 3, "verse_start": 10, "verse_end": 10 } },
+      { "correct": 0, "ref": { "book": "EXO", "chapter": 19, "verse_start": 20, "verse_end": 20 } },
+      { "correct": 3, "ref": { "book": "1SA", "chapter": 17, "verse_start": 49, "verse_end": 50 } },
+      { "correct": 2, "ref": { "book": "DAN", "chapter": 6, "verse_start": 16, "verse_end": 16 } },
+      { "correct": 1, "ref": { "book": "JON", "chapter": 1, "verse_start": 17, "verse_end": 17 } },
+      { "correct": 0, "ref": { "book": "ROM", "chapter": 1, "verse_start": 1, "verse_end": 1 } }
+    ],
+    "en": {
+      "title": "Quiz: Bible basics",
+      "summary": "Ten starter questions about the Bible as a whole. A good first quiz for children and new readers.",
+      "questions": [
+        { "prompt": "Which is the first book of the Bible?", "options": ["Exodus", "Genesis", "Matthew", "Psalms"], "explanation": "The Bible opens with Genesis and its account of creation." },
+        { "prompt": "Which is the last book of the Bible?", "options": ["Jude", "Acts", "Malachi", "Revelation"], "explanation": "The Bible closes with the Revelation of John and its prayer for the coming of the Lord Jesus." },
+        { "prompt": "How many Gospels are there in the New Testament?", "options": ["Four", "Three", "Seven", "Twelve"], "explanation": "The four Gospels are Matthew, Mark, Luke and John." },
+        { "prompt": "How many books are there in the New Testament?", "options": ["12", "39", "27", "66"], "explanation": "Catholic, Orthodox and Protestant Bibles all have the same 27 New Testament books. (The number of Old Testament books differs between traditions.)" },
+        { "prompt": "Whom did God send to Pharaoh to bring the people of Israel out of Egypt?", "options": ["Joshua", "Moses", "Samuel", "Gideon"], "explanation": "At the burning bush God told Moses that he would send him to Pharaoh to bring Israel out of Egypt." },
+        { "prompt": "On which mountain did the LORD come down to meet Moses before giving the Ten Commandments?", "options": ["Mount Sinai", "Mount Carmel", "Mount Zion", "The Mount of Olives"], "explanation": "The LORD came down upon Mount Sinai and called Moses up to the top of the mount." },
+        { "prompt": "Who defeated the giant Goliath with a sling and a stone?", "options": ["Saul", "Samson", "Jonathan", "David"], "explanation": "David struck the Philistine with a stone from his sling; there was no sword in his hand." },
+        { "prompt": "Who was thrown into a den of lions for praying to God?", "options": ["Ezekiel", "Jeremiah", "Daniel", "Nehemiah"], "explanation": "At the king's command Daniel was brought and cast into the den of lions." },
+        { "prompt": "Which prophet was swallowed by a great fish?", "options": ["Amos", "Jonah", "Hosea", "Micah"], "explanation": "The LORD had prepared a great fish to swallow Jonah, and Jonah was in the fish three days and three nights." },
+        { "prompt": "Which of these books is a letter written by the apostle Paul?", "options": ["Romans", "Hebrews", "Revelation", "James"], "explanation": "The letter to the Romans opens with the name of Paul, a servant of Jesus Christ. (Hebrews does not name its author.)" }
+      ]
+    },
+    "ml": {
+      "title": "ക്വിസ്: ബൈബിൾ അടിസ്ഥാനങ്ങൾ",
+      "summary": "ബൈബിളിനെ മൊത്തത്തിൽ കുറിച്ചുള്ള പത്തു പ്രാരംഭ ചോദ്യങ്ങൾ. കുട്ടികൾക്കും പുതിയ വായനക്കാർക്കും നല്ല ആദ്യ ക്വിസ്.",
+      "questions": [
+        { "prompt": "ബൈബിളിലെ ആദ്യ പുസ്തകം ഏതാണ്?", "options": ["പുറപ്പാട്", "ഉല്പത്തി", "മത്തായി", "സങ്കീർത്തനങ്ങൾ"], "explanation": "ഉല്പത്തിയും അതിലെ സൃഷ്ടിവിവരണവും കൊണ്ടാണ് ബൈബിൾ തുടങ്ങുന്നത്." },
+        { "prompt": "ബൈബിളിലെ അവസാന പുസ്തകം ഏതാണ്?", "options": ["യൂദാ", "അപ്പൊസ്തലപ്രവൃത്തികൾ", "മലാഖി", "വെളിപ്പാട്"], "explanation": "യോഹന്നാനുണ്ടായ വെളിപ്പാടും കർത്താവായ യേശുവിന്റെ വരവിനായുള്ള അതിലെ പ്രാർത്ഥനയും കൊണ്ടാണ് ബൈബിൾ അവസാനിക്കുന്നത്." },
+        { "prompt": "പുതിയ നിയമത്തിൽ എത്ര സുവിശേഷങ്ങളുണ്ട്?", "options": ["നാല്", "മൂന്ന്", "ഏഴ്", "പന്ത്രണ്ട്"], "explanation": "മത്തായി, മർക്കൊസ്, ലൂക്കൊസ്, യോഹന്നാൻ എന്നിവയാണ് നാലു സുവിശേഷങ്ങൾ." },
+        { "prompt": "പുതിയ നിയമത്തിൽ എത്ര പുസ്തകങ്ങളുണ്ട്?", "options": ["12", "39", "27", "66"], "explanation": "കത്തോലിക്കാ, ഓർത്തഡോക്സ്, പ്രൊട്ടസ്റ്റന്റ് ബൈബിളുകളിലെല്ലാം പുതിയ നിയമത്തിൽ ഒരേ 27 പുസ്തകങ്ങളാണ്. (പഴയ നിയമത്തിലെ പുസ്തകങ്ങളുടെ എണ്ണം പാരമ്പര്യങ്ങൾ തമ്മിൽ വ്യത്യാസപ്പെടുന്നു.)" },
+        { "prompt": "യിസ്രായേൽമക്കളെ മിസ്രയീമിൽനിന്നു പുറപ്പെടുവിക്കാൻ ദൈവം ഫറവോന്റെ അടുക്കൽ അയച്ചത് ആരെയാണ്?", "options": ["യോശുവ", "മോശെ", "ശമൂവേൽ", "ഗിദെയോൻ"], "explanation": "യിസ്രായേലിനെ മിസ്രയീമിൽനിന്നു പുറപ്പെടുവിക്കാൻ താൻ അവനെ ഫറവോന്റെ അടുക്കൽ അയയ്ക്കുമെന്ന് കത്തുന്ന മുൾപ്പടർപ്പിങ്കൽവെച്ചു ദൈവം മോശെയോടു പറഞ്ഞു." },
+        { "prompt": "പത്തു കല്പനകൾ നൽകുന്നതിനു മുമ്പ് മോശെയെ കാണാൻ യഹോവ ഇറങ്ങിവന്നത് ഏതു പർവ്വതത്തിലാണ്?", "options": ["സീനായി പർവ്വതം", "കർമ്മേൽ പർവ്വതം", "സീയോൻ പർവ്വതം", "ഒലിവുമല"], "explanation": "യഹോവ സീനായി പർവ്വതത്തിൽ ഇറങ്ങി, മോശെയെ പർവ്വതത്തിന്റെ കൊടുമുടിയിലേക്കു വിളിച്ചു." },
+        { "prompt": "കവിണയും കല്ലും കൊണ്ട് മല്ലനായ ഗൊല്യാത്തിനെ തോല്പിച്ചത് ആരാണ്?", "options": ["ശൗൽ", "ശിംശോൻ", "യോനാഥാൻ", "ദാവീദ്"], "explanation": "ദാവീദ് കവിണയിൽനിന്നുള്ള ഒരു കല്ലുകൊണ്ടു ഫെലിസ്ത്യനെ വീഴ്ത്തി; അവന്റെ കയ്യിൽ വാൾ ഇല്ലായിരുന്നു." },
+        { "prompt": "ദൈവത്തോടു പ്രാർത്ഥിച്ചതിനു സിംഹങ്ങളുടെ ഗുഹയിൽ ഇടപ്പെട്ടത് ആരാണ്?", "options": ["യെഹെസ്കേൽ", "യിരെമ്യാവ്", "ദാനീയേൽ", "നെഹെമ്യാവ്"], "explanation": "രാജാവിന്റെ കല്പനപ്രകാരം ദാനീയേലിനെ കൊണ്ടുവന്നു സിംഹങ്ങളുടെ ഗുഹയിൽ ഇട്ടു." },
+        { "prompt": "ഒരു മഹാമത്സ്യം വിഴുങ്ങിയ പ്രവാചകൻ ആരാണ്?", "options": ["ആമോസ്", "യോനാ", "ഹോശേയ", "മീഖാ"], "explanation": "യോനായെ വിഴുങ്ങാൻ യഹോവ ഒരു മഹാമത്സ്യത്തെ കല്പിച്ചാക്കിയിരുന്നു; യോനാ മൂന്നു രാവും മൂന്നു പകലും മത്സ്യത്തിനുള്ളിൽ ആയിരുന്നു." },
+        { "prompt": "ഇവയിൽ അപ്പൊസ്തലനായ പൗലൊസ് എഴുതിയ ലേഖനം ഏതാണ്?", "options": ["റോമർ", "എബ്രായർ", "വെളിപ്പാട്", "യാക്കോബ്"], "explanation": "റോമർക്കുള്ള ലേഖനം തുടങ്ങുന്നത് യേശുക്രിസ്തുവിന്റെ ദാസനായ പൗലൊസിന്റെ പേരോടെയാണ്. (എബ്രായർക്കുള്ള ലേഖനം അതിന്റെ എഴുത്തുകാരന്റെ പേർ പറയുന്നില്ല.)" }
+      ]
+    }
+  }
+]

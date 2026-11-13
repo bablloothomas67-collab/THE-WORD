@@ -1,15 +1,19 @@
 import { useState, type FormEvent } from 'react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import { Badge, Button, Card, ErrorState, TextField } from '../components/ui';
+import { Badge, Button, Card, EmptyState, ErrorState, LoadingState, TextField } from '../components/ui';
 import { useAuth } from '../features/auth/useAuth';
 import { MAX_DISPLAY_NAME } from '../features/profile/profileService';
 import { getLanguage } from '../config/languages';
 import { PageHeader } from './PageHeader';
 import { StudyLists } from '../features/study/StudyLists';
+import { useAsync } from '../hooks/useAsync';
+import { useUiLanguage } from '../features/bible/useBible';
+import { contentService } from '../features/discover/contentService';
+import { ContentList } from './DiscoverPage';
 import styles from './pages.module.css';
 
-const COMING_SOON = ['history', 'saved', 'preferences'] as const;
+const COMING_SOON = ['history', 'preferences'] as const;
 const LINKS = [
   { to: '/prayer', key: 'journey.links.prayer' },
   { to: '/plans', key: 'journey.links.plans' },
@@ -54,6 +58,9 @@ export function JourneyPage() {
       <h2 className={styles.sectionTitle}>{t('journey.studyTitle')}</h2>
       <StudyLists />
 
+      <h2 className={styles.sectionTitle}>{t('journey.savedTitle')}</h2>
+      <SavedContent />
+
       <ul className={styles.list} style={{ marginTop: 'var(--space-6)' }}>
         {COMING_SOON.map((key) => (
           <li key={key} className={styles.listItem}>
@@ -64,6 +71,16 @@ export function JourneyPage() {
       </ul>
     </>
   );
+}
+
+function SavedContent() {
+  const { t } = useTranslation();
+  const lang = useUiLanguage();
+  const saved = useAsync(() => contentService.listSaved(lang), [lang]);
+  if (saved.loading) return <LoadingState />;
+  if (saved.error) return <ErrorState message={t('journey.lists.loadError')} onRetry={saved.reload} />;
+  if (!saved.data?.length) return <EmptyState body={t('journey.savedEmpty')} />;
+  return <ContentList items={saved.data} />;
 }
 
 function ProfileNameForm({ initialName }: { initialName: string }) {

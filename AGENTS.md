@@ -45,6 +45,7 @@ recommended next task. Wait for owner approval before the next phase.
 - `src/components/navigation` — top bar, bottom nav, language selector, theme toggle
 - `src/features/<feature>` — feature logic (auth now; bible, prayer, etc. later)
 - `src/services` — external providers (Supabase, bible-provider adapter; ai, payments later)
+- `content/` — reviewed source text for devotionals and Discover; `scripts/content` validates and imports it
 - `scripts/bible` — USFM parser, importer and search normaliser (keep in sync with SQL + TS)
 - `src/locales/<lang>` — interface translations
 - `src/styles/tokens.css` — design tokens (colours, type, spacing)

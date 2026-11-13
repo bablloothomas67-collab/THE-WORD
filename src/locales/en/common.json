@@ -143,7 +143,7 @@
     "categories": {
       "stories": {
         "title": "Bible stories",
-        "body": "Animated stories for children and families."
+        "body": "The great stories of Scripture, retold for families, with the passages to read."
       },
       "history": {
         "title": "Christian history",
@@ -161,6 +161,32 @@
         "title": "Bible quizzes",
         "body": "Test and grow your Bible knowledge."
       }
+    },
+    "error": "We couldn't load this content. Please try again.",
+    "none": "Nothing has been published here yet.",
+    "notFound": "This page isn't available in the selected language.",
+    "count_one": "{{count}} item",
+    "count_other": "{{count}} items",
+    "passages": "Read the passages",
+    "passageError": "This passage couldn't be loaded.",
+    "sources": "Sources and further reading",
+    "original": "Original writing by {{author}}.",
+    "reviewed": "Reviewed by {{reviewer}}.",
+    "save": "Save to My Journey",
+    "saved": "Saved — tap to remove",
+    "saveError": "We couldn't update your saved content. Please try again.",
+    "quiz": {
+      "check": "Check my answers",
+      "retry": "Try again",
+      "score": "You scored {{score}} out of {{total}}.",
+      "best": "Your best so far: {{score}} out of {{total}}.",
+      "unanswered_one": "{{count}} question left to answer",
+      "unanswered_other": "{{count}} questions left to answer",
+      "right": "Correct.",
+      "wrong": "Not quite.",
+      "correctAnswer": "Correct answer",
+      "signInToSave": "Sign in to keep your quiz results.",
+      "saveError": "Your score couldn't be saved, but your answers are shown above."
     }
   },
   "journey": {
@@ -200,7 +226,9 @@
       "plans": "Reading plans",
       "prayer": "Prayer journal",
       "devotionals": "Devotionals"
-    }
+    },
+    "savedTitle": "Saved content",
+    "savedEmpty": "Nothing saved yet. Save articles and quizzes from Discover."
   },
   "auth": {
     "loginTitle": "Sign in",
