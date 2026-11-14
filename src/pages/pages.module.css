@@ -435,3 +435,17 @@ a.listItem:hover {
   font-size: var(--font-size-xl);
   margin: var(--space-3) 0;
 }
+.contactList {
+  max-width: var(--reading-max);
+  margin-bottom: var(--space-5);
+}
+.contactList dt {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-muted);
+  margin-top: var(--space-4);
+}
+.contactList dd {
+  margin: 0;
+  font-size: var(--font-size-lg);
+  overflow-wrap: anywhere;
+}

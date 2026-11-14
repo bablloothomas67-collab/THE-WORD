@@ -18,6 +18,7 @@ import { RegisterPage } from '../pages/RegisterPage';
 import { NotFoundPage } from '../pages/NotFoundPage';
 import { ForgotPasswordPage } from '../pages/ForgotPasswordPage';
 import { ResetPasswordPage } from '../pages/ResetPasswordPage';
+import { ContactPage, LegalPage } from '../pages/LegalPage';
 import { ProtectedRoute } from '../features/auth/ProtectedRoute';
 
 export function AppRoutes() {
@@ -61,6 +62,10 @@ export function AppRoutes() {
             </ProtectedRoute>
           }
         />
+        <Route path="terms" element={<LegalPage doc="terms" />} />
+        <Route path="privacy" element={<LegalPage doc="privacy" />} />
+        <Route path="refunds" element={<LegalPage doc="refunds" />} />
+        <Route path="contact" element={<ContactPage />} />
         <Route path="login" element={<LoginPage />} />
         <Route path="register" element={<RegisterPage />} />
         <Route path="forgot-password" element={<ForgotPasswordPage />} />

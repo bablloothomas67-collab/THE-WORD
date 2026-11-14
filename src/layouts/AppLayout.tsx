@@ -1,6 +1,7 @@
 import { Outlet } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { TopBar } from '../components/navigation/TopBar';
+import { SiteFooter } from '../components/navigation/SiteFooter';
 import { BottomNav } from '../components/navigation/BottomNav';
 import styles from './layout.module.css';
 
@@ -15,6 +16,7 @@ export function AppLayout() {
       <main id="main" className={styles.main} tabIndex={-1}>
         <Outlet />
       </main>
+      <SiteFooter />
       <BottomNav />
     </div>
   );

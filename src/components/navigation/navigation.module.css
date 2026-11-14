@@ -184,3 +184,35 @@
     display: inline-flex;
   }
 }
+
+/* Site footer. On small screens it clears the fixed bottom navigation. */
+.siteFooter {
+  width: 100%;
+  max-width: var(--content-max);
+  margin: 0 auto;
+  padding: var(--space-5) var(--space-4) calc(var(--bottomnav-height) + var(--space-5));
+  border-top: 1px solid var(--color-border);
+  font-size: var(--font-size-sm);
+}
+.footerList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2) var(--space-5);
+}
+.footerList a {
+  display: inline-block;
+  padding: var(--space-2) 0;
+}
+.footerNote {
+  margin: var(--space-3) 0 0;
+  color: var(--color-text-muted);
+  font-size: var(--font-size-xs);
+}
+@media (min-width: 900px) {
+  .siteFooter {
+    padding: var(--space-5) var(--space-5) var(--space-6);
+  }
+}

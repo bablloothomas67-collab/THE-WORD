@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.7.1 — 2026-11-14
+
+- Legal pages published in English and Malayalam: Terms of use (`/terms`), Privacy policy (`/privacy`), Refunds and cancellation (`/refunds`), Contact (`/contact`). Text is in the locale files; seller details are in `src/config/business.ts` (owner approved publishing name, address, email and phone).
+- Owner decisions: full refund within 7 days of purchase; not GST registered; courts at Thiruvananthapuram; 30 days for account export or deletion.
+- Site footer on every page with links to the legal pages and Premium; Premium link in the desktop navigation; `<noscript>` block naming the seller and linking the legal pages.
+- Razorpay test mode verified end to end on 14 Nov 2026: purchase, webhook (payment.captured, order.paid, refund.processed), duplicate notices counted once, refund removes Premium for that account only. Paywall remains off.
+- Tests: 160 unit tests pass (9 new in `tests/unit/legal.test.tsx`).
+
 ## 0.7.0 — 2026-11-13 — Phase 6: Premium and payments (test mode not yet exercised)
 
 ### Added

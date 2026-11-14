@@ -38,6 +38,14 @@ export function TopBar() {
                 </NavLink>
               </li>
             ))}
+            <li>
+              <NavLink
+                to="/premium"
+                className={({ isActive }) => [styles.desktopLink, isActive ? styles.active : ''].join(' ')}
+              >
+                {t('nav.premium')}
+              </NavLink>
+            </li>
           </ul>
         </nav>
 

@@ -1,3 +1,5 @@
+> Status (14 Nov 2026): superseded. The owner's answers were applied and the pages are published at /terms, /privacy, /refunds and /contact. The live text is in `src/locales/*/common.json` under `legal`. The Malayalam text was machine-drafted and awaits the owner's read-through. Neither version has been checked by a lawyer.
+
 # THE WORD — draft legal pages (for owner review; not yet published)
 
 These are plain-language drafts written by an AI assistant, not by a lawyer. Please have them checked
