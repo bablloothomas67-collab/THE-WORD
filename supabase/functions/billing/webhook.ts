@@ -9,7 +9,7 @@
 import type { SupabaseClient } from 'jsr:@supabase/supabase-js@2';
 import { verifyWebhookSignature, webhookAction } from './logic.ts';
 
-const WEBHOOK_SECRET = Deno.env.get('RAZORPAY_WEBHOOK_SECRET') ?? '';
+const WEBHOOK_SECRET = (Deno.env.get('RAZORPAY_WEBHOOK_SECRET') ?? '').trim();
 
 function reply(status: number, body: unknown) {
   return new Response(JSON.stringify(body), { status, headers: { 'Content-Type': 'application/json' } });

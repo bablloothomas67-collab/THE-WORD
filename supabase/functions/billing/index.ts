@@ -20,8 +20,9 @@ import { createClient } from 'jsr:@supabase/supabase-js@2';
 import { handleWebhook } from './webhook.ts';
 import { CURRENCY, isPlan, isProviderId, orderIsPaid, PLANS, verifyPaymentSignature } from './logic.ts';
 
-const KEY_ID = Deno.env.get('RAZORPAY_KEY_ID') ?? '';
-const KEY_SECRET = Deno.env.get('RAZORPAY_KEY_SECRET') ?? '';
+// Trimmed: values pasted into the dashboard often carry a trailing tab or line break.
+const KEY_ID = (Deno.env.get('RAZORPAY_KEY_ID') ?? '').trim();
+const KEY_SECRET = (Deno.env.get('RAZORPAY_KEY_SECRET') ?? '').trim();
 const configured = KEY_ID.length > 0 && KEY_SECRET.length > 0;
 const MAX_PENDING_PER_DAY = 10;
 
