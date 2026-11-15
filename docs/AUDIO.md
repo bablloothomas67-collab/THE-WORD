@@ -67,3 +67,14 @@ where Scripture starts and ends, and reports the match rate); `build_plan_audio.
 trims, levels to −16 LUFS, re-encodes at 80 kbit/s mono and writes a manifest; then
 `upload_audio.py` as above. Chapters whose match rate is under 95% are flagged and not uploaded.
 The Malayalam audio has not been machine-checked against the text; the owner listened to samples.
+
+### Status of recorded plan audio (15 Nov 2026)
+- Malayalam (`malirv`): all 21 chapters of John published, 128 minutes.
+- English (`web`): 19 chapters published, 93 minutes. Chapters 15 and 20 are HELD BACK: the reader
+  skips the opening clause of John 15:11 and one clause of John 20:25 (found by aligning
+  speech-to-text with the site's text and re-checking short clips). Owner to decide.
+- Every processed English file was machine-checked at its first and last seconds for leftover
+  LibriVox intro/outro speech: none found. Omissions shorter than about seven words cannot be
+  told apart from edition differences by this check.
+- Verified live: anonymous visitors cannot get a file link; a signed-in reader can play both
+  languages; ordinary users cannot upload.

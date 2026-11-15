@@ -29,6 +29,13 @@ SRC = {
                      'comment': 'Adapted by THE WORD (vachanambible.net): silence trimmed and volume levelled. This adapted file is also licensed CC BY-SA 4.0 https://creativecommons.org/licenses/by-sa/4.0/'}),
 }
 
+# Places where the English reader skips part of a verse (found by aligning speech-to-text with
+# the site's text, then re-checking a short clip). These chapters are held back for the owner.
+KNOWN_OMISSIONS = {
+    15: 'reader omits the opening clause of John 15:11',
+    20: 'reader omits one clause of John 20:25',
+}
+
 def run(args):
     return subprocess.run(args, capture_output=True, text=True)
 
@@ -46,8 +53,11 @@ def window(lang, ch, path):
     if lang == 'en':
         from align import analyse
         r = analyse(ch)
+        note = f"text match {r['match']:.3f}"
         ok = r['match'] >= 0.95 and r['lead_ref_missing'] == 0 and r['tail_ref_missing'] == 0
-        return max(0, r['start'] - 0.35), min(total, r['end'] + 0.7), ok, f"text match {r['match']:.3f}"
+        if ch in KNOWN_OMISSIONS:
+            ok, note = False, note + '; ' + KNOWN_OMISSIONS[ch]
+        return max(0, r['start'] - 0.35), min(total, r['end'] + 0.7), ok, note
     starts, ends = silences(path)
     lead = ends[0] if starts and starts[0] < 0.05 and ends else 0.0
     tail = starts[-1] if starts and (len(ends) < len(starts) or ends[-1] > total - 0.05) else total
