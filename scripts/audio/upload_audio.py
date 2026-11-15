@@ -34,14 +34,20 @@ def main():
             skipped += 1
             continue
         data = open(os.path.join(a.root, j['storage_path']), 'rb').read()
-        r = requests.post(f"{url}/storage/v1/object/scripture-audio/{j['storage_path']}",
-                          headers={**h, 'Content-Type': 'audio/mpeg', 'x-upsert': 'true',
-                                   'Cache-Control': 'public, max-age=31536000'}, data=data, timeout=120)
-        if r.status_code not in (200, 201):
+        # Recorded plan chapters go to the private bucket (insert only, no overwrite);
+        # everything else goes to the public bucket as before.
+        bucket = j.get('bucket', 'scripture-audio')
+        extra = ({'Cache-Control': 'private, max-age=3600'} if bucket == 'premium-audio'
+                 else {'x-upsert': 'true', 'Cache-Control': 'public, max-age=31536000'})
+        r = requests.post(f"{url}/storage/v1/object/{bucket}/{j['storage_path']}",
+                          headers={**h, 'Content-Type': 'audio/mpeg', **extra}, data=data, timeout=300)
+        already = r.status_code in (400, 409) and 'exist' in r.text.lower()
+        if r.status_code not in (200, 201) and not already:
             raise SystemExit(f"upload {j['storage_path']}: {r.status_code} {r.text[:200]}")
         row = {k: j[k] for k in ('kind', 'content_key', 'language_code', 'version_code', 'storage_path',
                                  'duration_secs', 'text_sha256', 'voice_label')}
         row['published'] = True
+        row['bucket'] = bucket
         r = requests.post(f'{url}/rest/v1/audio_tracks?on_conflict=storage_path',
                           headers={**h, 'Content-Type': 'application/json',
                                    'Prefer': 'resolution=merge-duplicates,return=minimal'}, json=row, timeout=30)

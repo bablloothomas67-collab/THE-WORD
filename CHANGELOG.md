@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.8.0 — 2026-11-15
+
+- Reading-plan audio for the Gospel of John (21 chapters) in English and Malayalam, from existing human recordings: LibriVox WEB (public domain) and the Malayalam IRV audio (CC BY-SA 4.0, Davar Partners International / Bridge Connectivity Solutions). Private bucket, signed links.
+- The player shows a credit line per recording, with a licence link for the Malayalam audio; a reader hears the recording in their interface language (Malayalam falls back to English).
+- `upload_audio.py` can upload to the private `premium-audio` bucket; new `scripts/audio/plan/` processing scripts. See docs/AUDIO.md, "Recorded plan audio".
+- Owner approved the legal pages (EN + ML) and Phase 6 on 15 Nov 2026.
+
 ## 0.7.1 — 2026-11-14
 
 - Legal pages published in English and Malayalam: Terms of use (`/terms`), Privacy policy (`/privacy`), Refunds and cancellation (`/refunds`), Contact (`/contact`). Text is in the locale files; seller details are in `src/config/business.ts` (owner approved publishing name, address, email and phone).

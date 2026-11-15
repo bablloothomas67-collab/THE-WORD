@@ -38,3 +38,32 @@ app never calls ElevenLabs.
 - 174 daily-verse clips and 30 devotional clips (Week 1: Scripture + prayer, EN + ML) published.
 - Characters billed: 25,349 (daily) + 5,934 (devotionals) + ~1,900 samples.
 - 12 Nov 2026: Week 2 devotionals (16–22 Nov) — 28 clips, 7,139 characters billed. Total published: 232 clips.
+
+## Recorded plan audio (not AI) — added 15 Nov 2026
+
+Reading-plan chapters use existing human recordings, not the AI voice. They live in the private
+`premium-audio` bucket (`audio_tracks.kind = 'plan_chapter'`, `content_key = 'JHN.3'`) and are
+served through one-hour signed links. While the paywall is off any signed-in reader can listen;
+with it on, only Premium readers can.
+
+| Language | Version | Source | Licence | What we changed |
+|---|---|---|---|---|
+| English | `web` | LibriVox "Book of John WEB", archive.org item `book_john` | Public domain | LibriVox spoken intro and closing line removed; volume levelled |
+| Malayalam | `malirv` | Malayalam IRV Audio Bible from Bridge Connectivity Solutions' catalogue (Vachan Online) | CC BY-SA 4.0, © 2022 Davar Partners International and Bridge Connectivity Solutions (tag embedded in every file) | Leading/trailing silence removed; volume levelled |
+
+Rules that follow from the licences:
+- The Malayalam credit line and a link to the licence are shown under the player
+  (`plans.audioCredit.malirv`, `RECORDING_CREDITS` in `audioService.ts`). Do not remove them.
+- Our adapted Malayalam files are themselves CC BY-SA 4.0 (stated in each file's tags). We may charge
+  for access, but we may not forbid listeners from sharing the files.
+- The English recording was read from the 2006 WEB edition; about 2% of words differ from the WEB
+  text on the site. The credit line says so.
+- A reader sees the recording in their interface language; Malayalam falls back to English when a
+  chapter has no Malayalam recording.
+
+Process (`scripts/audio/plan/`): download the source files; for English run `transcribe.py`
+(speech-to-text with word timings) and `align.py` (matches the words to the site's text to find
+where Scripture starts and ends, and reports the match rate); `build_plan_audio.py en|ml OUT`
+trims, levels to −16 LUFS, re-encodes at 80 kbit/s mono and writes a manifest; then
+`upload_audio.py` as above. Chapters whose match rate is under 95% are flagged and not uploaded.
+The Malayalam audio has not been machine-checked against the text; the owner listened to samples.

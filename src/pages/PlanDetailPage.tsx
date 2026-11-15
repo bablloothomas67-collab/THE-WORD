@@ -8,7 +8,8 @@ import { useAuth } from '../features/auth/useAuth';
 import { pickDefaultVersion, useBooks, useUiLanguage, useVersions } from '../features/bible/useBible';
 import { readerPath } from '../features/bible/readingState';
 import { nextDay, plansService } from '../features/plans/plansService';
-import { audioService } from '../features/audio/audioService';
+import { audioService, RECORDING_CREDITS } from '../features/audio/audioService';
+import { isEnabledLanguage, type LanguageCode } from '../config/languages';
 import { AudioPlayer } from '../features/audio/AudioPlayer';
 import { usePremium } from '../features/billing/usePremium';
 import { PremiumHint } from '../features/billing/PremiumHint';
@@ -140,17 +141,38 @@ export function PlanDetailPage() {
  * English recordings for the chapters of the reader's next unread day. Shows nothing
  * until a recording exists; shows a Premium line when it exists but is locked.
  */
-function PlanDayAudio({ bookCode, chapterStart, chapterEnd, bookName }: { bookCode: string; chapterStart: number; chapterEnd: number; bookName: string }) {
+/** Who made the recording and under what licence; falls back to a plain label. */
+function RecordingCredit({ versionCode }: { versionCode: string | null }) {
   const { t } = useTranslation();
+  const credit = versionCode ? RECORDING_CREDITS[versionCode] : undefined;
+  if (!versionCode || !credit) return <>{t('plans.audioCaption')}</>;
+  return (
+    <>
+      {t(`plans.audioCredit.${versionCode}`)}
+      {credit.licenceUrl && (
+        <>
+          {' '}
+          <a href={credit.licenceUrl} target="_blank" rel="noreferrer license">
+            {t('plans.audioLicence')}
+          </a>
+        </>
+      )}
+    </>
+  );
+}
+
+function PlanDayAudio({ bookCode, chapterStart, chapterEnd, bookName }: { bookCode: string; chapterStart: number; chapterEnd: number; bookName: string }) {
+  const { t, i18n } = useTranslation();
   const premium = usePremium();
+  const lang: LanguageCode = isEnabledLanguage(i18n.language) ? i18n.language : 'en';
   const chapters = Array.from({ length: chapterEnd - chapterStart + 1 }, (_, i) => chapterStart + i);
   const tracks = useAsync(
     () =>
-      Promise.all(chapters.map((c) => audioService.getPlanChapter(bookCode, c))).catch((e: unknown) => {
+      Promise.all(chapters.map((c) => audioService.getPlanChapter(bookCode, c, lang))).catch((e: unknown) => {
         console.warn(e);
         return [];
       }),
-    [bookCode, chapterStart, chapterEnd, premium.premium],
+    [bookCode, chapterStart, chapterEnd, premium.premium, lang],
   );
   const available = (tracks.data ?? []).map((tr, i) => ({ ...tr, chapter: chapters[i] })).filter((tr) => tr.available);
   if (available.length === 0) return null;
@@ -166,7 +188,7 @@ function PlanDayAudio({ bookCode, chapterStart, chapterEnd, bookName }: { bookCo
               src={tr.url}
               durationSecs={tr.durationSecs}
               label={t('bible.reference', { book: bookName, chapter: tr.chapter })}
-              caption={t('plans.audioCaption')}
+              caption={<RecordingCredit versionCode={tr.versionCode} />}
             />
           ),
       )}

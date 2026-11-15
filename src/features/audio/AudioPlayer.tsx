@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState, type ReactNode } from 'react';
 import { useTranslation } from 'react-i18next';
 import { formatClock } from './formatClock';
 import styles from './audio.module.css';
@@ -10,7 +10,7 @@ interface Props {
   /** Accessible name, e.g. "Listen to John 3:16". */
   label: string;
   /** Short line under the controls, e.g. "AI voice · KJV". */
-  caption?: string;
+  caption?: ReactNode;
   tone?: 'light' | 'dark';
 }
 

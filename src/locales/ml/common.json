@@ -348,7 +348,12 @@
     "complete": "പൂർത്തിയായി",
     "range": "{{book}} {{start}}–{{end}}",
     "listen": "ഇന്നത്തെ വായന കേൾക്കുക",
-    "audioCaption": "ഇംഗ്ലീഷ് റെക്കോർഡിംഗ്"
+    "audioCaption": "റെക്കോർഡിംഗ്",
+    "audioLicence": "ലൈസൻസ്",
+    "audioCredit": {
+      "web": "World English Bible, 2006 പതിപ്പിൽനിന്ന് വായിച്ചത്; അതിനാൽ സ്ക്രീനിലെ പാഠത്തിൽനിന്ന് ചില വാക്കുകൾ വ്യത്യാസപ്പെടാം. LibriVox സന്നദ്ധപ്രവർത്തകരുടെ റെക്കോർഡിംഗ്, പൊതുസഞ്ചയം. THE WORD തുടക്കവും ഒടുക്കവും വെട്ടിച്ചുരുക്കി ശബ്ദനില ക്രമീകരിച്ചു.",
+      "malirv": "ഇന്ത്യൻ റിവൈസ്ഡ് വേർഷൻ (IRV) മലയാളം ഓഡിയോ © 2022 Davar Partners International, Bridge Connectivity Solutions, CC BY-SA 4.0. THE WORD ഒടുവിലെ നിശ്ശബ്ദത നീക്കി ശബ്ദനില ക്രമീകരിച്ചു."
+    }
   },
   "prayer": {
     "title": "പ്രാർത്ഥനാ ഡയറി",

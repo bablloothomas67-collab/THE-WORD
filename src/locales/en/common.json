@@ -348,7 +348,12 @@
     "complete": "Completed",
     "range": "{{book}} {{start}}–{{end}}",
     "listen": "Listen to today's reading",
-    "audioCaption": "English recording"
+    "audioCaption": "Recording",
+    "audioLicence": "Licence",
+    "audioCredit": {
+      "web": "World English Bible, read from the 2006 edition, so a few words differ from the text on screen. LibriVox volunteer recording, public domain. Trimmed and volume-levelled by THE WORD.",
+      "malirv": "Malayalam Indian Revised Version audio © 2022 Davar Partners International and Bridge Connectivity Solutions, CC BY-SA 4.0. Trimmed and volume-levelled by THE WORD."
+    }
   },
   "prayer": {
     "title": "Prayer journal",
