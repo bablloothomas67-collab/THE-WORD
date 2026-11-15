@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.8.1 — 2026-11-15
+
+- `index.html` now carries a plain-HTML summary (what the service is, Premium prices, seller, policy links) that shows until the app loads and to visitors or checkers that do not run JavaScript. Added after Razorpay asked that the website "clearly reflect the business's products or services". This is the one deliberate exception to "no hardcoded UI text": it sits outside the React app, is English only, and must be kept in step with `src/config/business.ts` and the Premium prices.
+- Clearer page title and description; real `robots.txt` and `sitemap.xml`.
+
 ## 0.8.0 — 2026-11-15
 
 - Reading-plan audio for the Gospel of John (21 chapters) in English and Malayalam, from existing human recordings: LibriVox WEB (public domain) and the Malayalam IRV audio (CC BY-SA 4.0, Davar Partners International / Bridge Connectivity Solutions). Private bucket, signed links.
